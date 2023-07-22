@@ -9,5 +9,9 @@ export default defineNuxtConfig({
       } 
     }]
   ],
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css'
+  },
+  css: ['assets/css/main.css'],
   devtools: { enabled: true }
 })

@@ -9,33 +9,44 @@
     resolve_links: 'url',
   });
   
+  // Define header menu as a ref
   const headerMenu = ref(null);
-  headerMenu.value = data.story.content.header_menu;
-  const logo = data.story.content.logo?.filename || null
+  headerMenu.value = data.story.content.header_menu.filter(item => !item.featured);
+  // Get call to actions
+  const CTA = data.story.content.header_menu.find(item => !!item.featured);
+  // Fetch Navbar Logo
+  const logo = data.story.content.logo?.filename || null;
+  // handle headers colors and scroll behaviour
+  const showBackground = !data.story.content.background_on_scroll;
+  const header_color = data.story.content?.header_color.color;
+  const header_text_color = data.story.content?.header_text_color.color;
 
   const mobileMenuOpen = ref(false);
 
-// Handle scroll
-const isScrolled = ref(false);
-// Add scroll event listener
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+  // Handle scroll
+  const isScrolled = ref(false);
+  // Add scroll event listener
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+  })
 
-// Remove scroll event listener on component unmount
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  // Remove scroll event listener on component unmount
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
 
-// Handle scroll event
-const handleScroll = () => {
-  const scrollPosition = window.scrollY
-  isScrolled.value = scrollPosition > 0
-}
+  // Handle scroll event
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY
+    isScrolled.value = scrollPosition > 0
+  }
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" :class="{ 'bg-white dark:bg-gray-900': isScrolled }">
+  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" 
+    :class="{'bg-white': isScrolled || showBackground}" 
+    :style="isScrolled || showBackground ? { backgroundColor: header_color} : ''"
+  >
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5">
@@ -44,26 +55,35 @@ const handleScroll = () => {
         </NuxtLink>
       </div>
       <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white" @click="mobileMenuOpen = true">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = true">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
       </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <NuxtLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" class="text-sm font-semibold leading-6 text-gray-900 hover:text-secondary dark:text-white dark:hover:text-secondary transition duration-300">
+      <div class="hidden lg:flex items-center lg:gap-x-12">
+        <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
+          class="text-sm font-semibold leading-6 transition duration-300 text-gray-900 hover:text-secondary"
+          :style="{color: header_text_color}"
+        >
           {{ blok.text }}
-        </NuxtLink>
+        </AppLink>
+        <AppLink :to="CTA.url" class="text-sm font-semibold leading-6 transition duration-300 btn">
+          {{ CTA.text }}
+        </AppLink>
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-50" />
-      <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <DialogPanel 
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        :style="{ backgroundColor: header_color}"
+      >
         <div class="flex items-center justify-between">
-          <NuxtLink to="/" class="-m-1.5 p-1.5">
+          <NuxtLink to="/" class="-m-1.5 p-1.5" @click="mobileMenuOpen = false">
             <span class="sr-only">Logo</span>
             <img class="h-8 sm:h-16 w-auto dark-brighten" :src="logo" alt="Logo" />
           </NuxtLink>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-white" @click="mobileMenuOpen = false">
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
           </button>
@@ -71,10 +91,15 @@ const handleScroll = () => {
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <NuxtLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" @click="mobileMenuOpen = false" 
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-primaryGreen hover:text-white dark:hover:bg-secondary">
-                {{ blok.text }}
-              </NuxtLink>
+              <AppLink v-for="link in headerMenu" :key="link.name" :to="link.url" @click="mobileMenuOpen = false" 
+                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-900 hover:opacity-50 duration-500"
+                :style="{color: header_text_color}"
+                >
+                {{ link.text }}
+              </AppLink>
+              <AppLink :to="CTA.url" class="inline-block -mx-3 rounded-lg text-base font-semibold leading-7 btn">
+                {{ CTA.text }}
+              </AppLink>
             </div>
           </div>
         </div>
@@ -84,12 +109,8 @@ const handleScroll = () => {
 </template>
 
 <style scoped>
-@media (prefers-color-scheme: dark) {
-  .dark-brighten{
-    filter: brightness(0) invert(1);
-  }
-}
 nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-2 decoration-secondary;
+  @apply text-secondary !important
 }
+
 </style>
