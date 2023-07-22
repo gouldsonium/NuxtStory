@@ -1,35 +1,94 @@
 <script setup>
-  const storyblokApi = useStoryblokApi()
+  import { ref, onMounted, onUnmounted } from 'vue';
+  import { Dialog, DialogPanel } from '@headlessui/vue';
+  import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
+
+  const storyblokApi = useStoryblokApi();
   const { data } = await storyblokApi.get('cdn/stories/config', {
     version: 'draft',
     resolve_links: 'url',
-  })
+  });
   
-  const headerMenu = ref(null)
-  headerMenu.value = data.story.content.header_menu
-  console.log(headerMenu)
+  const headerMenu = ref(null);
+  headerMenu.value = data.story.content.header_menu;
+  const logo = data.story.content.logo?.filename || null
+
+  const mobileMenuOpen = ref(false);
+
+// Handle scroll
+const isScrolled = ref(false);
+// Add scroll event listener
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+// Remove scroll event listener on component unmount
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+// Handle scroll event
+const handleScroll = () => {
+  const scrollPosition = window.scrollY
+  isScrolled.value = scrollPosition > 0
+}
 </script>
 
 <template>
-  <header class="w-full h-24 bg-primary">
-    <div class="container h-full mx-auto flex items-center justify-between">
-      <NuxtLink to="/">
-        <h1 class="text-secondary text-3xl font-bold">Storyblok Nuxt</h1>
-      </NuxtLink>
-      <nav v-if="headerMenu">
-        <ul class="flex space-x-8 text-lg font-bold text-white">
-          <li v-for="blok in headerMenu" :key="blok._uid">
-            <NuxtLink :to="`/${blok.url}`">
-              {{ blok.text }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" :class="{ 'bg-white dark:bg-gray-900': isScrolled }">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <NuxtLink to="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">Logo</span>
+          <img v-if="logo" class="h-8 sm:h-20 w-auto dark-brighten" :src="logo" alt="Logo" />
+        </NuxtLink>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white" @click="mobileMenuOpen = true">
+          <span class="sr-only">Open main menu</span>
+          <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <NuxtLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" class="text-sm font-semibold leading-6 text-gray-900 hover:text-secondary dark:text-white dark:hover:text-secondary transition duration-300">
+          {{ blok.text }}
+        </NuxtLink>
+      </div>
+    </nav>
+    <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+      <div class="fixed inset-0 z-50" />
+      <DialogPanel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <NuxtLink to="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">Logo</span>
+            <img class="h-8 sm:h-16 w-auto dark-brighten" :src="logo" alt="Logo" />
+          </NuxtLink>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-white" @click="mobileMenuOpen = false">
+            <span class="sr-only">Close menu</span>
+            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <NuxtLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" @click="mobileMenuOpen = false" 
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-primaryGreen hover:text-white dark:hover:bg-secondary">
+                {{ blok.text }}
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </DialogPanel>
+    </Dialog>
   </header>
 </template>
 
 <style scoped>
+@media (prefers-color-scheme: dark) {
+  .dark-brighten{
+    filter: brightness(0) invert(1);
+  }
+}
 nav a.router-link-active {
   @apply underline underline-offset-4 decoration-2 decoration-secondary;
 }
