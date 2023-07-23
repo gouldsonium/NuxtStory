@@ -48,6 +48,14 @@
       <div class="text-gray-900">
         <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok.title }}</h1>
         <h2 class="text-4xl font-light" :style="{color: blok.text_color?.color}">{{ blok.text }}</h2>
+        <div class="mt-10 flex justify-center items-center" v-if="blok?.buttons">
+          <StoryblokComponent
+            class="mx-3 text-lg"
+            v-for="blok in blok.buttons"
+            :key="blok._uid"
+            :blok="blok"
+          />
+        </div>
       </div>
       <div class="w-full lg:w-1/2 p-5" v-if="!!blok.image?.filename">
         <img :src="blok.image?.filename" alt="hero-img">

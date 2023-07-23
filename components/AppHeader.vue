@@ -1,5 +1,5 @@
 <script setup>
-  // import { ref, onMounted, onUnmounted } from 'vue';
+  import { ref, onMounted, onUnmounted } from 'vue';
   import { Dialog, DialogPanel } from '@headlessui/vue';
   import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
@@ -17,28 +17,7 @@
   headerMenu.value = data.story.content.header_menu;
 
   // Handle call to action button
-  const callToAction = data.story.content?.cta[0];
-  const buttonBackgroundColor = ref(callToAction.btn_color?.color);
-  const buttonTextColor = ref(callToAction.text_color?.color);
-
-  const btnClasses = [
-    callToAction.style,
-    callToAction.hover == 'fade' ? 'hover:opacity-50' : ''
-  ]
-
-  const changeBackgroundColor = () => {
-    if(callToAction.hover == 'flip'){
-      buttonBackgroundColor.value = callToAction.text_color?.color;
-      buttonTextColor.value = callToAction.btn_color?.color;
-    } else if(callToAction.hover == 'transparent'){
-      buttonBackgroundColor.value = '#ffffff00'
-    }
-  };
-
-  const changeBackgroundBack = () => {
-    buttonBackgroundColor.value = callToAction.btn_color?.color;
-    buttonTextColor.value = callToAction.text_color?.color;
-  }
+  const CTA = data.story.content?.cta;
 
   // handle headers colors and scroll behaviour
   const showBackground = !data.story.content.background_on_scroll;
@@ -91,16 +70,12 @@
         >
           {{ blok.text }}
         </AppLink>
-        <AppLink v-if="callToAction.url && callToAction.text" :to="callToAction?.url" 
-          :class="btnClasses" class="text-sm font-semibold leading-6 btn" 
-          :style="{
-            backgroundColor: buttonBackgroundColor, color: buttonTextColor, 
-            border:`${callToAction.btn_color?.color} solid 2px`
-          }"
-          @mouseover="changeBackgroundColor('#e0e0e0')" @mouseout="changeBackgroundBack"
-        >
-          {{ callToAction?.text }}
-        </AppLink>
+        <StoryblokComponent
+          class="text-sm"
+          v-for="blok in CTA"
+          :key="blok._uid"
+          :blok="blok"
+        />
       </div>
     </nav>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -128,13 +103,12 @@
                 >
                 {{ link.text }}
               </AppLink>
-              <AppLink
-                v-if="callToAction.url && callToAction.text" :class="btnClasses"
-                :to="callToAction.url" class="inline-block -mx-0 rounded-lg text-base font-semibold leading-7 btn" 
-                :style="{backgroundColor: buttonBackgroundColor, color: buttonTextColor}"
-              >
-                {{ callToAction.text }}
-              </AppLink>
+              <StoryblokComponent
+                class="text-base w-auto"
+                v-for="blok in CTA"
+                :key="blok._uid"
+                :blok="blok"
+              />
             </div>
           </div>
         </div>
@@ -142,10 +116,3 @@
     </Dialog>
   </header>
 </template>
-
-<style scoped>
-nav a.router-link-active {
-  @apply text-secondary !important
-}
-
-</style>
