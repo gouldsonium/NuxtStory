@@ -13,5 +13,8 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/tailwind.css'
   },
   css: ['assets/css/main.css'],
-  devtools: { enabled: true }
+  devtools: { enabled: true },
+  app:{
+    pageTransition: {name: 'page', mode: 'out-in'}
+  }
 })

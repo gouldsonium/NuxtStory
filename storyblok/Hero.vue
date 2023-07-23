@@ -1,35 +1,65 @@
+<script setup>
+  import { defineProps, computed } from 'vue';
+
+  const props = defineProps({ blok: Object });
+
+  const hasBackgroundImage = !!props.blok.background_image?.filename;
+  const hasBackgroundVideo = !!props.blok.background_video?.filename;
+  const backgroundColor = props.blok.background_color?.color;
+
+  const backgroundStyle = computed(() => {
+    if (hasBackgroundImage) {
+      return {
+        backgroundImage: `linear-gradient(to right, #22283180, #22283180), url(${props.blok.background_image.filename})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      };
+    }
+
+    if(!!backgroundColor){
+      return {backgroundColor: backgroundColor}
+    }
+
+    return null;
+  });
+</script>
+
 <template>
   <section
     v-editable="blok"
-    class="min-h-[700px] relative flex items-center justify-center rounded-[5px] overflow-hidden"
-    :style="backgroundImageStyle"
+    class="min-h-[700px] relative flex items-center justify-center overflow-hidden"
+    :class="{ 'pt-32 lg:pt-0': !!blok.image.filename}"
+    :style="backgroundStyle"
   >
-    <div class="relative z-10 w-full text-center py-6 px-3"
-      :class="hasBackgroundImage ? 'text-white' : 'text-gray-900'"
+    <!-- If background video exists, add the <video> element -->
+    <video
+      v-if="hasBackgroundVideo"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      class="absolute top-0 left-0 w-full h-full object-cover z-0"
     >
-      <h1 class="text-6xl font-bold mb-3">
-        {{ blok.title }}
-      </h1>
-      <h2 class="text-4xl font-light">
-        {{ blok.text }}
-      </h2>
+      <source :src="props.blok.background_video.filename" type="video/mp4" />
+      <!-- Add more <source> elements for other video formats if needed -->
+    </video>
+
+    <div class="flex flex-col lg:flex-row justify-center items-center z-10 w-full text-center py-6 px-5 min-h-full">
+      <div :class="hasBackgroundImage || hasBackgroundVideo ? 'text-white' : 'text-gray-900'">
+        <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color.color}">{{ blok.title }}</h1>
+        <h2 class="text-4xl font-light" :style="{color: blok.text_color.color}">{{ blok.text }}</h2>
+      </div>
+      <div class="w-full lg:w-1/2 p-5" v-if="!!blok.image.filename">
+        <img :src="blok.image.filename" alt="hero-img">
+      </div>
     </div>
   </section>
 </template>
- 
-<script setup>
-const props = defineProps({ blok: Object })
 
-const hasBackgroundImage = !!props.blok.background_image?.filename;
-const backgroundImageStyle = computed(() => {
-  if(hasBackgroundImage){
-    return {
-      backgroundImage: 'linear-gradient(to right, #22283180, #22283180), url(' + props.blok.background_image.filename + ')',
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
-    }
-  }
-  return null;
-})
-</script>
+<style scoped>
+video{
+  filter: brightness(0.5);
+}
+</style>
