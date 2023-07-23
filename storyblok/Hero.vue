@@ -27,7 +27,7 @@
   <section
     v-editable="blok"
     class="min-h-[700px] relative flex items-center justify-center overflow-hidden"
-    :class="{ 'pt-32 lg:py-12': !!blok.image?.filename}"
+    :class="{ 'pt-32 lg:py-20': !!blok.image?.filename}"
     :style="backgroundStyle"
   >
     <!-- If background video exists, add the <video> element -->
@@ -46,8 +46,8 @@
 
     <div class="flex flex-col lg:flex-row justify-center items-center z-10 w-full text-center py-6 px-5 min-h-full">
       <div class="text-gray-900">
-        <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok.title }}</h1>
-        <h2 class="text-4xl font-light" :style="{color: blok.text_color?.color}">{{ blok.text }}</h2>
+        <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Example Title' }}</h1>
+        <h2 class="text-4xl font-light" :style="{color: blok.text_color?.color}">{{ blok?.text || 'Example text' }}</h2>
         <div class="mt-10 flex justify-center items-center" v-if="blok?.buttons">
           <StoryblokComponent
             class="mx-3 text-lg"

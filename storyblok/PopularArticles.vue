@@ -1,6 +1,6 @@
 <template>
     <div class="py-24">
-      <h2 class="text-6xl text-secondary font-bold text-center mb-12">{{ blok.headline }}</h2>
+      <h2 class="text-4xl text-secondary font-bold text-center mb-12">{{ blok.headline }}</h2>
       <div class="container mx-auto grid md:grid-cols-3 gap-12 my-12 place-items-start">
         <ArticleCard
           v-for="article in blok.articles"
