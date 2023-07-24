@@ -30,7 +30,6 @@
     :class="{ 'pt-32 lg:py-20': !!blok.image?.filename}"
     :style="backgroundStyle"
   >
-    <!-- If background video exists, add the <video> element -->
     <video
       v-if="!!blok.background_video?.filename"
       autoplay
