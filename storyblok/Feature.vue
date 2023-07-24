@@ -1,8 +1,8 @@
 <template>
   <div
     v-editable="blok" :class="layoutClass"
-    class="w-full flex flex-col justify-center items-center p-12 bg-primary"
-    :style="{backgroundColor: blok.background_color?.color}"
+    class="w-full flex flex-col justify-center items-center bg-primary"
+    :style="{backgroundColor: blok.background_color?.color, borderColor: blok.border_color?.color}"
   >
     <div :class="blok.constrained ? 'md:w-1/2 w-full' : 'w-full'" class="md:px-3 py-6">
       <h2 v-if="!!blok.name" class="text-4xl text-secondary font-bold" :style="{color: blok.title_color?.color}">
@@ -10,9 +10,15 @@
       </h2>
       <div v-if="!!blok?.content" 
         v-html="resolvedRichText" 
-        class="max-w-none p-2 prose"
+        class="max-w-none py-2 prose"
         :class="{'prose-invert' : blok.invert}"
       ></div>
+      <StoryblokComponent
+        class="mr-3 my-3 text-base"
+        v-for="blok in blok.buttons"
+        :key="blok._uid"
+        :blok="blok"
+      />
     </div>
     <img
       v-if="!!blok.image?.filename"
@@ -29,17 +35,20 @@
   const resolvedRichText = computed(() => renderRichText(props.blok.content))
 
   const layoutClass = computed(() => {
-  const { layout, text_center } = props.blok;
+  const { layout, text_center, in_grid, border } = props.blok;
   return [
     layout === 'left' ? 'md:flex-row' : layout === 'right' ? 'md:flex-row-reverse' 
     : layout === 'top' ? 'md:flex-col' : layout === 'bottom' ? 'md:flex-col-reverse' : '',
-    text_center ? 'text-center' : ''
+    text_center ? 'text-center' : '',
+    in_grid ? 'p-5' : 'p-12',
+    border == 'square' ? 'border' : border == 'rounded' ? 'border rounded-lg' : 'border-none'
   ];
 });
 
 
   const imageClass = computed(() => {
     return [
+      props.blok?.in_grid ? 'h-48 xl:h-72' : '',
       // props.blok.constrained ? 'md:w-1/2 md:max-w-6xl' : '',
       (props.blok.layout == 'top' || props.blok.layout == 'bottom') && !props.blok.constrained 
       ? 'w-full' : 'md:w-1/2 md:max-w-6xl'    

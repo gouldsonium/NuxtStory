@@ -1,6 +1,6 @@
 <template>
   <div v-editable class="inline-block">
-    <AppLink :to="blok?.url" class="font-semibold leading-6 btn"
+    <AppLink v-if="blok?.url" :to="blok?.url" class="font-semibold leading-6 btn"
       :class="{'hover:opacity-50' : blok.hover == 'fade'}"  
       :style="{
         backgroundColor: buttonBackgroundColor, color: buttonTextColor, 
