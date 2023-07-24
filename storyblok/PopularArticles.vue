@@ -1,6 +1,8 @@
 <template>
-  <div class="py-24">
-    <h2 class="text-4xl text-secondary font-bold text-center mb-12">{{ blok.headline }}</h2>
+  <div class="py-24" :style="{backgroundColor: blok.background_color?.color}">
+    <h2 v-if="blok.headline" class="text-4xl text-secondary font-bold text-center mb-12" :style="{color: blok.headline_color?.color}">
+      {{ blok.headline }}
+    </h2>
     <div class="container mx-auto grid md:grid-cols-3 gap-12 my-12 place-items-start">
       <ArticleCard
         v-for="article in blok.articles"

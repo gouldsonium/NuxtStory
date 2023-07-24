@@ -1,10 +1,11 @@
 <template>
   <div
-    v-editable="blok" :class="layoutClass"
+    v-editable="blok"
     class="w-full flex flex-col justify-center items-center bg-primary"
     :style="{backgroundColor: blok.background_color?.color, borderColor: blok.border_color?.color}"
   >
-    <div :class="blok.constrained ? 'md:w-1/2 w-full' : 'w-full'" class="md:px-3 py-6">
+  <div :class="layoutClass" class="flex flex-col justify-center items-center w-full">
+    <div class="md:px-3 py-6 w-full">
       <h2 v-if="!!blok.name" class="text-4xl text-secondary font-bold" :style="{color: blok.title_color?.color}">
         {{ blok.name }}
       </h2>
@@ -28,6 +29,7 @@
       :class="imageClass"
     />
   </div>
+  </div>
 </template>
    
 <script setup>
@@ -35,13 +37,14 @@
   const resolvedRichText = computed(() => renderRichText(props.blok.content))
 
   const layoutClass = computed(() => {
-  const { layout, text_center, in_grid, border } = props.blok;
+  const { layout, text_center, in_grid, border, constrained } = props.blok;
   return [
     layout === 'left' ? 'md:flex-row' : layout === 'right' ? 'md:flex-row-reverse' 
     : layout === 'top' ? 'md:flex-col' : layout === 'bottom' ? 'md:flex-col-reverse' : '',
     text_center ? 'text-center' : '',
     in_grid ? 'p-5' : 'p-12',
-    border == 'square' ? 'border' : border == 'rounded' ? 'border rounded-lg' : 'border-none'
+    border == 'square' ? 'border' : border == 'rounded' ? 'border rounded-lg' : 'border-none',
+    constrained ? 'max-w-6xl' : ''
   ];
 });
 

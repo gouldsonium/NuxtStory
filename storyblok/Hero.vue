@@ -44,7 +44,7 @@
       <!-- Add more <source> elements for other video formats if needed -->
     </video>
 
-    <div class="flex flex-col lg:flex-row justify-center items-center z-10 w-full text-center py-6 px-5 min-h-full">
+    <div class="flex flex-col lg:flex-row justify-center items-center z-10 w-full text-center py-6 px-5 min-h-full max-w-6xl">
       <div class="text-gray-900">
         <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Example Title' }}</h1>
         <h2 class="text-4xl font-light" :style="{color: blok.text_color?.color}">{{ blok?.text || 'Example text' }}</h2>
