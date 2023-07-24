@@ -1,11 +1,11 @@
 <template>
   <div
-    v-editable="blok"
+    v-editable="blok" :style="{backgroundColor: blok.background_color?.color}"
     class="w-full flex flex-col justify-center items-center bg-primary"
-    :style="{backgroundColor: blok.background_color?.color, borderColor: blok.border_color?.color}"
   >
-  <div :class="layoutClass" class="flex flex-col justify-center items-center w-full">
-    <div class="md:px-3 py-6 w-full">
+  <div :class="layoutClass" class="flex flex-col justify-center items-center w-full h-full overflow-hidden" 
+  :style="{borderColor: blok.border_color?.color}">
+    <div class="md:px-3 py-6 w-full overflow-hidden">
       <h2 v-if="!!blok.name" class="text-4xl text-secondary font-bold" :style="{color: blok.title_color?.color}">
         {{ blok.name }}
       </h2>
