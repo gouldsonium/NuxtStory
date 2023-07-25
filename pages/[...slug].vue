@@ -13,6 +13,29 @@ const story = await useAsyncStoryblok(
     resolveRelations,
   }
 )
+
+const metafields = story.value.content.metafields;
+useSeoMeta({
+  title: () => metafields?.title || 'Page Title',
+  ogTitle: () => metafields?.og_title || metafields?.title || 'Page Title',
+  description: () => metafields?.description  || 'Page Title',
+  ogDescription: () => metafields?.og_description || metafields?.description  || 'Page Title',
+  ogImage: () => metafields?.og_image || null,
+  twitterTitle: () => metafields?.twitter_title || null,
+  twitterDescription: () => metafields?.twitter_description || null,
+  twitterImage: () => metafields?.twitter_image || null
+});
+
+useServerSeoMeta({
+  title: () => metafields?.title || 'Page Title',
+  ogTitle: () => metafields?.og_title || metafields?.title || 'Page Title',
+  description: () => metafields?.description  || 'Page Title',
+  ogDescription: () => metafields?.og_description || metafields?.description  || 'Page Title',
+  ogImage: () => metafields?.og_image || null,
+  twitterTitle: () => metafields?.twitter_title || null,
+  twitterDescription: () => metafields?.twitter_description || null,
+  twitterImage: () => metafields?.twitter_image || null
+});
 </script>
  
 <template>
