@@ -6,13 +6,13 @@
         class="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
         {{ blok?.headline }}
       </h2>
-      <p v-if="!!blok.text" class="mt-2 text-lg leading-8 text-gray-900" :style="{color: blok.text_color?.color}">
-        {{ blok?.text }}
+      <p v-if="!!blok.text" clas="mt-2 text-lg leading-8 text-gray-900" :style="{color: blok.text_color?.color}">
+        {{ blok?.text }}s
       </p>
     </div>
-    <form method="POST" :name="blok?.name" class="mx-auto mt-10 max-w-xl" v-on:submit.prevent="handleSubmit" 
-      data-netlify="true" data-netlify-honeypot="bot-field" :action="blok?.redirect">
-      <input type="hidden" name="form-name" :value="blok?.name" />
+    <form method="POST" name="contact" class="mx-auto mt-10 max-w-xl" v-on:submit.prevent="handleSubmit" 
+      data-netlify="true" data-netlify-honeypot="bot-field" :action="blok?.redirect" netlify>
+      <input type="hidden" name="form-name" value="contact" />
       <p hidden>
         <label>
           Don't fill this out: <input name="bot-field" />
@@ -48,7 +48,7 @@
 import { useRouter } from 'vue-router';
 const props = defineProps({ blok: Object });
 
-const formData = ref({ room: null });
+const formData = ref({ });
 
 const encode = (data) => {
   return Object.keys(data)
@@ -59,6 +59,7 @@ const encode = (data) => {
 const router = useRouter();
 
 const handleSubmit = (e) => {
+  console.log(e)
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
