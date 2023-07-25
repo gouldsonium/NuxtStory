@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
@@ -5,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#222831',
-        secondary: '#ffa500'
+        primary: process.env.PRIMARY_COLOR,
+        secondary: process.env.SECONDARY_COLOR
       }
     },
   },
