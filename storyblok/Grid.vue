@@ -1,11 +1,11 @@
 <template>
-  <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}" class="py-12">
-    <div class="container mx-auto grid grid-cols-1 gap-12 place-items-center px-3" :class="gridClass">
+  <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
+    <div class="container grid grid-cols-1" :class="gridClass">
       <StoryblokComponent
         v-for="blok in blok.columns"
         :key="blok._uid"
         :blok="blok"
-        class="w-full h-full"
+        class="h-full"
       />
     </div>
   </section>
@@ -18,7 +18,8 @@
     return [
       props.blok?.max_columns == 4 ? 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
       : props.blok?.max_columns == 3 ? 'sm:grid-cols-2 lg:grid-cols-3' 
-      : props.blok?.max_columns == 2 ? 'sm:grid-cols-2' : ''
+      : props.blok?.max_columns == 2 ? 'sm:grid-cols-2' : '',
+      props.blok?.grid_spacing ? 'gap-12' : ''
     ]
   })
 </script>

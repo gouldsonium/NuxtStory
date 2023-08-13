@@ -20,7 +20,7 @@
     class="bg-gray-50 shadow p-4 text-gray-500" 
     :style="{backgroundColor: footer_color || null, color: footer_text_color || null}"
   >
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="w-full container mx-auto p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
         <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0">
           <img :src="logo" class="h-12 mr-3 dark-brighten" alt="Footer Logo" />

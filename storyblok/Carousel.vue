@@ -9,7 +9,7 @@
       >
         <img
           :src="item.image?.filename"
-          :alt="index"
+          :alt="item.image?.alt"
           class="d-block w-full object-cover max-h-[600px]"
           :class="{'filter brightness-50' : item?.darken}"
         />
@@ -18,7 +18,7 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2 text-center text-white transition-opacity transition-transform"
           :style="{ color: item.title_color?.color, opacity: index === activeIndex ? 1 : 0, transform: `translate(-50%, -50%) translateX(${100 * (index - activeIndex)}%)` }"
         >
-          <h2 class="text-4xl sm:text-6xl mb-5 font-bold">{{ item.title }}</h2>
+          <h3 class="mb-5 font-bold">{{ item.title }}</h3>
           <p class="text-lg sm:text-xl" :style="{ color: item.text_color?.color }">{{ item.text }}</p>
         </div>
       </div>
@@ -103,7 +103,7 @@
   color: #fff;
 }
 
-.carousel-content h2 {
+.carousel-content h3 {
   font-weight: bold;
   margin-bottom: 12px;
 }

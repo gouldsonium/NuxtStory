@@ -8,12 +8,12 @@
       :class="{ 'filter brightness-50': blok?.darken}"
     />
     <div class="container mx-auto py-12">
-      <h1 class="text-6xl text-secondary font-bold mb-4" :style="{ color: blok.headline_teaser_color?.color }">
+      <h1 class="text-secondary font-bold mb-4" :style="{ color: blok.headline_teaser_color?.color }">
         {{ blok.title }}
       </h1>
-      <h2 class="text-2xl text-gray-900 font-semibold mb-4" :style="{ color: blok.headline_teaser_color?.color }">
+      <!-- <h2 class="text-gray-900 font-semibold mb-4" :style="{ color: blok.headline_teaser_color?.color }">
         {{ blok.teaser }}
-      </h2>
+      </h2> -->
       <div v-html="resolvedRichText" class="prose" :class="{'prose-invert': blok.invert}"></div>
     </div>
   </div>

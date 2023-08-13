@@ -3,9 +3,30 @@
 @tailwind utilities;
 
 .btn{
-    @apply px-4 py-2 transition duration-500 bg-secondary border-secondary border flex items-center justify-center
+    @apply transition duration-500 bg-secondary border-secondary border flex items-center justify-center
+}
+
+nav a {
+    @apply hover:text-secondary !important 
 }
 
 nav a.router-link-active {
     @apply text-secondary !important
+}
+
+h1{
+    @apply text-4xl sm:text-6xl
+}
+
+h2{
+    @apply text-3xl sm:text-5xl
+}
+h3{
+    @apply text-2xl sm:text-4xl
+}
+h4{
+    @apply text-xl sm:text-3xl
+}
+p{
+    @apply text-base sm:text-lg
 }

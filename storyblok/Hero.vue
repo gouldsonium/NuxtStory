@@ -43,10 +43,11 @@
       <!-- Add more <source> elements for other video formats if needed -->
     </video>
 
-    <div class="flex flex-col lg:flex-row justify-center items-center z-10 w-full text-center py-6 px-5 min-h-full max-w-6xl">
-      <div class="text-gray-900">
-        <h1 class="text-6xl font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Example Title' }}</h1>
-        <h2 class="text-4xl font-light" :style="{color: blok.text_color?.color}">{{ blok?.text || 'Example text' }}</h2>
+    <div class="grid grid-cols-1 z-10 w-full py-6 px-5 min-h-full container" 
+      :class="blok.image?.filename ? 'md:grid-cols-2 gap-5':'', blok.text_position == 'items-center' ? 'text-center' : ''">
+      <div class="text-gray-900 flex flex-col justify-center" :class="blok.text_position">
+        <h1 class="font-bold mb-3" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>
+        <h2 class="font-light" :style="{color: blok.text_color?.color}">{{ blok?.text }}</h2>
         <div class="mt-10 flex justify-center items-center" v-if="blok?.buttons">
           <StoryblokComponent
             class="mx-3 text-lg"
@@ -56,8 +57,8 @@
           />
         </div>
       </div>
-      <div class="w-full lg:w-1/2 p-5" v-if="!!blok.image?.filename">
-        <img :src="blok.image?.filename" alt="hero-img">
+      <div class="w-full p-5" v-if="!!blok.image?.filename">
+        <img :src="blok.image?.filename" :alt="blok.image?.alt">
       </div>
     </div>
   </section>
