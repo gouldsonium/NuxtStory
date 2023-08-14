@@ -15,6 +15,13 @@ export default defineNuxtConfig({
   css: ['assets/css/main.css'],
   devtools: { enabled: true },
   app:{
-    pageTransition: {name: 'page', mode: 'out-in'}
+    pageTransition: {name: 'page', mode: 'out-in'},
+    head: {
+      link: [
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Poppins&display=swap" }
+      ]
+    }
   }
 })

@@ -6,7 +6,7 @@
     return [
       props.blok?.width,
       props.blok?.position,
-      'bg-primary'
+      'bg-primary mb-10'
     ]
   });
 

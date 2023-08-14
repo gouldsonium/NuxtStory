@@ -7,3 +7,11 @@
   opacity: 0;
   filter: blur(1rem);
 }
+
+body{
+  font-family: 'Poppins', sans-serif;
+}
+
+h1{
+  font-family: 'Cinzel', serif;
+}
