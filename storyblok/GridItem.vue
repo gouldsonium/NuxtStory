@@ -5,6 +5,7 @@
       v-for="blok in blok.content"
       :key="blok._uid"
       :blok="blok"
+      class="mb-5"
     />
   </div>
 </template>

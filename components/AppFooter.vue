@@ -5,8 +5,12 @@
     resolve_links: 'url',
   });
   
-  const footerMenu = ref(null);
-  footerMenu.value = data.story.content.footer_menu;
+  const quickLinks = ref(null);
+  quickLinks.value = data.story.content.quick_links;
+  const ourServices = ref(null);
+  ourServices.value = data.story.content.our_services;
+  const contactUs = ref(null);
+  contactUs.value = data.story.content.contact_us;
 
   const logo = data.story.content.footer_logo?.filename || null;
   const footer_color = data.story.content?.footer_color.color;
@@ -17,23 +21,53 @@
 
 <template>
   <footer 
-    class="bg-gray-50 shadow p-4 text-gray-500" 
+    class="bg-[#10336e] shadow p-4 text-white" 
     :style="{backgroundColor: footer_color || null, color: footer_text_color || null}"
   >
     <div class="w-full container mx-auto p-4 md:py-8">
-      <div class="sm:flex sm:items-center sm:justify-between">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
         <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0">
-          <img :src="logo" class="h-12 mr-3 dark-brighten" alt="Footer Logo" />
+          <img :src="logo" class="h-32" style="filter: brightness(0) invert(1);" alt="Footer Logo" />
         </NuxtLink>
-        <ul class="flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0">
-          <li v-for="item in footerMenu" :key="item.text">
-            <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
-          </li>
-        </ul>
+        <div>
+          <h4 class="text-base font-semibold">Quick Links</h4>
+          <img src="~/assets/img/dash.png" class="my-2" alt="dash.png" :class="{'mx-auto' : blok?.text_center}">
+          <ul class="text-sm font-medium">
+            <li v-for="item in quickLinks" :key="item.text" class="my-3">
+              <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-semibold">Our Services</h4>
+          <img src="~/assets/img/dash.png" class="my-2" alt="dash.png" :class="{'mx-auto' : blok?.text_center}">
+          <ul class="text-sm font-medium">
+            <li v-for="item in ourServices" :key="item.text" class="my-3">
+              <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-semibold">Contact Us</h4>
+          <img src="~/assets/img/dash.png" class="my-2" alt="dash.png" :class="{'mx-auto' : blok?.text_center}">
+          <ul class="text-sm font-medium">
+            <li v-for="item in contactUs" :key="item.text" class="my-3">
+              <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-      <span class="block text-sm sm:text-center">© 
-        {{currentYear}} Business. All Rights Reserved.
+      <div class="flex justify-between text-sm">
+        <span>
+          Copyright © {{currentYear}} rosbothamfinance.com
+        </span>
+        <span>All Rights Reserved</span>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <span class="block text-sm sm:text-center">
+        David Rosbotham is authorised by FINMA (36161) & FINOS (Finazombudsstelle Schweiz), 
+        a legally recognized ambudsman pursuant to Art 81 para 1 of FinSA
       </span>
     </div>
   </footer>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn{
-    @apply transition duration-500 bg-secondary border-secondary border flex items-center justify-center
+    @apply transition duration-500 bg-secondary border-secondary border flex items-center justify-center text-white
 }
 
 nav a {
@@ -28,8 +28,9 @@ h3{
     @apply text-2xl sm:text-4xl
 }
 h4{
+    font-family: 'Cinzel', serif;
     @apply text-xl sm:text-3xl
 }
 p{
-    @apply text-base sm:text-lg
+    @apply text-sm sm:text-base
 }
