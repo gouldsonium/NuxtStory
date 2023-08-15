@@ -1,7 +1,7 @@
 <template>
-  <div class="py-24" :style="{backgroundColor: blok.background_color?.color}">
+  <div class="py-24 px-3" :style="{backgroundColor: blok.background_color?.color}">
     <h2 v-if="!!blok?.headline" :style="{color: blok.headline_color?.color}"
-      class="font-bold text-secondary mb-10 flex text-center justify-center">
+      class="font-bold text-secondary mb-10 flex text-center justify-center items-center">
       <span>
         <img v-if="blok?.headline" src="~/assets/img/dash.png" class="my-5 h-2" alt="dash.png">
       </span>

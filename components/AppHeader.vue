@@ -65,7 +65,7 @@
           {{ blok.text }}
         </AppLink>
         <StoryblokComponent
-          class="text-sm"
+          id="callToAction"
           v-for="blok in CTA"
           :key="blok._uid"
           :blok="blok"
