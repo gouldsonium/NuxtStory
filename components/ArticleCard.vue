@@ -5,8 +5,9 @@
     class="w-full h-full bg-white rounded-[5px] text-center overflow-hidden"
   >
     <img
-      :src="article.image.filename + '/m/600x0'"
-      :alt="article.image.alt"
+      v-if="!!article?.image"
+      :src="article?.image?.filename + '/m/600x0'"
+      :alt="article?.image.alt"
       class="w-full h-48 xl:h-72 object-cover pointer-events-none rounded-[5px]"
     />
     <div class="p-4">

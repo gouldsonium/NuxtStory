@@ -1,6 +1,6 @@
 <template>
   <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
-    <div class="container grid grid-cols-1" :class="gridClass">
+    <div class="grid grid-cols-1" :class="gridClass">
       <StoryblokComponent
         v-for="blok in blok.columns"
         :key="blok._uid"

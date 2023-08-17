@@ -1,7 +1,7 @@
 <script setup>
 const { slug } = useRoute().params
  
-const resolveRelations = ['popular-articles.articles']
+const resolveRelations = ['articles-list.articles']
  
 const story = await useAsyncStoryblok(
   slug && slug.length > 0 ? slug.join('/') : 'home',
