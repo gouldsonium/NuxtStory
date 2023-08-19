@@ -3,7 +3,7 @@
     <AppLink v-if="blok?.url" :to="blok?.url" class="font-semibold leading-6 btn"
       :class="{'hover:opacity-50' : blok.hover == 'fade'}, blok?.font_size, blok?.padding"  
       :style="{
-        backgroundColor: buttonBackgroundColor, color: buttonTextColor, fontFamily: 'Poppins',
+        backgroundColor: buttonBackgroundColor, color: buttonTextColor,
         border:`${blok.btn_color?.color} solid 2px`, borderRadius: blok.style
       }"
       @mouseover="changeBackgroundColor" @mouseout="changeBackgroundBack"

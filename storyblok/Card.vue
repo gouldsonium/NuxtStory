@@ -11,9 +11,7 @@
       <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose my-5 text-center"></div>    
     </div>
     <div v-if="blok?.url" class="mx-auto w-fit">
-      <AppLink :to="blok?.url" class="font-semibold leading-6 btn text-white px-6 py-2 text-lg rounded-full hover:opacity-50"  
-      :style="{fontFamily: 'Poppins'}"
-    >
+      <AppLink :to="blok?.url" class="font-semibold leading-6 btn text-white px-6 py-2 text-lg rounded-full hover:opacity-50">
       {{ blok?.button_text || 'Learn More' }}
     </AppLink>
     </div>

@@ -16,7 +16,8 @@
 
   const gridClass = computed(() => {
     return [
-      props.blok?.max_columns == 4 ? 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
+      props.blok?.max_columns == 5 ? 'grid-cols-1 sm:grid-cols-3 xl:grid-cols-5' 
+      : props.blok?.max_columns == 4 ? 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
       : props.blok?.max_columns == 3 ? 'sm:grid-cols-2 lg:grid-cols-3' 
       : props.blok?.max_columns == 2 ? 'sm:grid-cols-2' : '',
       props.blok?.grid_spacing ? 'gap-12' : ''

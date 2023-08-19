@@ -4,10 +4,70 @@
   const resolvedRichText = computed(() => renderRichText(props.blok.text));
 
   const agreed = ref(false);
+
+  // const fetch = require('node-fetch'); // If you're running this in Node.js
+
+async function refreshAndPostLead() {
+  try {
+    // Refresh token endpoint
+    const refreshUrl = 'https://accounts.zoho.eu/oauth/v2/token';
+    const refreshParams = new URLSearchParams({
+      refresh_token: '1000.7a567acdf09d2369fd473f02aa0c6473.244ccb3379553c11c5190d282c0ad43b',
+      client_id: '1000.42EQXUXV9GLGA8M2A66WN5AUTL1ZTC',
+      client_secret: 'be5e2b9fa3cadf2dacbcf24eb2aace7078b8220518',
+      grant_type: 'refresh_token',
+    });
+
+    const refreshResponse = await fetch(`${refreshUrl}?${refreshParams.toString()}`, {
+      method: 'POST',
+    });
+
+    const refreshData = await refreshResponse.json();
+
+    // Access token obtained from refresh response
+    const accessToken = refreshData.access_token;
+
+    // Leads API endpoint
+    const leadsUrl = 'https://www.zohoapis.eu/crm/v2/leads';
+    const leadsData = {
+      data: [
+        {
+          First_Name: 'Stefan',
+          Last_Name: 'Gouldson',
+          Email: 'stefangouldson@gmail.com',
+        },
+      ],
+    };
+
+    // Make the API request to post leads
+    const leadsResponse = await fetch(leadsUrl, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadsData),
+    });
+
+    const leadsResult = await leadsResponse.json();
+    console.log('Leads API response:', leadsResult);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+// Ensure it runs on client side
+if (process.client) {
+  console.log(localStorage.getItem('source'));
+}
+
+const { data } = await useFetch('/api/refresh');
+console.log('data is' + data)
+
 </script>
 
 <template>
-  <section :style="{backgroundColor: blok.background_color?.color}" class="px-6 lg:px-8 py-24 sm:py-32">
+  <section :style="{backgroundColor: blok.background_color?.color}" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 container mx-auto place-items-center">
       <div>
         <h2 class="font-semibold">{{ blok?.title || 'Book a Meeting' }}</h2>
@@ -16,7 +76,7 @@
       </div>
       <div class="row-span-2">
         <p class="mb-5">Please fill out the form below to book a meeting</p>
-        <form action="#" method="POST" class="mx-auto max-w-xl">
+        <form @submit.prevent="refreshAndPostLead" method="POST" class="mx-auto max-w-xl">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
               <label for="first-name" class="block text-sm font-semibold leading-6 ">First name</label>
@@ -76,7 +136,7 @@
         </form>
       </div>
       <div class="hidden sm:block">
-        <img src="https://a.storyblok.com/f/246531/800x540/4731e1851e/placeholder.png" alt="">
+        <img src="https://a.storyblok.com/f/247081/940x887/82f70cfab3/rosbotham-icon.png" alt="logo-circle" class="my-5" style="max-height: 500px;">
       </div>
     </div>
   </section>
@@ -84,6 +144,6 @@
 
 <style scoped>
 input{
-  @apply block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary  sm:text-sm sm:leading-6
+  @apply block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6
 }
 </style>

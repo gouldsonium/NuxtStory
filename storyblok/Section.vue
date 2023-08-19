@@ -7,9 +7,16 @@
   const hasBackgroundColor = computed(() => {return !!props.blok.background_color?.color});
 
   const backgroundStyle = computed(() => {
-    if (hasBackgroundImage.value) {
+    if (hasBackgroundImage.value && props.blok?.darken_background_image) {
       return {
         backgroundImage: `linear-gradient(to right, #22283180, #22283180), url(${props.blok.background_image.filename})`,
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      };
+    } else if (hasBackgroundImage.value) {
+      return {
+        backgroundImage: `url(${props.blok.background_image.filename})`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -42,7 +49,7 @@
       </h2>
       <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mb-10"
         :class="{ 'prose-invert': blok.invert, 'text-center' : blok?.text_center}"></div>
-        <StoryblokComponent v-for="blok in blok.content" :key="blok._uid" :blok="blok" />
+        <StoryblokComponent v-for="blok in blok.content" :key="blok._uid" :blok="blok" class="relative" />
     </div>
   </section>
 </template>

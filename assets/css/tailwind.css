@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .btn{
+    font-family: 'Cinzel', serif;
     @apply transition duration-500 bg-secondary border-secondary border flex items-center justify-center text-white
 }
 
