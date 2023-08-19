@@ -2,13 +2,14 @@ async function refreshAndPostLead() {
     try {
       // Refresh token endpoint
       const refreshUrl = 'https://accounts.zoho.eu/oauth/v2/token';
+
       const refreshParams = new URLSearchParams({
-        refresh_token: '1000.7a567acdf09d2369fd473f02aa0c6473.244ccb3379553c11c5190d282c0ad43b',
-        client_id: '1000.42EQXUXV9GLGA8M2A66WN5AUTL1ZTC',
-        client_secret: 'be5e2b9fa3cadf2dacbcf24eb2aace7078b8220518',
+        refresh_token: '',
+        client_id: '',
+        client_secret: '',
         grant_type: 'refresh_token',
       });
-  
+
       const refreshResponse = await fetch(`${refreshUrl}?${refreshParams.toString()}`, {
         method: 'POST',
       });
