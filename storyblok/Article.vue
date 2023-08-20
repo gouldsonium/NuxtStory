@@ -20,6 +20,14 @@
 </template>
    
 <script setup>
-  const props = defineProps({ blok: Object })
-  const resolvedRichText = computed(() => renderRichText(props.blok.content))
+  const props = defineProps({ blok: Object });
+  const resolvedRichText = computed(() => renderRichText(props.blok.content));
+
+  defineOgImage({
+    component: 'PageOgImage',
+    title: props.blok.title,
+    description: props.blok.teaser,
+    height: 630,
+    width: 1200
+  });
 </script>

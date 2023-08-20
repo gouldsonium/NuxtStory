@@ -7,7 +7,9 @@ export default defineNuxtConfig({
       apiOptions: {
         region: "eu"
       } 
-    }]
+    }],
+    'nuxt-simple-sitemap',
+    'nuxt-og-image'
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
@@ -32,5 +34,9 @@ export default defineNuxtConfig({
         { name:"theme-color", content:"#ffffff" }
       ]
     }
+  },
+  experimental: {
+    componentIslands: true,
+    payloadExtraction: true
   }
 })

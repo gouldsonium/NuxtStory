@@ -57,13 +57,9 @@ async function refreshAndPostLead() {
 };
 
 // Ensure it runs on client side
-if (process.client) {
-  console.log(localStorage.getItem('source'));
-}
-
-const { data } = await useFetch('/api/refresh');
-console.log('data is' + data)
-
+// if (process.client) {
+//   console.log(localStorage.getItem('source'));
+// }
 </script>
 
 <template>
