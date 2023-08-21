@@ -60,7 +60,7 @@ export default {
       if (process.client) {
         leadSource = localStorage.getItem('source');
       }
-      const API = process.env.NODE_ENV == 'development' ? 'http://localhost:3001' : 'https://api.rosbothamfinance.com'
+      const API = process.env.NODE_ENV == 'development' ? 'http://localhost:3001' : 'https://k5hvbhv6pg.execute-api.eu-west-2.amazonaws.com/dev'
       try {
         await axios.post(API + '/subscribe', {
           email: email.value,
