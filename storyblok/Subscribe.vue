@@ -3,14 +3,14 @@
     <h6 class="text-center mb-5">{{ blok?.text }}</h6>
     <form @submit.prevent="submitForm" class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3">
       <div>
-        <label for="email" class="block text-sm leading-6">Email</label>
+        <label for="subscribeEmail" class="block text-sm leading-6">Email</label>
         <div class="mt-2.5">
           <input
             required
             v-model="email"
             type="email"
-            name="email"
-            id="email"
+            name="subscribeEmail"
+            id="subscribeEmail"
             autocomplete="email"
             placeholder="johnsmith@gmail.com"
             class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6"

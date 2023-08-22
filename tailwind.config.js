@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         primary: process.env.PRIMARY_COLOR,
         secondary: process.env.SECONDARY_COLOR
+      },
+      screens: {
+        xs: '495px'
       }
     },
   },

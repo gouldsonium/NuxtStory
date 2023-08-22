@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel relative max-h-[600px]" v-editable="blok">
+  <div class="carousel relative h-full" v-editable="blok">
     <div class="carousel-inner" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
       <div
         v-for="(item, index) in carouselItems"
@@ -10,7 +10,7 @@
         <img
           :src="item.image?.filename"
           :alt="item.image?.alt"
-          class="d-block w-full object-cover max-h-[600px]"
+          class="d-block w-full object-cover h-full"
           :class="{'filter brightness-50' : item?.darken}"
         />
         <div
@@ -18,24 +18,27 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2 text-center text-white transition-opacity transition-transform"
           :style="{ color: item.title_color?.color, opacity: index === activeIndex ? 1 : 0, transform: `translate(-50%, -50%) translateX(${100 * (index - activeIndex)}%)` }"
         >
-          <h3 class="mb-5 font-bold">{{ item.title }}</h3>
-          <p class="text-lg sm:text-xl" :style="{ color: item.text_color?.color }">{{ item.text }}</p>
+          <h3 class="mb-2 font-bold text-base xs:text-xl sm:text-2xl">{{ item.title }}</h3>
+          <p class="text-xs xs:text-base sm:text-xl" :style="{ color: item.text_color?.color }">{{ item.text }}</p>
         </div>
       </div>
     </div>
     
-    <button @click="moveCarousel(-1)" class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2">
+    <button v-if="activeIndex != 0" @click="moveCarousel(-1)" class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </button>
     <button @click="moveCarousel(1)" class="carousel-control-next absolute top-1/2 right-4 -translate-y-1/2">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <svg v-if="activeIndex != (carouselItems.length - 1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+      <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
       </svg>
     </button>
   </div>
@@ -64,7 +67,7 @@
 .carousel-inner {
   display: flex;
   transition: transform 0.3s ease;
-  max-height: 600px;
+  /* max-height: 600px; */
 }
 
 .carousel-item {
