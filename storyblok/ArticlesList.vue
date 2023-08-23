@@ -2,7 +2,7 @@
   <section class="py-24 px-3" :style="{ backgroundColor: blok.background_color?.color }">
     <div class="container mx-auto">
       <h2 v-if="!!blok?.headline"
-        class="font-bold flex items-center text-left justify-start sm:text-center sm:justify-center"
+        class="font-bold flex items-center text-left justify-start sm:text-center sm:justify-center uppercase"
         :style="{ color: blok.headline_color?.color }">
         <span class="hidden sm:flex">
           <img src="~/assets/img/dash.png" class="my-5 h-2" alt="dash.png">

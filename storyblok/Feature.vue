@@ -9,7 +9,7 @@
           {{ blok.name }}
         </h2>
         <div v-if="!!blok?.content" v-html="resolvedRichText" class="max-w-none py-2 prose"
-          :class="{ 'prose-invert': blok.invert }"></div>
+          :class="{ 'prose-invert text-white': blok.invert }"></div>
         <StoryblokComponent class="mr-3 my-3 text-base" v-for="blok in blok.buttons" :key="blok._uid" :blok="blok" />
       </div>
       <img v-if="!!blok.image?.filename" :src="blok.image.filename" :alt="blok.image.alt"

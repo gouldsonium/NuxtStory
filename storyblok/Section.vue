@@ -35,7 +35,7 @@
 <template>
   <section v-editable="blok" :style="backgroundStyle" class="w-full bg-primary px-6 lg:px-8 py-24 sm:py-32">
     <div :class="blok?.layout">
-      <h2 v-if="!!blok?.title" class="font-bold flex items-center" :style="{color: blok.title_color?.color}"
+      <h2 v-if="!!blok?.title" class="font-bold flex items-center uppercase" :style="{color: blok.title_color?.color}"
       :class="{'text-left justify-start sm:text-center sm:justify-center' : blok?.text_center}">
         <span class="hidden sm:flex">
           <img v-if="blok?.text_center" src="~/assets/img/dash.png" class="my-5 h-2" alt="dash.png">
@@ -52,7 +52,7 @@
       </span>
       <div 
         v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose my-10" 
-        :class="{ 'prose-invert': blok.invert, 'sm:text-center' : blok?.text_center}">
+        :class="{ 'prose-invert text-white': blok.invert, 'sm:text-center' : blok?.text_center}">
       </div>
       <div class="my-5">
         <StoryblokComponent v-for="blok in blok.content" :key="blok._uid" :blok="blok" class="relative" />

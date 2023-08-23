@@ -53,9 +53,9 @@ const submitForm = async () => {
   <section :style="{ backgroundColor: blok.background_color?.color }" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 container mx-auto place-items-center">
       <div>
-        <h2 class="font-semibold">{{ blok?.title || 'Book a Meeting' }}</h2>
+        <h2 class="font-semibold uppercase">{{ blok?.title || 'Book a Meeting' }}</h2>
         <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mt-5"
-          :class="{ 'prose-invert': blok.invert, 'text-center': blok?.text_center }"></div>
+          :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
       </div>
       <div class="row-span-2">
         <p class="mb-5">Please fill out the form below to book a meeting</p>
