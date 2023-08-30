@@ -1,12 +1,12 @@
 <script setup>
-const { slug } = useRoute().params
- 
-const resolveRelations = ['articles-list.articles']
+const { slug } = useRoute().params;
+const resolveRelations = ['articles-list.articles'];
+const runtimeConfig = useRuntimeConfig();
  
 const story = await useAsyncStoryblok(
   slug && slug.length > 0 ? slug.join('/') : 'home',
   {
-    version: 'draft',
+    version: runtimeConfig.public.VERSION,
     resolve_relations: resolveRelations,
   },
   {

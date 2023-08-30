@@ -10,7 +10,7 @@
         <img
           :src="item.image?.filename"
           :alt="item.image?.alt"
-          class="d-block w-full object-cover h-full"
+          class="d-block w-full object-cover h-full max-h-[600px]"
           :class="{'filter brightness-50' : item?.darken}"
         />
         <div
@@ -67,7 +67,7 @@
 .carousel-inner {
   display: flex;
   transition: transform 0.3s ease;
-  /* max-height: 600px; */
+  max-height: 600px;
 }
 
 .carousel-item {

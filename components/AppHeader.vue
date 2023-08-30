@@ -2,10 +2,11 @@
   import { ref, onMounted, onUnmounted } from 'vue';
   import { Dialog, DialogPanel } from '@headlessui/vue';
   import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
+  const runtimeConfig = useRuntimeConfig();
 
   const storyblokApi = useStoryblokApi();
   const { data } = await storyblokApi.get('cdn/stories/config', {
-    version: 'draft',
+    version: runtimeConfig.public.VERSION,
     resolve_links: 'url',
   });
 

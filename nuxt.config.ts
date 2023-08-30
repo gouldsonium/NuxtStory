@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      VERSION: process.env.STORYBLOK_VERSION
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     ["@storyblok/nuxt", { 
