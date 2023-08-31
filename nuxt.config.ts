@@ -5,6 +5,9 @@ export default defineNuxtConfig({
       VERSION: process.env.STORYBLOK_VERSION
     }
   },
+  site: {
+    url: 'https://rosbothamfinance.com'
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     ["@storyblok/nuxt", { 
@@ -14,7 +17,8 @@ export default defineNuxtConfig({
       } 
     }],
     'nuxt-simple-sitemap',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    'nuxt-simple-robots'
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'

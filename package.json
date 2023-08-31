@@ -18,6 +18,7 @@
     "@types/node": "^18.16.19",
     "nuxt": "^3.6.5",
     "nuxt-og-image": "^2.0.18",
+    "nuxt-simple-robots": "^3.1.2",
     "nuxt-simple-sitemap": "^3.1.8"
   },
   "dependencies": {
