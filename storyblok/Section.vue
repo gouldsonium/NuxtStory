@@ -33,7 +33,7 @@
 </script>
 
 <template>
-  <section v-editable="blok" :style="backgroundStyle" class="w-full bg-primary px-6 lg:px-8 py-24 sm:py-32">
+  <section v-editable="blok" :style="backgroundStyle" class="w-full bg-primary px-6 lg:px-12 py-24">
     <div :class="blok?.layout">
       <h2 v-if="!!blok?.title" class="font-bold flex items-center uppercase" :style="{color: blok.title_color?.color}"
       :class="{'text-left justify-start sm:text-center sm:justify-center' : blok?.text_center}">

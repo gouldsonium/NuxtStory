@@ -14,27 +14,22 @@ const story = await useAsyncStoryblok(
   }
 )
 
-const metafields = story.value.content.metafields;
+console.log(story.value.name)
+const pageName = story.value.name
+// No longer works, requires plan upgrade in storyblok
+// const metafields = story.value.content.metafields;
 useSeoMeta({
-  title: () => metafields?.title || 'Page Title',
-  ogTitle: () => metafields?.og_title || metafields?.title || 'Page Title',
-  description: () => metafields?.description  || 'Page Title',
-  ogDescription: () => metafields?.og_description || metafields?.description  || 'Page Title',
-  ogImage: () => metafields?.og_image || null,
-  twitterTitle: () => metafields?.twitter_title || null,
-  twitterDescription: () => metafields?.twitter_description || null,
-  twitterImage: () => metafields?.twitter_image || null
+  title: () => 'Rosbotham Finance: ' + pageName,
+  ogTitle: () => 'Rosbotham Finance: ' + pageName,
+  description: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
+  ogDescription: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
 });
 
 useServerSeoMeta({
-  title: () => metafields?.title || 'Page Title',
-  ogTitle: () => metafields?.og_title || metafields?.title || 'Page Title',
-  description: () => metafields?.description  || 'Page Title',
-  ogDescription: () => metafields?.og_description || metafields?.description  || 'Page Title',
-  ogImage: () => metafields?.og_image || null,
-  twitterTitle: () => metafields?.twitter_title || null,
-  twitterDescription: () => metafields?.twitter_description || null,
-  twitterImage: () => metafields?.twitter_image || null
+  title: () => 'Rosbotham Finance: ' + pageName,
+  ogTitle: () => 'Rosbotham Finance: ' + pageName,
+  description: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
+  ogDescription: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
 });
 </script>
  

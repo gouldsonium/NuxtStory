@@ -33,7 +33,7 @@
     <div class="shape-box">
       <div class="image-box" :style="imageBoxStyle">
         <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 px-5 min-h-full container py-48">
-          <div class="text-white flex flex-col justify-center px-24 lg:col-span-2" :class="blok.text_position">
+          <div class="text-white flex flex-col justify-center px-16 sm:px-24 lg:col-span-2" :class="blok.text_position">
             <h1 class="font-bold mb-3 uppercase">{{ blok?.title || 'Page Title' }}</h1>
             <p class="font-light">{{ blok?.text }}</p>
             <div class="mt-10 flex" v-if="blok?.buttons">

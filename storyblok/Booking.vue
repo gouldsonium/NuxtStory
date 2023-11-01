@@ -14,6 +14,15 @@ const email = ref('');
 const phone = ref('');
 const message = ref('');
 
+const resetForm = () => {
+  first_name.value = '';
+  last_name.value = '';
+  company.value = '';
+  phone.value = '';
+  email.value = '';
+  message.value = '';
+}
+
 const submitForm = async () => {
   if(agreed.value == false){
     window.alert("Please agree to our privacy policy");
@@ -40,7 +49,8 @@ const submitForm = async () => {
   try {
     const res = await axios.post(API + '/book', body);
     console.log(res.data);
-    window.alert("Meeting booked!");
+    resetForm()
+    window.alert("Thank you for registering your details, we will be in touch very soon.");
 
   } catch (error) {
     console.error('Error submitting form:', error);
@@ -56,6 +66,10 @@ const submitForm = async () => {
         <h2 class="font-semibold uppercase">{{ blok?.title || 'Book a Meeting' }}</h2>
         <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mt-5"
           :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
+          <div class="hidden sm:block">
+            <img src="https://a.storyblok.com/f/247081/940x887/82f70cfab3/rosbotham-icon.png" alt="logo-circle" class="my-10"
+              style="max-height: 350px;">
+          </div>
       </div>
       <div class="row-span-2">
         <p class="mb-5">Please fill out the form below to book a meeting</p>
@@ -126,10 +140,6 @@ const submitForm = async () => {
             </button>
           </div>
         </form>
-      </div>
-      <div class="hidden sm:block">
-        <img src="https://a.storyblok.com/f/247081/940x887/82f70cfab3/rosbotham-icon.png" alt="logo-circle" class="my-5"
-          style="max-height: 500px;">
       </div>
     </div>
   </section>
