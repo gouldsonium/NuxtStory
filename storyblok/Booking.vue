@@ -9,18 +9,38 @@ const agreed = ref(false);
 
 const first_name = ref('');
 const last_name = ref('');
-const company = ref('');
 const email = ref('');
 const phone = ref('');
+const country = ref('');
+const selectedAreas = ref([]);
+const call = ref('');
 const message = ref('');
+
+const areasOfInterest = [
+  "Financial_planning",
+  "Retirement_planning",
+  "Investment_advice",
+  "Repatriation_planning",
+  "Wills",
+  "Pension_insurance",
+  "Insurance",
+  "Tax"
+];
+
+const createLabel = (area) => {
+  const arr = area.split('_')
+  return arr.join(' ')
+}
 
 const resetForm = () => {
   first_name.value = '';
   last_name.value = '';
-  company.value = '';
+  country.value = '';
   phone.value = '';
   email.value = '';
   message.value = '';
+  call.value = '';
+  selectedAreas.value = []
 }
 
 const submitForm = async () => {
@@ -39,30 +59,30 @@ const submitForm = async () => {
   const body = {
     first_name: first_name.value,
     last_name: last_name.value,
-    company: company.value,
     email: email.value,
     phone: phone.value,
+    country: country.value,
+    areas: selectedAreas.value,
+    call: call.value,
     description: message.value,
-    lead_source: leadSource
+    lead_source: leadSource,
   };
 
   try {
     const res = await axios.post(API + '/book', body);
     console.log(res.data);
     resetForm()
-    window.alert("Thank you for registering your details, we will be in touch very soon.");
-
+    await navigateTo({ path: '/success'});
   } catch (error) {
     console.error('Error submitting form:', error);
   }
 };
-
 </script>
 
 <template>
   <section :style="{ backgroundColor: blok.background_color?.color }" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 container mx-auto place-items-center">
-      <div>
+      <div class="text-center sm:text-left">
         <h2 class="font-semibold uppercase">{{ blok?.title || 'Book a Meeting' }}</h2>
         <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mt-5"
           :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
@@ -72,7 +92,7 @@ const submitForm = async () => {
           </div>
       </div>
       <div class="row-span-2">
-        <p class="mb-5">Please fill out the form below to book a meeting</p>
+        <p class="mb-5 text-center sm:text-center">Please fill out the form below to book a meeting</p>
         <form @submit.prevent="submitForm" method="POST" action="/success" class="mx-auto max-w-xl">
           <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
@@ -90,13 +110,6 @@ const submitForm = async () => {
               </div>
             </div>
             <div class="sm:col-span-2">
-              <label for="company" class="block text-sm font-semibold leading-6">Company</label>
-              <div class="mt-2.5">
-                <input required type="text" name="company" id="company" autocomplete="organization" v-model="company"
-                  class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
-              </div>
-            </div>
-            <div class="sm:col-span-2">
               <label for="email" class="block text-sm font-semibold leading-6">Email</label>
               <div class="mt-2.5">
                 <input required type="email" name="email" id="email" autocomplete="email" v-model="email"
@@ -108,6 +121,36 @@ const submitForm = async () => {
               <div class="mt-2.5">
                 <input required type="text" name="phone-number" id="phone-number" autocomplete="tel" v-model="phone"
                   class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="country" class="block text-sm font-semibold leading-6">Country</label>
+              <div class="mt-2.5">
+                <input required type="text" name="country" id="country" autocomplete="organization" v-model="country"
+                  class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-semibold leading-6">Areas of Interest</label>
+                <div class="mt-2.5 grid grid-cols-1 lg:grid-cols-2 gap-x-3">
+                  <div class="space-y-2" v-for="area in areasOfInterest" :key="area">
+                    <label class="mr-3">
+                      <input type="checkbox" v-model="selectedAreas" :value="area" class="rounded text-secondary shadow-sm focus:border-gray-300 focus:ring focus:ring-gray-100" />
+                      {{ createLabel(area) }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <div class="sm:col-span-2">
+              <label for="call" class="block text-sm font-semibold leading-6">Best time to call</label>
+              <div class="mt-2.5">
+                <select required type="text" name="call" id="call" autocomplete="organization" v-model="call"
+                  class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6">
+                  <option :value="''" selected hidden disabled></option>
+                  <option value="Before 9:00 (CET)">Before 9:00 (CET)</option>
+                  <option value="Midday (CET)">Midday (CET)</option>
+                  <option value="After 17:00 (CET)">After 17:00 (CET)</option>
+                </select>
               </div>
             </div>
             <div class="sm:col-span-2">

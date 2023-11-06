@@ -14,7 +14,7 @@ const story = await useAsyncStoryblok(
   }
 )
 
-console.log(story.value.name)
+// console.log(story.value.name)
 const pageName = story.value.name
 // No longer works, requires plan upgrade in storyblok
 // const metafields = story.value.content.metafields;

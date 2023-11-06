@@ -36,7 +36,7 @@
   <section v-editable="blok" :style="backgroundStyle" class="w-full bg-primary px-6 lg:px-12 py-24">
     <div :class="blok?.layout">
       <h2 v-if="!!blok?.title" class="font-bold flex items-center uppercase" :style="{color: blok.title_color?.color}"
-      :class="{'text-left justify-start sm:text-center sm:justify-center' : blok?.text_center}">
+      :class="{'text-center justify-center' : blok?.text_center}">
         <span class="hidden sm:flex">
           <img v-if="blok?.text_center" src="~/assets/img/dash.png" class="my-5 h-2" alt="dash.png">
         </span>
@@ -47,7 +47,7 @@
           <img v-if="blok?.text_center" src="~/assets/img/dash.png" class="my-5 h-2 transform rotate-180" alt="dash.png">
         </span>
       </h2>
-      <span class="flex sm:hidden" v-if="!!blok?.title">
+      <span class="flex justify-center sm:hidden" v-if="!!blok?.title">
         <img src="~/assets/img/dash.png" class="my-5 h-2" alt="dash.png">
       </span>
       <div 
