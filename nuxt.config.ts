@@ -16,7 +16,6 @@ export default defineNuxtConfig({
         region: "eu"
       } 
     }],
-    'nuxt-simple-sitemap',
     'nuxt-og-image',
     'nuxt-simple-robots'
   ],
