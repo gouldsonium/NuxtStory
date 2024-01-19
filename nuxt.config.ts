@@ -18,15 +18,13 @@ export default defineNuxtConfig({
     }],
     'nuxt-og-image',
     'nuxt-simple-robots',
+    !!process.env.GTAG_ID ?
     ['nuxt-gtag', {
       id: process.env.GTAG_ID,
       config: {
         page_title: 'Rosbotham Finance Website'
       }
-    }]
-    // ['@zadigetvoltaire/nuxt-gtm', {
-    //   id: process.env.GTAG_ID
-    // }]
+    }] : null,
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'

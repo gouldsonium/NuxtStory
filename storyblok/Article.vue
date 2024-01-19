@@ -23,11 +23,28 @@
   const props = defineProps({ blok: Object });
   const resolvedRichText = computed(() => renderRichText(props.blok.content));
 
-  defineOgImage({
-    component: 'PageOgImage',
-    title: props.blok.title,
-    description: props.blok.teaser,
-    height: 630,
-    width: 1200
+  useSeoMeta({
+    title: () => 'Rosbotham Finance: ' + props.blok.title,
+    ogTitle: () => 'Rosbotham Finance: ' + props.blok.title,
+    description: () => props.blok.teaser,
+    ogDescription: () => props.blok.teaser,
+    ogImage: () => props.blok.image?.filename,
+    // ogImageUrl: () => props.blok.image?.filename
   });
+
+  useServerSeoMeta({
+    title: () => 'Rosbotham Finance: ' + props.blok.title,
+    ogTitle: () => 'Rosbotham Finance: ' + props.blok.title,
+    description: () => props.blok.teaser,
+    ogDescription: () => props.blok.teaser,
+    ogImage: () => props.blok.image?.filename,
+    // ogImageUrl: () => props.blok.image?.filename
+  });
+  // defineOgImage({
+  //   component: 'PageOgImage',
+  //   title: props.blok.title,
+  //   description: props.blok.teaser,
+  //   height: 630,
+  //   width: 1200
+  // });
 </script>

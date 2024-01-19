@@ -14,7 +14,7 @@ const story = await useAsyncStoryblok(
   }
 )
 
-const pageName = story.value.name
+const pageName = story.value?.name || 'Page Not Found'
 // No longer works, requires plan upgrade in storyblok
 // const metafields = story.value.content.metafields;
 useSeoMeta({
@@ -35,4 +35,5 @@ useServerSeoMeta({
  
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
+  <PageNotFound v-else />
 </template>
