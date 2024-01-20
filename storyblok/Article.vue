@@ -29,6 +29,8 @@
     description: () => props.blok.teaser,
     ogDescription: () => props.blok.teaser,
     ogImage: () => props.blok.image?.filename,
+    ogImageWidth: () => 1200, // Set the width of your image
+    ogImageHeight: () => 630, // Set the height of your image
     // ogImageUrl: () => props.blok.image?.filename
   });
 
@@ -38,6 +40,8 @@
     description: () => props.blok.teaser,
     ogDescription: () => props.blok.teaser,
     ogImage: () => props.blok.image?.filename,
+    ogImageWidth: () => 1200, // Set the width of your image
+    ogImageHeight: () => 630, // Set the height of your image
     // ogImageUrl: () => props.blok.image?.filename
   });
   // defineOgImage({
