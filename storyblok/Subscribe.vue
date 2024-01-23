@@ -1,4 +1,7 @@
 <template>
+  <h2>Unavailable</h2>
+</template>
+<!-- <template>
   <div v-editable="blok" class="mx-auto bg-gray-100 rounded-lg p-10 max-w-5xl">
     <h6 class="text-center mb-5">{{ blok?.text }}</h6>
     <form @submit.prevent="submitForm" class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-3">
@@ -84,4 +87,4 @@ export default {
     };
   },
 };
-</script>
+</script> -->

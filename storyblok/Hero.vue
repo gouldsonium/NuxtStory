@@ -32,13 +32,13 @@
   <section class="out-box" v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
     <div class="shape-box">
       <div class="image-box" :style="imageBoxStyle">
-        <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 px-5 min-h-full container py-48">
-          <div class="text-white flex flex-col justify-center px-16 sm:px-24 lg:col-span-2" :class="blok.text_position">
-            <h1 class="font-bold mb-3 uppercase">{{ blok?.title || 'Page Title' }}</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
+          <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
+            <h1 class="mb-3">{{ blok?.title || 'Page Title' }}</h1>
             <p class="font-light">{{ blok?.text }}</p>
-            <div class="mt-10 flex" v-if="blok?.buttons">
+            <div class="mt-10 flex flex-wrap" v-if="blok?.buttons">
               <StoryblokComponent
-                class="text-lg"
+                class="mr-3 mb-3 w-full sm:w-auto"
                 v-for="blok in blok.buttons"
                 :key="blok._uid"
                 :blok="blok"
@@ -52,20 +52,6 @@
 </template>
 
 <style scoped>
-/* Add a style rule to control the image visibility */
-
-.out-box{
-  width: 100%;
-  overflow: hidden;
-}
-.shape-box{
-	border-bottom-left-radius: 100% 250px;
-	border-bottom-right-radius: 100% 250px;
-	width: calc(100% + 100px) ;
-	margin-left: -50px;
-  overflow: hidden;
-  border-bottom: solid 20px #00ccff;
-}
 .image-box{
   min-height: 700px;
   width: 100%;

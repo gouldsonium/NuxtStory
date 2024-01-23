@@ -18,15 +18,15 @@ const pageName = story.value?.name || 'Page Not Found'
 // No longer works, requires plan upgrade in storyblok
 // const metafields = story.value.content.metafields;
 useSeoMeta({
-  title: () => 'Rosbotham Finance: ' + pageName,
-  ogTitle: () => 'Rosbotham Finance: ' + pageName,
+  title: () => 'KWP: ' + pageName,
+  ogTitle: () => 'KWP: ' + pageName,
   description: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
   ogDescription: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
 });
 
 useServerSeoMeta({
-  title: () => 'Rosbotham Finance: ' + pageName,
-  ogTitle: () => 'Rosbotham Finance: ' + pageName,
+  title: () => 'KWP: ' + pageName,
+  ogTitle: () => 'KWP: ' + pageName,
   description: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
   ogDescription: () => "Great financial planning is not about fancy investment or hot tips. It's about who you are, what sort of life you live and what you want out of life",
 });

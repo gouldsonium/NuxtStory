@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 .btn{
-    font-family: 'Cinzel', serif;
     @apply transition duration-500 bg-secondary border-secondary border flex items-center justify-center text-white
 }
 
 nav a {
-    font-family: 'Cinzel', serif;
     @apply hover:text-secondary duration-200 !important 
 }
 
@@ -25,15 +23,12 @@ h1{
 }
 
 h2{
-    font-family: 'Cinzel', serif;
     @apply text-3xl sm:text-5xl
 }
 h3{
-    font-family: 'Cinzel', serif;
     @apply text-2xl sm:text-4xl
 }
 h4{
-    font-family: 'Cinzel', serif;
     @apply text-xl sm:text-3xl
 }
 p{

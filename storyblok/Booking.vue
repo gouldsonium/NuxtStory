@@ -1,4 +1,7 @@
-<script setup>
+<template>
+  <h1>Form Unavailable</h1>
+</template>
+<!-- <script setup>
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 import axios from 'axios';
 
@@ -186,4 +189,4 @@ const submitForm = async () => {
       </div>
     </div>
   </section>
-</template>
+</template> -->

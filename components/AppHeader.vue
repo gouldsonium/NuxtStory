@@ -47,7 +47,7 @@
   >
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
-        <NuxtLink to="/" class="-m-1.5 p-1.5">
+        <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
           <img v-if="logo" class="h-20 w-auto" :class="{ 'dark-brighten' : !isScrolled}" :src="logo" alt="Nav Logo" />
         </NuxtLink>
@@ -61,7 +61,7 @@
       </div>
       <div class="hidden lg:flex items-center lg:gap-x-12">
         <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
-          class="text-sm font-semibold leading-6 hover:text-secondary"
+          class=" font-semibold leading-6 hover:text-secondary"
         >
           {{ blok.text }}
         </AppLink>

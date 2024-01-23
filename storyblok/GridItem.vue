@@ -1,11 +1,10 @@
 <template>
-  <div v-editable="blok" class="h-full flex flex-col" :class="itemClass" 
-  :style="{backgroundColor: blok.background_color?.color, ...borderStyle}">
+  <div v-editable="blok" class="h-full w-full flex flex-col" :class="itemClass" 
+  :style="{ backgroundColor: blok.background_color?.color, ...borderStyle }">
     <StoryblokComponent
       v-for="blok in blok.content"
       :key="blok._uid"
       :blok="blok"
-      class="mb-5"
     />
   </div>
 </template>
@@ -22,6 +21,7 @@
   });
 
   const borderStyle = computed(() => {
-    return {border: 'solid' + ' ' + props.blok.border_color?.color + ' ' + props.blok?.border_thickness + 'px'}
+    return !!props.blok?.border ? 
+    {border: 'solid' + ' ' + props.blok.border_color?.color + ' ' + props.blok?.border_thickness + 'px'} : null
   })
 </script>
