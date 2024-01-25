@@ -62,7 +62,7 @@ const submitForm = async () => {
     </div>
     <div>
       <p class="mb-5 text-center sm:text-center">Please fill out the form below to book a meeting</p>
-      <form @submit.prevent="submitForm" method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
+      <form method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
