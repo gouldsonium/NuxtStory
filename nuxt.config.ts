@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     ['nuxt-gtag', {
       id: process.env.GTAG_ID,
       config: {
-        page_title: 'Rosbotham Finance Website'
+        page_title: 'KWP'
       }
     }] : null,
   ],
