@@ -46,7 +46,7 @@
     :class="isScrolled ? 'bg-white text-gray-800': 'text-white'"
   >
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
+      <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
           <img v-if="logo" class="h-20 w-auto" :class="{ 'dark-brighten' : !isScrolled}" :src="logo" alt="Nav Logo" />
