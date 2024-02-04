@@ -16,6 +16,7 @@ const story = await useAsyncStoryblok(
 </script>
  
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+  <StoryblokComponent v-if="slug != 'login' && story" :blok="story.content" />
+  <Login v-else-if="slug == 'login'" />
   <PageNotFound v-else />
 </template>
