@@ -4,6 +4,7 @@
       <div class="sm:mx-auto sm:w-full sm:max-w-3xl">
         <img class="mx-auto h-36 w-auto" src="https://a.storyblok.com/f/272338/5098x5336/3a2be38bf6/png.png"
           alt="KWP">
+          <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">The Investor Portal</h2>
       </div>
       <form class="space-y-6" action="#" method="POST">
         <div>
@@ -34,9 +35,8 @@
         </div>
       </form>
 
-      <p class="mt-10 text-center text-sm text-gray-500">
-        Not a member?
-        <NuxtLink to="/contact" class="font-semibold leading-6 text-secondary hover:text-secondary">Get in touch</NuxtLink>
+      <p class="mt-10 text-center text-sm text-gray-800 font-semibold">
+        Investors Only
       </p>
     </div>
   </section>
