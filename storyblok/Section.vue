@@ -43,7 +43,7 @@
       </h2>
       <div 
         v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose" 
-        :class="{ 'prose-invert text-white': blok.invert, 'sm:text-center' : blok?.text_center}">
+        :class="{ 'prose-invert text-white': blok.invert, 'text-center' : blok?.text_center}">
       </div>
       <div>
         <StoryblokComponent v-for="blok in blok.content" :key="blok._uid" :blok="blok" class="relative" />
