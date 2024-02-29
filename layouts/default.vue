@@ -1,9 +1,9 @@
 <template>
   <main class="bg-primary min-h-screen flex flex-col justify-between">
     <div>
-      <!-- <AppHeader /> -->
+      <AppHeader />
       <slot />
     </div>
-    <!-- <AppFooter /> -->
+    <AppFooter />
   </main>
 </template>

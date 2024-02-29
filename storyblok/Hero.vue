@@ -29,8 +29,8 @@
 </script>
 
 <template>
-  <section class="out-box min-h-screen" v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
-    <div class="shape-box min-h-screen">
+  <section class="out-box" v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
+    <div class="shape-box">
       <div class="image-box" :style="imageBoxStyle">
         <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
           <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
@@ -53,7 +53,7 @@
 
 <style scoped>
 .image-box{
-  min-height: 100vh;
+  min-height: 700px;
   width: 100%;
   background-size: cover;
   background-position: center center;
