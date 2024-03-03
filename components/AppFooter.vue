@@ -19,6 +19,7 @@
   const footer_text_color = data.story.content?.footer_text_color.color;
 
   const currentYear = new Date().getFullYear();
+  const copyright = data.story.content?.copyright
 </script>
 
 <template>
@@ -32,23 +33,15 @@
           <img :src="logo" class="h-32" alt="Footer Logo" />
         </NuxtLink>
         <div>
-          <h4 class="text-base font-semibold text-secondary">Quick Links</h4>
+          <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Quick Links</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in quickLinks" :key="item.text" class="my-3">
               <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
             </li>
           </ul>
         </div>
-        <!-- <div>
-          <h4 class="text-base font-semibold">Our Services</h4>
-          <ul class="text-sm font-medium">
-            <li v-for="item in ourServices" :key="item.text" class="my-3">
-              <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
-            </li>
-          </ul>
-        </div> -->
         <div>
-          <h4 class="text-base font-semibold text-secondary">Contact Us</h4>
+          <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Contact Us</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in contactUs" :key="item.text" class="my-3">
               <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
@@ -59,7 +52,7 @@
       <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div class="flex text-sm">
         <span class="border-r-2 pr-2">
-          © kwp.co.uk {{currentYear}} 
+          © {{ copyright }} {{currentYear}} 
         </span>
         <span class="border-r-2 px-2">All Rights Reserved</span>
         <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:text-secondary">Privacy Policy</NuxtLink>

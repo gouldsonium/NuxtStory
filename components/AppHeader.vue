@@ -38,18 +38,25 @@
   const handleScroll = () => {
     const scrollPosition = window.scrollY
     isScrolled.value = scrollPosition > 0
-  }
+  };
+
+  const changeOnScroll = data.story.content?.change_on_scroll;
+  const whitenLogo = data.story.content?.whiten;
+  const logoHeight = data.story.content?.height;
 </script>
 
 <template>
   <header class="fixed inset-x-0 top-0 z-50 transition duration-500" 
-    :class="isScrolled ? 'bg-white text-gray-800': 'text-white'"
-  >
+    :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': 'bg-white text-gray-800'">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
-          <img v-if="logo" class="h-20 w-auto" :class="{ 'dark-brighten' : !isScrolled}" :src="logo" alt="Nav Logo" />
+          <img v-if="logo" 
+            class="w-auto" :style="{height: logoHeight + 'px'}" 
+            :class="{ 'dark-brighten' : !!whitenLogo && !isScrolled}" 
+            :src="logo" alt="Nav Logo" 
+          />
         </NuxtLink>
       </div>
       <div class="flex lg:hidden">

@@ -23,11 +23,11 @@
   <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
     <div class="image-box" :style="{minHeight: `${blok.height}px`}">
       <img 
-        v-if="blok.background_image" 
-        :src="blok.background_image?.filename" 
+        v-if="blok?.background_image?.filename" 
+        :src="blok?.background_image?.filename" 
         alt="Background Image" 
         class="img-background" 
-        :class="blok?.background_image_darken"
+        :class="{'brightness-50' : blok?.background_image_darken}"
         :style="{maxHeight: `${blok?.height}px`}"
       >
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
