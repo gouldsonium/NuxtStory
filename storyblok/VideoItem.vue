@@ -1,20 +1,9 @@
 <script setup>
   const props = defineProps({ blok: Object });
-  const videoMaxHeight = computed(() => {
-    return !!props.blok?.max_height ? { maxHeight: props.blok?.max_height + 'px' } : null
-  })
 </script>
 
 <template>
-  <div v-editable="blok" class="flex" :class="blok?.position">
-    <video
-      v-if="!!blok.video?.filename"
-      controls
-      preload="auto"
-      :style="videoMaxHeight"
-      :poster="blok.placeholder?.filename"
-    >
-      <source :src="blok.video?.filename" type="video/mp4" />
-    </video>
+  <div v-editable="blok" class="flex my-5" :class="blok?.position">
+    <iframe :width="blok.width" :height="blok.height" :src="blok.youtube_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
 </template>
