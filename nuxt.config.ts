@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     ['nuxt-gtag', {
       id: process.env.GTAG_ID,
       config: {
-        page_title: 'KWP'
+        page_title: process.env.WEBSITE_NAME
       }
     }] : null,
   ],

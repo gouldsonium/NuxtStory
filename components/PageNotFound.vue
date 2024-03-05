@@ -1,27 +1,19 @@
-<script setup>
-  // Define the computed property for the background image style
-  const imageBoxStyle = computed(() => {
-    return {
-      backgroundImage: `linear-gradient(to right, #22283180, #22283180), url(https://a.storyblok.com/f/247081/940x624/d74e27f7b8/mountains-2.png)`,
-      visibility: 'visible',
-      backgroundColor: '#ffffff'
-    };
-  });
-</script>
-
 <template>
-  <section class="out-box mb-5">
-    <div class="shape-box">
-      <div class="image-box" :style="imageBoxStyle">
-        <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 px-5 min-h-full container py-48">
-          <div class="text-white flex flex-col justify-center px-16 sm:px-24 lg:col-span-2">
-            <h1 class="font-bold mb-3 uppercase">404 Page Not Found</h1>
-            <p class="font-light">The page you are trying to access does not exist. To navigate back to the home page, click the button below.</p>
-            <div class="mt-10 flex">
-            <AppLink to="/" class="font-semibold leading-6 btn text-center hover:opacity-50 text-lg px-6 py-2 rounded-full">
-              Go to home page
+  <section class="bg-primary">
+    <div class="image-box min-h-screen">
+      <img  
+        src="https://a.storyblok.com/f/278559/1920x870/c7354190ad/skyrim-sky.png" 
+        alt="Background Image" 
+        class="img-background brightness-50 min-h-full" 
+      >
+      <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
+        <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2">
+          <h1 class="mb-3 z-30 text-white text-7xl">404</h1>
+          <p class="font-light z-30 text-gray-200 text-xl">Page not found</p>
+          <div class="w-fit my-5">
+            <AppLink to="/" class="font-semibold leading-6 btn text-center hover:opacity-50 px-6 py-3">
+              Back Home
             </AppLink>
-            </div>
           </div>
         </div>
       </div>
@@ -30,28 +22,18 @@
 </template>
 
 <style scoped>
-/* Add a style rule to control the image visibility */
-
-.out-box{
-  width: 100%;
-  overflow: hidden;
-}
-.shape-box{
-	border-bottom-left-radius: 100% 250px;
-	border-bottom-right-radius: 100% 250px;
-	width: calc(100% + 100px) ;
-	margin-left: -50px;
-  overflow: hidden;
-  border-bottom: solid 20px #00ccff;
-}
 .image-box{
-  min-height: 700px;
   width: 100%;
-  background-size: cover;
-  background-position: center center;
   display: flex;
   justify-content: center;
 }
 
+.img-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-height: 800px;
+  object-fit: cover; /* Zoom in while preserving aspect ratio */
+}
 </style>
 
