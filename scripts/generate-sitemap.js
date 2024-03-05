@@ -18,7 +18,7 @@ async function generateSitemap() {
         loc: `${process.env.WEBSITE_URL}/${adjustedSlug}`, // Replace with your domain
         lastmod: story.published_at, // Use story creation date as last modified
         changefreq: 'weekly', // Adjust frequency as needed
-        priority: 0.7, // Adjust priority for different pages (0.1 to 1.0)
+        priority: story.content.priority || 0.7, // Adjust priority for different pages (0.1 to 1.0)
       };
     });
 
