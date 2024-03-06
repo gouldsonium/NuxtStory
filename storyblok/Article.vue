@@ -16,8 +16,12 @@
       <h1 class="text-secondary font-bold" :style="{ color: blok.headline_teaser_color?.color }" itemprop="headline">
         {{ blok.title }}
       </h1>
-      <p class="my-4">Published on <time itemprop="datePublished" :datetime="blok?.published">{{ convertDate(blok?.published) || 'N/A' }}</time></p>
-      <div class="flex flex-wrap">
+      <p class="my-4" :style="{ color: blok.subheaders_color?.color }">Published on 
+        <time itemprop="datePublished" :datetime="blok?.published">
+          {{ convertDate(blok?.published) || 'N/A' }}
+        </time>
+      </p>
+      <div class="flex flex-wrap" :style="{ color: blok.subheaders_color?.color }">
         <h4 itemprop="author" class="mb-4">Written by {{ blok?.author || 'Author Name' }}</h4>
       </div>
       <p class="hidden" :style="{ color: blok.headline_teaser_color?.color }">
