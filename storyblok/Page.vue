@@ -10,14 +10,14 @@
   useSeoMeta({
     title: () => props.blok?.meta_title || 'Page Title',
     ogTitle: () => props.blok?.meta_title || 'Page Title',
-    description: () => props.blok?.meta_description || 'At Knightwood Portfolio we provide a range of investment products for investors all over the world',
-    ogDescription: () => props.blok?.meta_description || 'At Knightwood Portfolio we provide a range of investment products for investors all over the world',
+    description: () => props.blok?.meta_description || 'Page Description',
+    ogDescription: () => props.blok?.meta_description || 'Page Description',
   });
 
   useServerSeoMeta({
     title: () => props.blok?.meta_title || 'Page Title',
     ogTitle: () => props.blok?.meta_title || 'Page Title',
-    description: () => props.blok?.meta_description || 'At Knightwood Portfolio we provide a range of investment products for investors all over the world',
-    ogDescription: () => props.blok?.meta_description || 'At Knightwood Portfolio we provide a range of investment products for investors all over the world',
+    description: () => props.blok?.meta_description || 'Page Description',
+    ogDescription: () => props.blok?.meta_description || 'Page Description',
   });
 </script>

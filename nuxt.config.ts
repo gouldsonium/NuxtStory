@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://rosbothamfinance.com'
+    url: process.env.WEBSITE_URL,
+    name: process.env.WEBSITE_NAME
   },
   modules: [
     '@nuxtjs/tailwindcss',
