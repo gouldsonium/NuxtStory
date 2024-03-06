@@ -43,6 +43,17 @@
   const changeOnScroll = data.story.content?.change_on_scroll;
   const whitenLogo = data.story.content?.whiten;
   const logoHeight = data.story.content?.height;
+
+  const favicon = data.story.content.favicon?.filename || null;
+  useHead({
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: favicon
+      }
+    ]  
+  })
 </script>
 
 <template>
