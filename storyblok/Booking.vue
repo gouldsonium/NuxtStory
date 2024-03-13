@@ -1,6 +1,5 @@
 <script setup>
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
-import axios from 'axios';
 
 const props = defineProps({ blok: Object });
 const resolvedRichText = computed(() => renderRichText(props.blok.text));
@@ -57,7 +56,7 @@ const submitForm = async () => {
   <section :style="{ backgroundColor: blok.background_color?.color }" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="text-center">
       <h2 class="font-semibold font-heading">{{ blok?.title || 'Get in touch' }}</h2>
-      <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mt-5"
+      <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose my-5"
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
