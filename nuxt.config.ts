@@ -17,7 +17,6 @@ export default defineNuxtConfig({
         region: "eu"
       } 
     }],
-    'nuxt-og-image',
     'nuxt-simple-robots',
     !!process.env.GTAG_ID ?
     ['nuxt-gtag', {
@@ -38,7 +37,7 @@ export default defineNuxtConfig({
       link: [
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Work+Sans&family=Poppins&display=swap" },
+        { rel: "stylesheet", href: process.env.FONT_URL },
       ],
       meta: [
         { name:"msapplication-TileColor", content:"#00aba9"},

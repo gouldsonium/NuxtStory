@@ -18,7 +18,7 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2 text-center text-white transition-opacity transition-transform"
           :style="{ color: item.title_color?.color, opacity: index === activeIndex ? 1 : 0, transform: `translate(-50%, -50%) translateX(${100 * (index - activeIndex)}%)` }"
         >
-          <h3 class="mb-2 font-bold text-base xs:text-xl sm:text-2xl">{{ item.title }}</h3>
+          <h3 class="mb-2 font-bold text-base xs:text-xl sm:text-2xl font-heading">{{ item.title }}</h3>
           <p class="text-xs xs:text-base sm:text-xl" :style="{ color: item.text_color?.color }">{{ item.text }}</p>
         </div>
       </div>

@@ -1,22 +1,5 @@
 <script setup>
-  import { ref, onMounted } from 'vue';
   const props = defineProps({ blok: Object });
-
-  // Run this code after the component is mounted
-  onMounted(() => {
-    const image = new Image();
-    image.onload = handleImageLoad;
-    image.src = props.blok.background_image?.filename;
-  });
-
-  // Function to handle the image load event
-  const handleImageLoad = () => {
-    // Trigger reactivity when the image is loaded
-    imageLoaded.value = true;
-  };
-
-  // Define the reactive property for image loaded state
-  const imageLoaded = ref(false);
 </script>
 
 <template>
@@ -32,7 +15,7 @@
       >
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
         <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
-          <h1 class="mb-3 z-30" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>
+          <h1 class="mb-3 z-30 font-heading" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>
           <p class="font-light z-30" :style="{color: blok.text_color?.color}">{{ blok?.text }}</p>
           <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons">
             <StoryblokComponent

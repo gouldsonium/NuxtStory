@@ -8,23 +8,6 @@
   filter: blur(1rem);
 }
 
-body{
-  font-family: 'Work Sans', sans-serif;
-}
-
-h1{
-  font-family: "Times New Roman", Times, serif;
-}
-h2{
-  font-family: "Times New Roman", Times, serif;
-}
-h3{
-  font-family: "Times New Roman", Times, serif;
-}
-h4{
-  font-family: "Times New Roman", Times, serif;
-}
-
 .dark-brighten{
   filter: brightness(0) invert(1);
 }

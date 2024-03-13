@@ -2,7 +2,7 @@
   <section class="py-24 px-3" :style="{ backgroundColor: blok.background_color?.color }">
     <div class="container mx-auto">
       <h2 v-if="!!blok?.headline"
-        class="font-semibold flex items-center text-center justify-center"
+        class="font-semibold flex items-center text-center justify-center font-heading"
         :style="{ color: blok.headline_color?.color }">
         <span class="sm:mx-3">
           {{ blok?.headline }}

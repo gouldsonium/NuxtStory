@@ -35,7 +35,7 @@
 <template>
   <section v-editable="blok" :style="backgroundStyle" class="bg-primary" :class="{'py-16' : !!blok?.title}">
     <div :class="blok?.layout">
-      <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5" :style="{color: blok.title_color?.color}"
+      <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading" :style="{color: blok.title_color?.color}"
       :class="{'text-center justify-center' : blok?.text_center}">
         <span :class="{'sm:mx-3' : blok?.text_center}">
           {{ blok?.title }}

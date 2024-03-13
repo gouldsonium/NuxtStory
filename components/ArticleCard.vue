@@ -11,7 +11,7 @@
       class="w-full h-48 xl:h-72 object-cover pointer-events-none"
     />
     <div class="p-4 border h-full border-secondary border-t-0">
-      <h3 class="text-xl text-gray-900 font-bold mb-3" style="font-family: 'poppins';">
+      <h3 class="text-xl text-gray-900 font-bold mb-3 font-heading">
         {{ article.title }}
       </h3>
       <div class="line-clamp-4 text-gray-700">

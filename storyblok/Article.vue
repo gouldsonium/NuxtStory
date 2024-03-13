@@ -13,7 +13,7 @@
       :class="{ 'filter brightness-50': blok?.darken}"
     />
     <div class="container mx-auto py-8 sm:py-12 px-3 w-full">
-      <h1 class="text-secondary font-bold" :style="{ color: blok.headline_teaser_color?.color }" itemprop="headline">
+      <h1 class="text-secondary font-bold font-heading" :style="{ color: blok.headline_teaser_color?.color }" itemprop="headline">
         {{ blok.title }}
       </h1>
       <p class="my-4" :style="{ color: blok.subheaders_color?.color }">Published on 

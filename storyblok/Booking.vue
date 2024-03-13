@@ -56,12 +56,12 @@ const submitForm = async () => {
 <template>
   <section :style="{ backgroundColor: blok.background_color?.color }" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="text-center">
-      <h2 class="font-semibold uppercase">{{ blok?.title || 'Book a Meeting' }}</h2>
+      <h2 class="font-semibold font-heading">{{ blok?.title || 'Get in touch' }}</h2>
       <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mt-5"
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
-      <p class="mb-5 text-center sm:text-center">Please fill out the form below to book a meeting</p>
+      <p class="mb-5 text-center sm:text-center">Please fill out the form below to get in touch</p>
       <form method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

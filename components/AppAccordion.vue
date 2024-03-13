@@ -1,7 +1,7 @@
 <template>
   <div class="accordion-item">
     <button @click="toggleAccordion" :aria-expanded="isOpen" :aria-controls="`collapse${_uid}`">
-      <h3 class="accordion-title">{{ title }}</h3>
+      <h3 class="accordion-title font-heading hover:text-secondary">{{ title }}</h3>
       <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" aria-hidden="true"
         class="icon" :class="{'rotate-180': isOpen, 'rotate-0': !isOpen}">
         <path d="M15 1.2l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -39,11 +39,9 @@ export default {
   border-top: 2px solid white;
 }
 .accordion-title{
-  font-family: 'JetBrains Mono', monospace;
   text-align: left;
 }
 .accordion-title:hover{
-  color: white;
   transition: .3s ease;
 }
 .icon{
