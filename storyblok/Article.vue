@@ -5,8 +5,8 @@
     itemtype="http://schema.org/Article" 
     :style="{ backgroundColor: blok.background_color?.color }"
   >
-    <img
-      v-if="blok.image?.filename"
+    <NuxtImg
+      v-if="blok.image?.filename" placeholder
       :src="blok.image.filename + '/m/1600x0'"
       alt="Article Image" itemprop="image"
       class="w-full h-[360px] lg:h-[450px] object-cover"

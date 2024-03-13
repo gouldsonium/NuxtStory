@@ -5,14 +5,14 @@
 <template>
   <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
     <div class="image-box" :style="{minHeight: `${blok.height}px`}">
-      <img 
+      <NuxtImg 
         v-if="blok?.background_image?.filename" 
         :src="blok?.background_image?.filename" 
-        alt="Background Image" 
+        alt="Background Image" placeholder
         class="img-background" 
         :class="{'brightness-50' : blok?.background_image_darken}"
         :style="{maxHeight: `${blok?.height}px`}"
-      >
+      />
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
         <div class="text-white flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
           <h1 class="mb-3 z-30 font-heading" :style="{color: blok.title_color?.color}">{{ blok?.title || 'Page Title' }}</h1>

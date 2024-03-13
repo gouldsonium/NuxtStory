@@ -17,6 +17,7 @@ export default defineNuxtConfig({
         region: "eu"
       } 
     }],
+    '@nuxt/image',
     'nuxt-simple-robots',
     !!process.env.GTAG_ID ?
     ['nuxt-gtag', {
@@ -28,6 +29,13 @@ export default defineNuxtConfig({
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
+  },
+  image: {
+    storyblok: {
+      baseURL: 'https://a.storyblok.com'
+    },
+    dir: 'assets/img'
+
   },
   css: ['assets/css/main.css'],
   devtools: { enabled: true },
