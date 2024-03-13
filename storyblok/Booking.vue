@@ -61,7 +61,6 @@ const submitForm = async () => {
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
-      <p class="mb-5 text-center sm:text-center">Please fill out the form below to get in touch</p>
       <form method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">

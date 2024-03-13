@@ -19,7 +19,8 @@
   const footer_text_color = data.story.content?.footer_text_color.color;
 
   const currentYear = new Date().getFullYear();
-  const copyright = data.story.content?.copyright
+  const copyright = data.story.content?.copyright;
+  const maxHeight = data.story.content?.footer_max_height || '100';
 </script>
 
 <template>
@@ -29,8 +30,8 @@
   >
     <div class="w-full container mx-auto p-4 md:py-8">
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-10">
-        <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0 col-span-2 sm:col-span-1">
-          <img :src="logo" class="h-32" alt="Footer Logo" />
+        <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0 col-span-2 sm:col-span-1" :style="{maxHeight: maxHeight + 'px'}">
+          <img :src="logo" class="h-full" alt="Footer Logo" />
         </NuxtLink>
         <div>
           <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Quick Links</h4>
