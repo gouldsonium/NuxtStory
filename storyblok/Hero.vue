@@ -9,7 +9,7 @@
         v-if="blok?.background_image?.filename" 
         :src="blok?.background_image?.filename" 
         alt="Background Image" placeholder
-        class="img-background" 
+        class="img-background" provider="storyblok"
         :class="{'brightness-50' : blok?.background_image_darken}"
         :style="{maxHeight: `${blok?.height}px`}"
       />
