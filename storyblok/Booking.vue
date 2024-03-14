@@ -60,7 +60,7 @@ const submitForm = async () => {
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
-      <form method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
+      <form method="POST" @submit.prevent="submitForm" class="mx-auto max-w-xl" name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
