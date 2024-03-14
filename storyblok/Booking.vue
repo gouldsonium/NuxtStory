@@ -11,45 +11,6 @@ const last_name = ref('');
 const email = ref('');
 const phone = ref('');
 const message = ref('');
-
-const resetForm = () => {
-  first_name.value = '';
-  last_name.value = '';
-  phone.value = '';
-  email.value = '';
-  message.value = '';
-}
-
-const encode = (data) => {
-  return Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
-}
-
-const submitForm = async () => {
-  if (agreed.value == false) {
-    window.alert("Please agree to our privacy policy");
-    return;
-  }
-
-  const formData = {
-    first_name: first_name.value,
-    last_name: last_name.value,
-    email: email.value,
-    phone: phone.value,
-    description: message.value,
-  };
-
-  try {
-    // const res = await axios.post(API + '/book', body);
-    fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({'form-name': "Contact", ...formData})
-      }).then(() => console.log('Success')).catch(error => alert(error));
-    await navigateTo({ path: '/success' });
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
-};
 </script>
 
 <template>
@@ -67,35 +28,35 @@ const submitForm = async () => {
             <label for="first-name" class="block text-sm font-semibold leading-6">First name</label>
             <div class="mt-2.5">
               <input required type="text" name="first-name" id="first-name" autocomplete="given-name" v-model="first_name"
-                class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+                class="form-input" />
             </div>
           </div>
           <div>
             <label for="last-name" class="block text-sm font-semibold leading-6">Last name</label>
             <div class="mt-2.5">
               <input required type="text" name="last-name" id="last-name" autocomplete="family-name" v-model="last_name"
-                class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+                class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="email" class="block text-sm font-semibold leading-6">Email</label>
             <div class="mt-2.5">
               <input required type="email" name="email" id="email" autocomplete="email" v-model="email"
-                class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+                class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="phone-number" class="block text-sm font-semibold leading-6">Phone number</label>
             <div class="mt-2.5">
               <input required type="text" name="phone-number" id="phone-number" autocomplete="tel" v-model="phone"
-                class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary sm:text-sm sm:leading-6" />
+                class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="message" class="block text-sm font-semibold leading-6">Message</label>
             <div class="mt-2.5">
               <textarea name="message" id="message" rows="4" v-model="message"
-                class="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-secondary  sm:text-sm sm:leading-6" />
+                class="form-input" />
             </div>
           </div>
           <SwitchGroup as="div" class="flex gap-x-4 sm:col-span-2">
