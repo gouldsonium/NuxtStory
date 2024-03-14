@@ -23,7 +23,7 @@ async function generateSitemap() {
     });
 
     const xml = generateXml(urls);
-    await writeToFile(xml, './public/sitemap.xml');
+    await writeToFile(xml, 'public/sitemap.xml');
 
     console.log('Sitemap generated successfully!');
   } catch (error) {
