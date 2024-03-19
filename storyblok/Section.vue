@@ -33,7 +33,7 @@
 </script>
 
 <template>
-  <section v-editable="blok" :style="backgroundStyle" class="bg-primary" :class="{'py-16' : !!blok?.title}">
+  <section v-editable="blok" :style="backgroundStyle" class="bg-primary" :class="{'py-16' : !!blok?.padding}">
     <div :class="blok?.layout">
       <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading" :style="{color: blok.title_color?.color}"
       :class="{'text-center justify-center' : blok?.text_center}">
@@ -42,7 +42,7 @@
         </span>
       </h2>
       <div 
-        v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose" 
+        v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mb-5" 
         :class="{ 'prose-invert text-white': blok.invert, 'text-center' : blok?.text_center}">
       </div>
       <div>
