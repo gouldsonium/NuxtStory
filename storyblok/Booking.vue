@@ -16,7 +16,7 @@ const message = ref('');
 <template>
   <section :style="{ backgroundColor: blok.background_color?.color }" class="px-6 lg:px-8 py-24 sm:py-32 relative">
     <div class="text-center">
-      <h2 class="font-semibold font-heading">{{ blok?.title || 'Get in touch' }}</h2>
+      <h2 class="font-semibold font-heading" :style="{color: blok?.title_color?.color}">{{ blok?.title || 'Get in touch' }}</h2>
       <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose my-5"
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
@@ -25,35 +25,35 @@ const message = ref('');
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
-            <label for="first-name" class="block text-sm font-semibold leading-6">First name</label>
+            <label for="first-name" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">First name</label>
             <div class="mt-2.5">
               <input required type="text" name="first-name" id="first-name" autocomplete="given-name" v-model="first_name"
                 class="form-input" />
             </div>
           </div>
           <div>
-            <label for="last-name" class="block text-sm font-semibold leading-6">Last name</label>
+            <label for="last-name" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">Last name</label>
             <div class="mt-2.5">
               <input required type="text" name="last-name" id="last-name" autocomplete="family-name" v-model="last_name"
                 class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="email" class="block text-sm font-semibold leading-6">Email</label>
+            <label for="email" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">Email</label>
             <div class="mt-2.5">
               <input required type="email" name="email" id="email" autocomplete="email" v-model="email"
                 class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="phone-number" class="block text-sm font-semibold leading-6">Phone number</label>
+            <label for="phone-number" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">Phone number</label>
             <div class="mt-2.5">
               <input required type="text" name="phone-number" id="phone-number" autocomplete="tel" v-model="phone"
                 class="form-input" />
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="message" class="block text-sm font-semibold leading-6">Message</label>
+            <label for="message" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">Message</label>
             <div class="mt-2.5">
               <textarea name="message" id="message" rows="4" v-model="message"
                 class="form-input" />
@@ -71,12 +71,22 @@ const message = ref('');
             <SwitchLabel class="text-sm leading-6 text-gray-600">
               By selecting this, you agree to our
               {{ ' ' }}
-              <NuxtLink to="/privacy-policy" class="font-semibold text-secondary">privacy&nbsp;policy</NuxtLink>.
+              <NuxtLink 
+                to="/privacy-policy" 
+                class="font-semibold text-secondary" 
+                :style="{color: blok?.privacy_policy?.color}"
+              >
+                  privacy&nbsp;policy
+              </NuxtLink>.
             </SwitchLabel>
           </SwitchGroup>
         </div>
         <div class="mt-10 w-full">
-          <button type="submit" class="w-full btn py-2 rounded-lg border-none hover:opacity-75 bg-secondary">
+          <button 
+            type="submit" 
+            class="w-full btn py-2 rounded-lg border-none hover:opacity-75 bg-secondary" 
+            :style="{backgroundColor: blok?.btn_color?.color, color:blok?.btn_text_color?.color}"
+          >
             Get in touch
           </button>
         </div>

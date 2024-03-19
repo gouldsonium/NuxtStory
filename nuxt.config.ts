@@ -35,7 +35,6 @@ export default defineNuxtConfig({
       baseURL: 'https://a.storyblok.com'
     },
     dir: 'assets/img'
-
   },
   css: ['assets/css/main.css'],
   devtools: { enabled: true },

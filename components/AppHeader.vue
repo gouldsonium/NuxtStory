@@ -54,10 +54,12 @@
       }
     ]  
   })
+
+  const showHeader = !!logo || headerMenu.value.length > 0 || !!CTA.length > 0;
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" 
+  <header class="fixed inset-x-0 top-0 z-50 transition duration-500" v-if="showHeader" 
     :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': 'bg-white text-gray-800'">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex-1">
