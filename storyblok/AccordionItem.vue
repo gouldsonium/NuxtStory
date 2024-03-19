@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok" class="border-t-2 border-secondary" :style="{borderColor: blok?.border_color.color || '#000000'}">
     <button @click="toggleAccordion" :aria-expanded="isOpen" :aria-controls="`collapse${blok._uid}`">
-      <h4 class="text-left hover:text-secondary duration-300 py-5 font-semibold font-heading" :style="{color:blok?.title_color.color}">
+      <h4 class="text-left hover:text-secondary duration-300 py-5 font-heading" :style="{color:blok?.title_color.color}">
         {{ blok?.title }}
       </h4>
       <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" aria-hidden="true"
