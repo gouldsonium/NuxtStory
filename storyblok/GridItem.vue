@@ -16,7 +16,7 @@
     return [
       props.blok.position,
       props.blok?.border,
-      props.blok?.border_thickness > 0 ? 'p-3' : ''
+      props.blok?.padding ? 'p-3' : ''
     ]
   });
 
