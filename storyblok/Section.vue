@@ -42,7 +42,7 @@
         </span>
       </h2>
       <div 
-        v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose mb-5" 
+        v-if="!!resolvedRichText" v-html="resolvedRichText" class="max-w-none prose mb-5" 
         :class="{ 'prose-invert text-white': blok.invert, 'text-center' : blok?.text_center}">
       </div>
       <div>
