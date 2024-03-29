@@ -22,7 +22,9 @@ const handleSubmit = async () => {
       body: new FormData(event.target),
       netlify: true // Important for Netlify Forms
     });
-    // const data = await response.json();
+    const data = await response.json();
+    console.log(data);
+    console.log("Data success: ", data.success);
     router.push('/success'); // Redirect to the success page
     // if (data.success) {
     // } else {
