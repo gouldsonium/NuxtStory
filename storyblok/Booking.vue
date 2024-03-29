@@ -1,5 +1,9 @@
 <script setup>
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
+import { useRoute, useRouter } from 'nuxt/app';
+
+const route = useRoute();
+const router = useRouter();
 
 const props = defineProps({ blok: Object });
 const resolvedRichText = computed(() => renderRichText(props.blok.text));
@@ -12,23 +16,31 @@ const email = ref('');
 const phone = ref('');
 const message = ref('');
 
+const encode = (data) => {
+  return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join("&");
+};
+
 const handleSubmit = async () => {
   try {
+    const form = encode({
+      "form-name": "Contact",
+      first_name: first_name.value,
+      last_name: last_name.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value
+    });
+
+    console.log(form);
+
     const response = await fetch('/', {
       method: 'POST',
-      body: new FormData(event.target),
+      body: {...form},
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       netlify: true // Important for Netlify Forms
     });
 
-    const data = await response.json();
-
-    if (data.success) {
-      router.push('/success'); // Redirect to the success page
-    } else {
-      // Handle submission errors
-      console.error('Form submission failed:', data.error);
-      // Display error messages to the user, if needed
-    }
+    router.push('/success'); // Redirect to the success page
   } catch (error) {
     console.error('Form submission error:', error);
     // Handle network or other errors
