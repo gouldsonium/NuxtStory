@@ -11,6 +11,29 @@ const last_name = ref('');
 const email = ref('');
 const phone = ref('');
 const message = ref('');
+
+const handleSubmit = async () => {
+  try {
+    const response = await fetch('/', {
+      method: 'POST',
+      body: new FormData(event.target),
+      netlify: true // Important for Netlify Forms
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      router.push('/success'); // Redirect to the success page
+    } else {
+      // Handle submission errors
+      console.error('Form submission failed:', data.error);
+      // Display error messages to the user, if needed
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    // Handle network or other errors
+  }
+};
 </script>
 
 <template>
@@ -21,7 +44,7 @@ const message = ref('');
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
-      <form method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
+      <form @submit.prevent="handleSubmit" method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
         <input type="hidden" name="form-name" value="contact" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>

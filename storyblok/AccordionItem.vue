@@ -13,7 +13,12 @@
       <article v-if="isOpen" :id="`collapse${blok._uid}`">
         <p :style="{color:blok?.text_color.color}" class="pb-4">{{ blok?.content }}</p>
         <div class="w-fit">
-          <AppLink v-if="!!blok?.url" :to="blok?.url" class="mb-4 text-center font-semibold leading-6 btn text-white px-6 py-2 text-xs sm:text-lg rounded-full hover:opacity-50">
+          <AppLink 
+            v-if="!!blok?.url" 
+            :to="blok?.url" 
+            class="mb-4 text-center font-semibold leading-6 btn text-white px-6 py-2 text-xs sm:text-lg hover:opacity-50"
+            :style="{borderRadius: blok.style}" 
+            >
             {{ blok?.button_text || 'Learn More' }}
           </AppLink>
         </div>
