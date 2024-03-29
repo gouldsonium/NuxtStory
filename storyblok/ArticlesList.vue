@@ -1,3 +1,8 @@
+<script setup>
+  const props = defineProps({ blok: Object });
+  const resolvedRichText = computed(() => renderRichText(props.blok.text));
+</script>
+
 <template>
   <section class="py-24 px-3" :style="{ backgroundColor: blok.background_color?.color }">
     <div class="container mx-auto">
@@ -8,6 +13,10 @@
           {{ blok?.headline }}
         </span>
       </h2>
+      <div 
+        v-if="!!resolvedRichText" v-html="resolvedRichText" class="max-w-none prose mt-5 text-center" 
+        :class="{ 'prose-invert text-white': blok.invert}">
+      </div>
       <div class="grid md:grid-cols-3 gap-12 my-12 place-items-start">
         <ArticleCard v-for="article in blok.articles" :key="article.uuid" :article="article.content"
           :slug="article.full_slug" />
@@ -15,7 +24,3 @@
     </div>
   </section>
 </template>
-   
-<script setup>
-defineProps({ blok: Object })
-</script>
