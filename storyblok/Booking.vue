@@ -22,19 +22,10 @@ const handleSubmit = async () => {
       body: new FormData(event.target),
       netlify: true // Important for Netlify Forms
     });
-    const data = await response.json();
-    console.log(data);
-    console.log("Data success: ", data.success);
     router.push('/success'); // Redirect to the success page
-    // if (data.success) {
-    // } else {
-    //   // Handle submission errors
-    //   console.error('Form submission failed:', data.error);
-    //   // Display error messages to the user, if needed
-    // }
   } catch (error) {
     console.error('Form submission error:', error);
-    alert('Oops, something went wrong');
+    alert('Oops, something went wrong. Please get in touch another way');
     // Handle network or other errors
   }
 };

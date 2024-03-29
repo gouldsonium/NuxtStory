@@ -2,29 +2,57 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
+          <loc>https://storyblok.gouldsonium.com/referral</loc>
+          <lastmod>2024-03-29T16:17:12.565Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+      
+        <url>
+          <loc>https://storyblok.gouldsonium.com/components</loc>
+          <lastmod>2024-03-29T16:17:12.887Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+      
+        <url>
+          <loc>https://storyblok.gouldsonium.com/success</loc>
+          <lastmod>2024-03-29T16:17:13.215Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.1</priority>
+        </url>
+      
+        <url>
           <loc>https://storyblok.gouldsonium.com/contact</loc>
-          <lastmod>2024-03-13T23:05:01.839Z</lastmod>
+          <lastmod>2024-03-29T16:17:13.559Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.6</priority>
         </url>
       
         <url>
           <loc>https://storyblok.gouldsonium.com/blog/</loc>
-          <lastmod>2024-03-13T23:05:02.000Z</lastmod>
+          <lastmod>2024-03-29T16:17:13.000Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.8</priority>
         </url>
       
         <url>
+          <loc>https://storyblok.gouldsonium.com/blog/first-article</loc>
+          <lastmod>2024-03-29T16:17:13.000Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+        </url>
+      
+        <url>
           <loc>https://storyblok.gouldsonium.com/privacy-policy</loc>
-          <lastmod>2024-03-13T23:05:02.481Z</lastmod>
+          <lastmod>2024-03-29T16:17:14.230Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.1</priority>
         </url>
       
         <url>
           <loc>https://storyblok.gouldsonium.com/</loc>
-          <lastmod>2024-03-13T23:05:02.815Z</lastmod>
+          <lastmod>2024-03-29T16:17:14.567Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>1</priority>
         </url>

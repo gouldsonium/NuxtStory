@@ -33,6 +33,7 @@
         <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0 col-span-2 sm:col-span-1" :style="{maxHeight: maxHeight + 'px'}">
           <img :src="logo" class="h-full" alt="Footer Logo" />
         </NuxtLink>
+        <a href="/success" class="hidden">Success Link</a>
         <div>
           <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Quick Links</h4>
           <ul class="text-sm font-medium">
