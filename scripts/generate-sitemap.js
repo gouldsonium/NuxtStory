@@ -12,14 +12,14 @@ async function generateSitemap() {
   try {
     const response = await storyblokApi.get(`/stories?token=${process.env.STORYBLOK_ACCESS_TOKEN}`);
 
-    const urls = response.data.stories.filter(story => story.full_slug !== 'config').map((story) => {
+    const urls = response.data.stories.filter(story => story.full_slug !== 'config' && !story.content.sitemap_ignore).map((story) => {
       const adjustedSlug = story.full_slug.startsWith('home') ? '' : story.full_slug;
-      return {
-        loc: `${process.env.WEBSITE_URL}/${adjustedSlug}`, // Replace with your domain
-        lastmod: story.published_at, // Use story creation date as last modified
-        changefreq: 'weekly', // Adjust frequency as needed
-        priority: story.content.priority || 0.7, // Adjust priority for different pages (0.1 to 1.0)
-      };
+        return {
+          loc: `${process.env.WEBSITE_URL}/${adjustedSlug}`, // Replace with your domain
+          lastmod: story.published_at, // Use story creation date as last modified
+          changefreq: 'weekly', // Adjust frequency as needed
+          priority: story.content.priority || 0.7, // Adjust priority for different pages (0.1 to 1.0)
+        };
     });
 
     const xml = generateXml(urls);
