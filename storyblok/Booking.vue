@@ -17,6 +17,10 @@ const message = ref('');
 
 const handleSubmit = async () => {
   try {
+    if(!agreed.value){
+      alert('Please agree to our privacy policy');
+      return;
+    }
     const response = await fetch('/', {
       method: 'POST',
       body: new FormData(event.target),
@@ -26,7 +30,6 @@ const handleSubmit = async () => {
   } catch (error) {
     console.error('Form submission error:', error);
     alert('Oops, something went wrong. Please get in touch another way');
-    // Handle network or other errors
   }
 };
 </script>
@@ -39,8 +42,8 @@ const handleSubmit = async () => {
         :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"></div>
     </div>
     <div>
-      <form @submit.prevent="handleSubmit" method="POST" action="/success" class="mx-auto max-w-xl" name="contact" netlify>
-        <input type="hidden" name="form-name" value="contact" />
+      <form @submit.prevent="handleSubmit" method="POST" action="/success" class="mx-auto max-w-xl" :name="blok.name" netlify>
+        <input type="hidden" name="form-name" :value="blok.name" />
         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label for="first-name" class="block text-sm font-semibold leading-6" :style="{color: blok?.text_color?.color}">First name</label>
