@@ -22,6 +22,6 @@
       {{ blok?.subtitle }}
     </h4>
     <div v-if="!!blok?.text" v-html="resolvedRichText" class="max-w-none prose my-5"
-      :class="{ 'prose-invert text-white': blok.invert, 'text-left' : !blok?.text_center}"></div>
+      :class="{ 'prose-invert text-white': blok.invert, 'text-center' : blok?.text_center}"></div>
   </div>
 </template>
