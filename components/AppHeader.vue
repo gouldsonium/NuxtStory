@@ -66,7 +66,7 @@
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
           <NuxtImg v-if="logo" placeholder provider="storyblok"
-            class="w-auto" :style="{height: logoHeight + 'px'}" 
+            class="w-auto transition duration-300" :style="{height: logoHeight + 'px'}" 
             :class="{'dark-brighten' : !!whitenLogo && !isScrolled}" 
             :src="logo" alt="Nav Logo" 
           />
