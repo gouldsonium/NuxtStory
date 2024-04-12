@@ -31,7 +31,7 @@
     <div class="w-full container mx-auto p-4 md:py-8">
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-10">
         <NuxtLink v-if="logo" to="/" class="flex items-center mb-4 sm:mb-0 col-span-2 sm:col-span-1" :style="{maxHeight: maxHeight + 'px'}">
-          <img :src="logo" class="h-full" alt="Footer Logo" />
+          <NuxtImg :src="logo" class="h-full" alt="Footer Logo" placeholder provider="storyblok" />
         </NuxtLink>
         <a href="/success" class="hidden">Success Link</a>
         <div>
@@ -42,7 +42,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div v-if="contactUs.length > 0">
           <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Contact Us</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in contactUs" :key="item.text" class="my-3">
@@ -52,12 +52,17 @@
         </div>
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
-      <div class="flex text-sm">
-        <span class="border-r-2 pr-2">
-          © {{ copyright }} {{currentYear}} 
-        </span>
-        <span class="border-r-2 px-2">All Rights Reserved</span>
-        <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:text-secondary">Privacy Policy</NuxtLink>
+      <div class="flex flex-col sm:flex-row text-sm w-full justify-between">
+        <div class="flex">
+          <span class="border-r-2 pr-2">
+            © {{ copyright }} {{currentYear}} 
+          </span>
+          <span class="border-r-2 px-2">All Rights Reserved</span>
+          <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:text-secondary">Privacy Policy</NuxtLink>
+        </div>
+        <div class="justify-self-end py-3 sm:py-0">
+          Website by <a class="underline hover:text-secondary" href="https://storyblok.gouldsonium.com" target="_blank">Gouldsonium</a> 
+        </div>
       </div>
     </div>
   </footer>

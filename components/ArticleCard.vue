@@ -4,10 +4,11 @@
     v-editable="article"
     class="overflow-hidden w-full h-full rounded-[25px] text-center overflow-hidden border-b-secondary border-b-4 hover:scale-105 duration-500"
   >
-    <img
+    <NuxtImg
       v-if="!!article?.image"
       :src="article?.image?.filename + '/m/600x0'"
       :alt="article?.image.alt"
+      placeholder provider="storyblok"
       class="w-full h-48 xl:h-72 object-cover pointer-events-none"
     />
     <div class="p-4 border h-full border-secondary border-t-0 bg-white">

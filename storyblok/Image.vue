@@ -7,7 +7,14 @@
 
 <template>
   <div v-editable="blok" class="flex w-full" :class="blok?.position">
-    <img v-if="!!blok.image?.filename" :src="blok.image.filename" :alt="blok.image.alt" :style="imageMaxHeight" 
-      class="h-full" :class="{'w-full' : !!blok?.full_width}">
+    <NuxtImg 
+      v-if="!!blok.image?.filename" 
+      :src="blok.image.filename" 
+      :alt="blok.image.alt" 
+      :style="imageMaxHeight" 
+      class="h-full" 
+      :class="{'w-full' : !!blok?.full_width}"
+      placeholder provider="storyblok"
+    />
   </div>
 </template>

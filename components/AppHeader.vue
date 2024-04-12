@@ -65,7 +65,7 @@
       <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
-          <img v-if="logo" 
+          <NuxtImg v-if="logo" placeholder provider="storyblok"
             class="w-auto" :style="{height: logoHeight + 'px'}" 
             :class="{'dark-brighten' : !!whitenLogo && !isScrolled}" 
             :src="logo" alt="Nav Logo" 
@@ -101,7 +101,13 @@
         <div class="flex items-center justify-between">
           <NuxtLink to="/" class="-m-1.5 p-1.5" @click="mobileMenuOpen = false">
             <span class="sr-only">Logo</span>
-            <img class="h-24 sm:h-16 w-auto" :src="logo" alt="Mobile Nav Logo" :style="{height: logoHeight + 'px'}" />
+            <NuxtImg 
+              class="h-24 sm:h-16 w-auto" 
+              :src="logo" 
+              alt="Mobile Nav Logo" 
+              :style="{height: logoHeight + 'px'}"
+              placeholder provider="storyblok"
+            />
           </NuxtLink>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>

@@ -7,9 +7,10 @@
         class="carousel-item relative"
         :style="{ zIndex: index === activeIndex ? 1 : 0 }"
       >
-        <img
-          :src="item.image?.filename"
-          :alt="item.image?.alt"
+        <NuxtImg
+          v-if="item.image?.filename" placeholder
+          :src="item.image?.filename" provider="storyblok"
+          :alt="'carousel-item-'[index]" 
           class="d-block w-full object-cover h-full max-h-[600px]"
           :class="{'filter brightness-50' : item?.darken}"
         />
@@ -24,20 +25,28 @@
       </div>
     </div>
     
-    <button v-if="activeIndex != 0" @click="moveCarousel(-1)" class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2">
+    <button v-if="activeIndex != 0" @click="moveCarousel(-1)" 
+      class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2" :style="{backgroundColor: blok?.button_color?.color}">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+      class="w-6 h-6 text-secondary" :style="{color: blok?.chevron_color?.color}">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </button>
-    <button @click="moveCarousel(1)" class="carousel-control-next absolute top-1/2 right-4 -translate-y-1/2">
+    <button @click="moveCarousel(1)" class="carousel-control-next absolute top-1/2 right-4 -translate-y-1/2 bg-secondary" 
+    :style="{backgroundColor: blok?.button_color?.color}">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
-      <svg v-if="activeIndex != (carouselItems.length - 1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
+      <svg 
+        v-if="activeIndex != (carouselItems.length - 1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+        stroke-width="1.5" stroke="currentColor" class="w-6 h-6" :style="{color: blok?.chevron_color?.color}"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
-      <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-secondary">
+      <svg 
+        v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+        class="w-6 h-6" :style="{color: blok?.chevron_color?.color}">
         <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
       </svg>
     </button>
@@ -77,7 +86,6 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
@@ -88,7 +96,8 @@
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0.5;
+  transition: all 0.3s;
 }
 .carousel-control-prev {
   left: 0;
