@@ -26,11 +26,13 @@
     </div>
     
     <button v-if="activeIndex != 0" @click="moveCarousel(-1)" 
-      class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2" :style="{backgroundColor: blok?.button_color?.color}">
+      class="carousel-control-prev absolute top-1/2 left-4 -translate-y-1/2 bg-secondary" 
+      :style="{backgroundColor: blok?.button_color?.color}"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-      class="w-6 h-6 text-secondary" :style="{color: blok?.chevron_color?.color}">
+        class="w-6 h-6" :style="{color: blok?.chevron_color?.color}">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
     </button>
