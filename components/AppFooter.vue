@@ -42,7 +42,7 @@
             </li>
           </ul>
         </div>
-        <div v-if="contactUs.length > 0">
+        <div v-if="contactUs?.length > 0">
           <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Contact Us</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in contactUs" :key="item.text" class="my-3">

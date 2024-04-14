@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="bg-primary py-5" :style="{backgroundColor: blok.background_color?.color}">
+  <div v-editable="blok" class="py-5" :style="{backgroundColor: blok.background_color?.color}">
     <StoryblokComponent
       v-for="blok in blok.items"
       :key="blok._uid"

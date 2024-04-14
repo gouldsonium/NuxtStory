@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary">
+  <section>
     <div class="image-box min-h-screen">
       <img src="/404.avif" alt="Background Image" class="img-background brightness-50 min-h-full" />
       <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">

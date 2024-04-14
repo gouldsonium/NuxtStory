@@ -7,7 +7,7 @@
   >
     <NuxtImg
       v-if="blok.image?.filename" placeholder
-      :src="blok.image.filename + '/m/1600x0'"
+      :src="blok.image.filename"
       alt="Article Image" itemprop="image" provider="storyblok"
       class="w-full h-[360px] lg:h-[450px] object-cover"
       :class="{ 'filter brightness-50': blok?.darken}"

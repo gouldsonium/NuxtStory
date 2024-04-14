@@ -11,7 +11,6 @@ module.exports = {
         text: [process.env.TEXT_FONT_FAMILY, 'sans-serif'],
       },
       colors: {
-        primary: process.env.PRIMARY_COLOR,
         secondary: process.env.SECONDARY_COLOR
       },
       screens: {

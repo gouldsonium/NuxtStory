@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-primary min-h-screen flex flex-col justify-between font-text">
+  <main class="min-h-screen flex flex-col justify-between font-text">
     <div>
       <AppHeader />
       <slot />

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     ["@storyblok/nuxt", { 
       accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
       apiOptions: {
-        region: "eu"
+        region: process.env.STORYBLOK_REGION || 'eu'
       } 
     }],
     '@nuxt/image',
@@ -32,7 +32,8 @@ export default defineNuxtConfig({
   },
   image: {
     storyblok: {
-      baseURL: 'https://a.storyblok.com'
+      baseURL: !!process.env.STORYBLOK_REGION 
+      ? `https://a-${process.env.STORYBLOK_REGION}.storyblok.com` : 'https://a.storyblok.com'
     },
     dir: 'assets/img'
   },
