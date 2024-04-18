@@ -26,6 +26,8 @@
     "@heroicons/vue": "^2.0.18",
     "@nuxt/image": "^1.4.0",
     "@storyblok/nuxt": "^5.5.2",
+    "axios": "^1.6.8",
+    "markdown-it": "^14.1.0",
     "playwright": "^1.37.1"
   }
 }

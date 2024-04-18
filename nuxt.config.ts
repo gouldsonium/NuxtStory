@@ -46,6 +46,7 @@ export default defineNuxtConfig({
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com" },
         { rel: "stylesheet", href: process.env.FONT_URL },
+        { rel: "stylesheet", href: 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css'}
       ],
       meta: [
         { name:"msapplication-TileColor", content:"#00aba9"},

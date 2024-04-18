@@ -29,7 +29,6 @@
 
     return null;
   });
-
 </script>
 
 <template>
