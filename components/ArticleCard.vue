@@ -6,15 +6,18 @@
   >
     <NuxtImg
       v-if="!!article?.image"
-      :src="article?.image?.filename + '/m/600x0'"
+      :src="article?.image?.filename"
       :alt="article?.image.alt"
       placeholder provider="storyblok"
       class="w-full h-48 xl:h-72 object-cover pointer-events-none"
     />
     <div class="p-4 border h-full border-secondary border-t-0 bg-white">
-      <h3 class="text-xl text-gray-900 font-bold mb-3 font-heading">
+      <h3 class="text-gray-900 font-bold mb-3 font-heading">
         {{ article.title }}
       </h3>
+      <h5 class="my-3">
+        by <span class="text-secondary">{{ article.author }}</span> 
+      </h5>
       <div class="line-clamp-4 text-gray-700">
         {{ article.teaser }}
       </div>

@@ -1,17 +1,17 @@
 <template>
-  <div class="carousel relative h-full" v-editable="blok">
+  <div class="carousel relative h-full" v-editable="blok" :style="{maxHeight: !!blok.height ? blok.height : '600px'} ">
     <div class="carousel-inner" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
       <div
         v-for="(item, index) in carouselItems"
         :key="index"
         class="carousel-item relative"
-        :style="{ zIndex: index === activeIndex ? 1 : 0 }"
+        :style="{ zIndex: index === activeIndex ? 1 : 0, maxHeight: !!blok.height ? blok.height : '600px' }"
       >
         <NuxtImg
           v-if="item.image?.filename" placeholder
           :src="item.image?.filename" provider="storyblok"
           :alt="'carousel-item-'[index]" 
-          class="d-block w-full object-cover h-full max-h-[600px]"
+          class="d-block w-full object-cover h-full"
           :class="{'filter brightness-50' : item?.darken}"
         />
         <div
@@ -78,7 +78,6 @@
 .carousel-inner {
   display: flex;
   transition: transform 0.3s ease;
-  max-height: 600px;
 }
 
 .carousel-item {
