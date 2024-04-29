@@ -12,6 +12,7 @@
     ogTitle: () => props.blok?.meta_title || 'Page Title',
     description: () => props.blok?.meta_description || 'Page Description',
     ogDescription: () => props.blok?.meta_description || 'Page Description',
+    ogImage: () => props.blok?.og_image?.filename || null
   });
 
   useServerSeoMeta({
@@ -19,5 +20,6 @@
     ogTitle: () => props.blok?.meta_title || 'Page Title',
     description: () => props.blok?.meta_description || 'Page Description',
     ogDescription: () => props.blok?.meta_description || 'Page Description',
+    ogImage: () => props.blok?.og_image?.filename || null
   });
 </script>
