@@ -151,7 +151,7 @@ async function createStory() {
         });
 
         // console.log(componentData)
-        console.log(`Module '${file}' created with ID: ${res.data.component.id}`);
+        console.log(`Story '${file}' created with ID: ${res.data.component.id}`);
       }
     }
   } catch (err) {
@@ -161,7 +161,7 @@ async function createStory() {
 
 const generateBloks = async () => {
   await createFolders();
-  // IMPORTANT there is a 'Rate limit of 6 request per second reached'
+  // IMPORTANT there is a 'Rate limit of 6 request per second'
   setTimeout(() => {createItems()}, 1000)
   setTimeout(() => {createComponents()}, 2000)
   setTimeout(() => {createModules()}, 3000)

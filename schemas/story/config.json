@@ -101,7 +101,7 @@
       "filetypes": [
         "images"
       ],
-      "description": "must be square",
+      "description": "Icon you see on the tab. Image must be square",
       "tooltip": true,
       "pos": 12,
       "required": true,

@@ -62,6 +62,7 @@ const generateContent = async () => {
               {
                 component: "hero",
                 title: page.name,
+                height: 700
               }
             ]
           }
@@ -79,14 +80,13 @@ const generateContent = async () => {
       }
     });
 
-    console.log('Blog Folder Created');
+    console.log('Blog Folder created');
     const blogFolderID = folderResponse.data.story.id;
 
     // Create Blog page
     await storyblokManageApi.post(`/spaces/${process.env.STORYBLOK_SPACE_ID}/stories`, {
       story: {
         name: "Blog",
-        // slug: "blog",
         parent_id: blogFolderID,
         is_startpage: true,
         content: {
@@ -97,6 +97,7 @@ const generateContent = async () => {
             {
               component: "hero",
               title: 'Our Blog',
+              height: 700
             }
           ]
         }

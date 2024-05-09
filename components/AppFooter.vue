@@ -15,8 +15,8 @@
   contactUs.value = data.story.content.contact_us;
 
   const logo = data.story.content.footer_logo?.filename || null;
-  const footer_color = data.story.content?.footer_color.color;
-  const footer_text_color = data.story.content?.footer_text_color.color;
+  const footer_color = data.story.content?.footer_color?.color;
+  const footer_text_color = data.story.content?.footer_text_color?.color;
 
   const currentYear = new Date().getFullYear();
   const copyright = data.story.content?.copyright;
@@ -25,7 +25,7 @@
 
 <template>
   <footer 
-    class="bg-secondary shadow p-4 text-white" 
+    class="bg-black shadow p-4 text-white" 
     :style="{backgroundColor: footer_color || null, color: footer_text_color || null}"
   >
     <div class="w-full container mx-auto p-4 md:py-8">

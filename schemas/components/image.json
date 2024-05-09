@@ -5,7 +5,7 @@
     "image": {
       "type": "asset",
       "filetypes": [
-          "images"
+        "images"
       ],
       "required": true,
       "asset_folder_id": null
@@ -15,12 +15,10 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "620a2912-6bd3-4d1e-ac02-60e343c93c3d",
           "name": "Center",
           "value": "justify-center items-center"
         },
         {
-          "_uid": "2661e599-18d0-4793-90a9-c77a90710ee7",
           "value": "justify-start items-center",
           "name": "Left"
         }

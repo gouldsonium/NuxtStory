@@ -69,12 +69,10 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "25abb856-8bbe-4ed8-a3da-cd4bc7ec02b0",
           "name": "Full",
           "value": "w-full"
         },
         {
-          "_uid": "461744ca-9347-44fd-8c81-63db11febbd5",
           "value": "container mx-auto px-3",
           "name": "Constrained "
         }

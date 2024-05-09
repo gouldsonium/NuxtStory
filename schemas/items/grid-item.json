@@ -14,12 +14,10 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "9277a445-8f28-4c2c-a765-8c4355ecb9f6",
           "name": "Center",
           "value": "justify-center items-center"
         },
         {
-          "_uid": "062b0413-defa-46ee-a99b-223a609a9d4d",
           "value": "justify-start",
           "name": "Top Left"
         }
@@ -53,12 +51,10 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "e8d54856-95be-465c-baa6-8a4a2ec8a188",
           "name": "Square",
           "value": "rounded-none"
         },
         {
-          "_uid": "9eb93d2d-0dd0-48e9-86a2-6a154bb60442",
           "value": "rounded-lg",
           "name": "Rounded"
         }

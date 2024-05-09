@@ -64,17 +64,14 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "eb77b5ea-cffe-44d3-a824-d225aaf62441",
           "name": "Block",
           "value": "0px"
         },
         {
-          "_uid": "edc71c95-059e-42b3-b2f1-df7c6154386a",
           "value": "8px",
           "name": "Rounded"
         },
         {
-          "_uid": "10445b68-fb0d-49c3-8a4b-3284175c252b",
           "value": "9999px",
           "name": "Round"
         }

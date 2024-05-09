@@ -55,7 +55,7 @@
     ]  
   })
 
-  const showHeader = !!logo || headerMenu.value.length > 0 || !!CTA.length > 0;
+  const showHeader = !!logo || headerMenu.value?.length > 0 || !!CTA?.length > 0;
 </script>
 
 <template>

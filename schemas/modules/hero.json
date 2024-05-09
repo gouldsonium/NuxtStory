@@ -16,7 +16,7 @@
     },
     "height": {
       "type": "number",
-      "default_value": "700",
+      "default_value": 700,
       "max_value": 1000,
       "min_value": 500,
       "pos": 2
@@ -70,17 +70,14 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "04dd1416-6006-45eb-adf4-58a75d68f309",
           "value": "brightness-100",
           "name": "Default"
         },
         {
-          "_uid": "b58f0485-f635-49b2-8f9e-4ad7dd0300fd",
           "name": "Darker",
           "value": "brightness-[0.75]"
         },
         {
-          "_uid": "7c49ade5-5d61-4243-9197-3390bbaa221f",
           "value": "brightness-50",
           "name": "Dark"
         }

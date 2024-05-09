@@ -40,12 +40,10 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "66a4efbd-07ed-4848-a135-28d7f67fbcd5",
           "name": "Full",
           "value": "w-full"
         },
         {
-          "_uid": "5950b491-64c6-4f54-b1b7-7e48bceb4d3b",
           "value": "w-fit px-3",
           "name": "Fit Content"
         }
@@ -57,17 +55,14 @@
       "use_uuid": true,
       "options": [
         {
-          "_uid": "23e49fcf-289b-4450-b84d-0005f11ecfd6",
           "name": "Auto",
           "value": "m-auto"
         },
         {
-          "_uid": "a99442eb-e5d8-4afe-9781-30e83e2ddb2d",
           "value": "left-0",
           "name": "Left"
         },
         {
-          "_uid": "e696bfe8-6cfc-4374-96ef-f82c023b01d2",
           "value": "mx-auto my-auto",
           "name": "Center"
         }

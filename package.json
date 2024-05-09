@@ -8,7 +8,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "proxy": "local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "mkcert": "mkcert -install && mkcert localhost"
+    "mkcert": "mkcert -install && mkcert localhost",
+    "setup": "node scripts/generate-bloks.js && node scripts/generate-content.js"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
