@@ -1,0 +1,117 @@
+{
+  "name": "hero",
+  "display_name": null,
+  "schema": {
+    "title_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 0
+    },
+    "text_color": {
+      "type": "custom",
+      "pos": 1,
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "height": {
+      "type": "number",
+      "default_value": "700",
+      "max_value": 1000,
+      "min_value": 500,
+      "pos": 2
+    },
+    "title": {
+      "type": "text",
+      "pos": 3,
+      "required": true,
+      "tooltip": false
+    },
+    "text": {
+      "type": "textarea",
+      "pos": 4
+    },
+    "buttons": {
+      "type": "bloks",
+      "pos": 5,
+      "maximum": 2,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "base-button"
+      ]
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 6
+    },
+    "tab-317f8e72-e492-4637-bacb-d1f37a46fa6b": {
+      "display_name": "Advanced",
+      "keys": [
+        "title_color",
+        "text_color",
+        "height"
+      ],
+      "pos": 7,
+      "type": "tab"
+    },
+    "background_image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "pos": 8,
+      "asset_folder_id": null
+    },
+    "background_image_darken": {
+      "type": "boolean",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "04dd1416-6006-45eb-adf4-58a75d68f309",
+          "value": "brightness-100",
+          "name": "Default"
+        },
+        {
+          "_uid": "b58f0485-f635-49b2-8f9e-4ad7dd0300fd",
+          "name": "Darker",
+          "value": "brightness-[0.75]"
+        },
+        {
+          "_uid": "7c49ade5-5d61-4243-9197-3390bbaa221f",
+          "value": "brightness-50",
+          "name": "Dark"
+        }
+      ],
+      "description": "Make background image darker to make text more readable",
+      "tooltip": true,
+      "pos": 9
+    },
+    "tab-5ee9446b-8b04-4edb-858d-2816e97f10fc": {
+      "display_name": "Background",
+      "keys": [
+        "background_image",
+        "background_color",
+        "background_image_darken"
+      ],
+      "pos": 10,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "preview_field": "title",
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "hero",
+  "component_group_uuid": "",
+  "color": "#395ece",
+  "icon": "block-resize-fc",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

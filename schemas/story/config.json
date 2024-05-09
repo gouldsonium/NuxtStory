@@ -1,0 +1,151 @@
+{
+  "name": "config",
+  "display_name": null,
+  "schema": {
+    "footer_logo": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "pos": 0,
+      "asset_folder_id": null
+    },
+    "footer_max_height": {
+      "type": "number",
+      "pos": 1
+    },
+    "footer_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 2
+    },
+    "footer_text_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 3
+    },
+    "copyright": {
+      "type": "text",
+      "pos": 4,
+      "required": false
+    },
+    "quick_links": {
+      "type": "bloks",
+      "maximum": 5,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "menu_link"
+      ],
+      "pos": 5
+    },
+    "contact_us": {
+      "type": "bloks",
+      "maximum": 5,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "menu_link"
+      ],
+      "pos": 6
+    },
+    "tab-04c92f78-8c57-4bc4-8701-f0979a658adc": {
+      "display_name": "Header",
+      "keys": [
+        "header_menu",
+        "cta",
+        "change_on_scroll"
+      ],
+      "pos": 7,
+      "type": "tab"
+    },
+    "tab-d080cde6-a4a1-4802-802e-4e78bca2338b": {
+      "display_name": "Footer",
+      "keys": [
+        "footer_logo",
+        "footer_color",
+        "footer_text_color",
+        "quick_links",
+        "contact_us",
+        "copyright",
+        "footer_max_height"
+      ],
+      "pos": 8,
+      "type": "tab",
+      "name": "tab-d080cde6-a4a1-4802-802e-4e78bca2338b"
+    },
+    "logo": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "pos": 9,
+      "asset_folder_id": null
+    },
+    "height": {
+      "type": "number",
+      "default_value": "80",
+      "required": true,
+      "pos": 10
+    },
+    "whiten": {
+      "type": "boolean",
+      "description": "Makes the logo white at the top of the page. Best paired with the change on scroll feature for the header",
+      "tooltip": true,
+      "pos": 11
+    },
+    "favicon": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "description": "must be square",
+      "tooltip": true,
+      "pos": 12,
+      "required": true,
+      "asset_folder_id": null
+    },
+    "change_on_scroll": {
+      "type": "boolean",
+      "pos": 13,
+      "tooltip": true,
+      "description": "Have the navbar background transparent at the top of the page and change on scroll"
+    },
+    "header_menu": {
+      "type": "bloks",
+      "pos": 14,
+      "maximum": 5,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "menu_link"
+      ]
+    },
+    "cta": {
+      "type": "bloks",
+      "pos": 15,
+      "maximum": 1,
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "base-button"
+      ]
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "config",
+  "component_group_uuid": "",
+  "color": "#00b3b0",
+  "icon": "block-monitor",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

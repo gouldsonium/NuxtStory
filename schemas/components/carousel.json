@@ -1,0 +1,38 @@
+{
+  "name": "carousel",
+  "display_name": null,
+  "schema": {
+    "slides": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "slide"
+      ]
+    },
+    "button_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "chevron_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "carousel",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-table",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

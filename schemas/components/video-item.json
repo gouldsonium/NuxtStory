@@ -1,0 +1,59 @@
+{
+  "name": "video-item",
+  "display_name": null,
+  "schema": {
+    "youtube_video": {
+      "type": "text",
+      "pos": 0,
+      "tooltip": true,
+      "description": "On YouTube, click the share button on the video, click embed then copy and paste the URL after src=\"(copy what is here)\"",
+      "required": true
+    },
+    "width": {
+      "type": "number",
+      "default_value": "560",
+      "min_value": 0,
+      "required": true,
+      "pos": 1
+    },
+    "height": {
+      "type": "number",
+      "default_value": "315",
+      "min_value": 0,
+      "required": true,
+      "pos": 2
+    },
+    "position": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "0c93330c-7339-4144-8c74-97fcce7b2998",
+          "name": "Center",
+          "value": "justify-center items-center"
+        },
+        {
+          "_uid": "e667f899-41bd-4416-b3fa-5826bfadcecd",
+          "value": "justify-start items-center",
+          "name": "Left"
+        }
+      ],
+      "default_value": "justify-center items-center",
+      "pos": 3
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "video-item",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-image",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

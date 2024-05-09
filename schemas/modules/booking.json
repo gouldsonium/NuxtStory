@@ -1,0 +1,122 @@
+{
+  "name": "booking",
+  "display_name": null,
+  "schema": {
+    "name": {
+      "type": "text",
+      "pos": 0,
+      "tooltip": true,
+      "description": "Name of the form, so if you have multiple forms you know which one the submission came from",
+      "default_value": "contact"
+    },
+    "title": {
+      "type": "text",
+      "pos": 1
+    },
+    "text": {
+      "type": "richtext",
+      "pos": 2
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 3
+    },
+    "title_color": {
+      "type": "custom",
+      "pos": 4,
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "invert": {
+      "type": "boolean",
+      "pos": 5,
+      "tooltip": true,
+      "description": "Invert the text color so you can write white text in the editor"
+    },
+    "text_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 6
+    },
+    "privacy_policy": {
+      "type": "custom",
+      "pos": 7,
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "btn_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 8
+    },
+    "btn_text_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 9
+    },
+    "style": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "eb77b5ea-cffe-44d3-a824-d225aaf62441",
+          "name": "Block",
+          "value": "0px"
+        },
+        {
+          "_uid": "edc71c95-059e-42b3-b2f1-df7c6154386a",
+          "value": "8px",
+          "name": "Rounded"
+        },
+        {
+          "_uid": "10445b68-fb0d-49c3-8a4b-3284175c252b",
+          "value": "9999px",
+          "name": "Round"
+        }
+      ],
+      "default_value": "0px",
+      "pos": 10
+    },
+    "tab-d7be8512-b7b7-4e91-9131-a27404a00aab": {
+      "display_name": "Color",
+      "keys": [
+        "background_color",
+        "text_color",
+        "privacy_policy",
+        "title_color",
+        "invert"
+      ],
+      "pos": 11,
+      "type": "tab"
+    },
+    "tab-ab2f1e55-fec9-4d4d-801a-10f994f2fd9a": {
+      "display_name": "Button",
+      "keys": [
+        "btn_color",
+        "btn_text_color",
+        "style"
+      ],
+      "pos": 12,
+      "type": "tab"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "booking",
+  "component_group_uuid": "",
+  "color": "#395ece",
+  "icon": "block-@",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

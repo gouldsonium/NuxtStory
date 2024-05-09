@@ -1,0 +1,97 @@
+{
+  "name": "grid-item",
+  "display_name": null,
+  "schema": {
+    "content": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [],
+      "pos": 0
+    },
+    "position": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "9277a445-8f28-4c2c-a765-8c4355ecb9f6",
+          "name": "Center",
+          "value": "justify-center items-center"
+        },
+        {
+          "_uid": "062b0413-defa-46ee-a99b-223a609a9d4d",
+          "value": "justify-start",
+          "name": "Top Left"
+        }
+      ],
+      "default_value": "justify-center items-center",
+      "pos": 1
+    },
+    "padding": {
+      "type": "boolean",
+      "default_value": true,
+      "pos": 2
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 3
+    },
+    "tab-9a2289f5-6a93-4c71-bb07-fc21ad17fa68": {
+      "display_name": "Border",
+      "keys": [
+        "border",
+        "border_thickness",
+        "border_color"
+      ],
+      "pos": 4,
+      "type": "tab"
+    },
+    "border": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "e8d54856-95be-465c-baa6-8a4a2ec8a188",
+          "name": "Square",
+          "value": "rounded-none"
+        },
+        {
+          "_uid": "9eb93d2d-0dd0-48e9-86a2-6a154bb60442",
+          "value": "rounded-lg",
+          "name": "Rounded"
+        }
+      ],
+      "default_value": "",
+      "pos": 5
+    },
+    "border_thickness": {
+          "type": "number",
+          "description": "",
+          "tooltip": false,
+          "default_value": "0",
+          "pos": 6
+    },
+    "border_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 7
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "grid-item",
+  "component_group_uuid": "",
+  "color": "#ffac00",
+  "icon": "block-add",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

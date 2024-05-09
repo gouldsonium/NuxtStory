@@ -1,0 +1,53 @@
+{
+  "name": "image",
+  "display_name": null,
+  "schema": {
+    "image": {
+      "type": "asset",
+      "filetypes": [
+          "images"
+      ],
+      "required": true,
+      "asset_folder_id": null
+    },
+    "position": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "620a2912-6bd3-4d1e-ac02-60e343c93c3d",
+          "name": "Center",
+          "value": "justify-center items-center"
+        },
+        {
+          "_uid": "2661e599-18d0-4793-90a9-c77a90710ee7",
+          "value": "justify-start items-center",
+          "name": "Left"
+        }
+      ],
+      "default_value": "justify-center items-center"
+    },
+    "max_height": {
+      "type": "number"
+    },
+    "full_width": {
+      "type": "boolean",
+      "description": "Do want the image to use the full width it can",
+      "tooltip": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "image",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-image",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

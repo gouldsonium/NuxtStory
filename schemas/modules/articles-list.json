@@ -1,0 +1,63 @@
+{
+  "name": "articles-list",
+  "display_name": null,
+  "schema": {
+    "headline": {
+      "type": "text",
+      "pos": 0
+    },
+    "text": {
+      "type": "richtext",
+      "pos": 1
+    },
+    "articles": {
+      "type": "options",
+      "source": "internal_stories",
+      "folder_slug": "blog/",
+      "filter_content_type": [
+        "article"
+      ],
+      "min_options": "",
+      "pos": 2
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 3
+    },
+    "headline_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 4
+    },
+    "tab-5a280404-246e-421b-82c9-c86a97e5bb92": {
+      "display_name": "Colors",
+      "keys": [
+        "background_color",
+        "headline_color",
+        "invert"
+      ],
+      "pos": 5,
+      "type": "tab"
+    },
+    "invert": {
+      "type": "boolean"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "articles-list",
+  "component_group_uuid": "",
+  "color": "#395ece",
+  "icon": "block-text-img-r-l",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

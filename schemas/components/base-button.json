@@ -1,0 +1,147 @@
+{
+  "name": "base-button",
+  "display_name": null,
+  "schema": {
+    "url": {
+      "type": "text"
+    },
+    "text": {
+      "type": "text"
+    },
+    "btn_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "text_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "tab-22bc6190-f8d2-45e7-9ffc-426d48b81984": {
+      "display_name": "Advanced",
+      "keys": [
+          "style",
+          "hover",
+          "spacing",
+          "center"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "tab-b226f3ec-e1c0-4bb1-a498-0807498f102b": {
+      "display_name": "Size",
+      "keys": [
+          "font_size",
+          "padding"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "style": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "16caa244-eab3-4dfc-a2ea-292495272506",
+          "name": "Block",
+          "value": "0px"
+        },
+        {
+          "_uid": "9c6884aa-889b-4069-b629-610d6e7ad426",
+          "value": "8px",
+          "name": "Rounded"
+        },
+        {
+          "_uid": "3e03d00b-1458-46d4-9c68-ca64924e1c89",
+          "value": "9999px",
+          "name": "Round"
+        }
+      ],
+      "default_value": "0px"
+    },
+    "hover": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "7903b6f1-75ce-4c6c-af31-805da7c386f8",
+          "name": "Fade",
+          "value": "fade"
+        },
+        {
+          "_uid": "6b18bd66-87c5-4c88-a6cf-592d5501d9d7",
+          "value": "flip",
+          "name": "Flip colors"
+        },
+        {
+          "_uid": "53067e0e-bbbf-4325-9d4b-516f535c43aa",
+          "value": "transparent",
+          "name": "Transparent with border"
+        }
+      ],
+      "default_value": "fade"
+    },
+    "spacing": {
+      "type": "boolean",
+      "description": "Tick if button need to be spaced out",
+      "tooltip": true
+    },
+    "center": {
+      "type": "boolean"
+    },
+    "font_size": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "bbf4ff84-21f2-413b-9aa6-e0d3f53cc9e0",
+          "name": "Small",
+          "value": "text-sm"
+        },
+        {
+          "_uid": "b270a59a-993d-4040-a147-d461720a7edd",
+          "value": "text-lg",
+          "name": "Medium"
+        },
+        {
+          "_uid": "22a96d0b-1138-43e6-b9a8-889a2e1df596",
+          "value": "text-xl",
+          "name": "Large"
+        }
+      ],
+      "default_value": "text-lg"
+    },
+    "padding": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "7f7c0e46-e6a2-4cfa-b9d8-e63c59ce93a4",
+          "name": "Normal",
+          "value": "px-6 py-2"
+        },
+        {
+          "_uid": "4a8c324a-39dc-4716-a442-0d839de8db56",
+          "value": "px-8 py-5",
+          "name": "Large"
+        }
+      ],
+      "default_value": "px-6 py-2"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "base-button",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-arrow-pointer",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

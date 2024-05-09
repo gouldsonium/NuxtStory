@@ -1,0 +1,56 @@
+{
+  "name": "slide",
+  "display_name": null,
+  "schema": {
+    "image": {
+      "type": "asset",
+      "filetypes": [
+          "images"
+      ],
+      "asset_folder_id": null
+    },
+    "title": {
+      "type": "text"
+    },
+    "text": {
+      "type": "textarea"
+    },
+    "tab-f542daae-87da-40e9-b336-86217c9aa61b": {
+      "display_name": "Color",
+      "keys": [
+        "darken",
+        "title_color",
+        "text_color"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "darken": {
+      "type": "boolean"
+    },
+    "title_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "text_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    }
+  },
+  "image": null,
+  "preview_field": "title",
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "slide",
+  "component_group_uuid": "",
+  "color": "#ffac00",
+  "icon": null,
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

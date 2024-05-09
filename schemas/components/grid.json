@@ -1,0 +1,51 @@
+{
+  "name": "grid",
+  "display_name": null,
+  "schema": {
+    "columns": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "grid-item"
+      ]
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "max_columns": {
+      "type": "number",
+      "min_value": 1,
+      "max_value": 5,
+      "default_value": "2",
+      "steps": 1,
+      "decimals": 0
+    },
+    "min_columns": {
+      "type": "number",
+      "min_value": 1,
+      "max_value": 3,
+      "decimals": 0,
+      "steps": 1
+    },
+    "grid_spacing": {
+      "type": "boolean"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "grid",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-table-2",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

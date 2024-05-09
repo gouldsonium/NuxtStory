@@ -1,0 +1,103 @@
+{
+  "name": "section",
+  "display_name": null,
+  "schema": {
+    "title": {
+      "type": "text"
+    },
+    "title_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "content": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": []
+    },
+    "tab-7cb0f65a-1f51-4950-97ca-7facb36a3d96": {
+      "display_name": "Background",
+      "keys": [
+        "background_color",
+        "background_image",
+        "darken_background_image"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "tab-5e0d33fa-78e1-41b8-b432-522e814b7f83": {
+      "display_name": "Advanced",
+      "keys": [
+        "invert",
+        "text_center",
+        "layout",
+        "padding"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "background_image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ],
+      "asset_folder_id": null
+    },
+    "darken_background_image": {
+      "type": "boolean"
+    },
+    "invert": {
+      "type": "boolean",
+      "description": "Invert text color on dark background",
+      "tooltip": true
+    },
+    "text_center": {
+      "type": "boolean",
+      "default_value": true
+    },
+    "layout": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "25abb856-8bbe-4ed8-a3da-cd4bc7ec02b0",
+          "name": "Full",
+          "value": "w-full"
+        },
+        {
+          "_uid": "461744ca-9347-44fd-8c81-63db11febbd5",
+          "value": "container mx-auto px-3",
+          "name": "Constrained "
+        }
+      ],
+      "default_value": "w-full"
+    },
+    "padding": {
+      "type": "boolean",
+      "default_value": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "section",
+  "component_group_uuid": "",
+  "color": "#395ece",
+  "icon": "block-1-2block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

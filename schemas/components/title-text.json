@@ -1,0 +1,110 @@
+{
+  "name": "title-text",
+  "display_name": null,
+  "schema": {
+    "title": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "tab-f4280306-abbf-4e42-93e8-21713466abb2": {
+      "display_name": "Layout",
+      "keys": [
+        "text_center",
+        "width",
+        "position"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "tab-f3aa9ff3-7178-47a7-bb94-235a603e2ccc": {
+      "display_name": "Color",
+      "keys": [
+        "background_color",
+        "title_color",
+        "subtitle_color",
+        "invert"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "text_center": {
+      "type": "boolean"
+    },
+    "width": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "66a4efbd-07ed-4848-a135-28d7f67fbcd5",
+          "name": "Full",
+          "value": "w-full"
+        },
+        {
+          "_uid": "5950b491-64c6-4f54-b1b7-7e48bceb4d3b",
+          "value": "w-fit px-3",
+          "name": "Fit Content"
+        }
+      ],
+      "default_value": "w-full"
+    },
+    "position": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "23e49fcf-289b-4450-b84d-0005f11ecfd6",
+          "name": "Auto",
+          "value": "m-auto"
+        },
+        {
+          "_uid": "a99442eb-e5d8-4afe-9781-30e83e2ddb2d",
+          "value": "left-0",
+          "name": "Left"
+        },
+        {
+          "_uid": "e696bfe8-6cfc-4374-96ef-f82c023b01d2",
+          "value": "mx-auto my-auto",
+          "name": "Center"
+        }
+      ],
+      "default_value": "m-auto"
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "title_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "subtitle_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "invert": {
+      "type": "boolean"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "title-text",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-keyboard",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

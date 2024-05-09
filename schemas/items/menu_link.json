@@ -1,0 +1,30 @@
+{
+  "name": "menu_link",
+  "display_name": null,
+  "schema": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "url": {
+      "type": "text",
+      "required": true,
+      "description": "Just use /link if link is to same site. Else use full https link",
+      "tooltip": true
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "menu_link",
+  "component_group_uuid": "",
+  "color": "#ffac00",
+  "icon": null,
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

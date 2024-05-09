@@ -1,0 +1,33 @@
+{
+  "name": "accordion",
+  "display_name": null,
+  "schema": {
+    "items": {
+      "type": "bloks",
+      "restrict_type": "",
+      "restrict_components": true,
+      "component_whitelist": [
+        "accordion-item"
+      ]
+    },
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": false,
+  "preview_tmpl": null,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "accordion",
+  "component_group_uuid": "",
+  "color": "#fbce41",
+  "icon": "block-block",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

@@ -1,0 +1,114 @@
+{
+  "name": "article",
+  "display_name": null,
+  "schema": {
+    "background_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 0
+    },
+    "headline_teaser_color": {
+      "type": "custom",
+      "field_type": "storyblok-colorpicker",
+      "options": [],
+      "pos": 1
+    },
+    "subheaders_color": {
+      "type": "custom",
+      "pos": 2,
+      "field_type": "storyblok-colorpicker",
+      "options": []
+    },
+    "invert": {
+      "type": "boolean",
+      "pos": 3,
+      "tooltip": true,
+      "description": "If you're using a dark background color, this will brighten the blog content"
+    },
+    "darken": {
+      "type": "boolean",
+      "pos": 4
+    },
+    "image": {
+      "type": "asset",
+      "required": true,
+      "filetypes": [
+        "images"
+      ],
+      "pos": 5,
+      "asset_folder_id": null
+    },
+    "title": {
+      "type": "text",
+      "required": true,
+      "pos": 6,
+      "tooltip": true,
+      "description": "Used for SEO and Schema"
+    },
+    "teaser": {
+      "type": "textarea",
+      "required": true,
+      "pos": 7,
+      "tooltip": true,
+      "description": "Used as preview text on website and description for SEO & Schema"
+    },
+    "author": {
+      "type": "text",
+      "pos": 8,
+      "required": true
+    },
+    "published": {
+      "type": "datetime",
+      "pos": 9,
+      "disable_time": true,
+      "required": true
+    },
+    "keywords": {
+      "type": "textarea",
+      "description": "Keywords must be separated by commas, fir example \"cheap clothes, affordable clothing, budget fashion\"",
+      "tooltip": true,
+      "pos": 10
+    },
+    "content": {
+      "type": "richtext",
+      "pos": 11
+    },
+    "tab-916bdb1d-9a9a-49a0-af35-8122d76a557b": {
+      "display_name": "Content",
+      "keys": [
+        "content"
+      ],
+      "pos": 12,
+      "type": "tab",
+      "name": "tab-916bdb1d-9a9a-49a0-af35-8122d76a557b"
+    },
+    "tab-380f9ab1-65c6-4e87-b9c9-6c40fdc683b3": {
+      "display_name": "Colors",
+      "keys": [
+        "background_color",
+        "headline_teaser_color",
+        "invert",
+        "darken",
+        "subheaders_color"
+      ],
+      "pos": 13,
+      "type": "tab",
+      "name": "tab-380f9ab1-65c6-4e87-b9c9-6c40fdc683b3"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "article",
+  "component_group_uuid": "",
+  "color": "#00b3b0",
+  "icon": "block-text-img-t-l",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}

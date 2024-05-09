@@ -1,0 +1,67 @@
+{
+  "name": "page",
+  "display_name": null,
+  "schema": {
+    "body": {
+      "type": "bloks",
+      "restrict_type": "groups",
+      "restrict_components": true,
+      "component_whitelist": []
+    },
+    "tab-93421ce7-d638-44c9-ba80-723587517703": {
+      "display_name": "SEO",
+      "keys": [
+        "meta_title",
+        "meta_description",
+        "og_image",
+        "priority",
+        "sitemap_ignore"
+      ],
+      "pos": 0,
+      "type": "tab"
+    },
+    "meta_title": {
+      "type": "text",
+      "required": true
+    },
+    "meta_description": {
+      "type": "textarea",
+      "required": true
+    },
+    "og_image": {
+      "type": "asset",
+      "filetypes": [
+        "images"
+      ]
+    },
+    "priority": {
+      "type": "number",
+      "default_value": "0.7",
+      "min_value": 0.1,
+      "max_value": 1,
+      "decimals": 1,
+      "description": "Page priority on your sitemap, 0.1 being lowest & 1.0 being highest.",
+      "tooltip": true,
+      "required": false
+    },
+    "sitemap_ignore": {
+      "type": "boolean",
+      "tooltip": true,
+      "description": "Should this page be excluded from the sitemap"
+    }
+  },
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "preview_tmpl": null,
+  "is_nestable": false,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "page",
+  "component_group_uuid": "",
+  "color": "#00b3b0",
+  "icon": "block-doc",
+  "internal_tags_list": [],
+  "internal_tag_ids": [],
+  "content_type_asset_preview": null
+}
