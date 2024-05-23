@@ -15,6 +15,6 @@ const renderedContent = renderMarkdown(readmeContent);
 
 <template>
   <div>
-    <div class="markdown-body font-text" v-if="readmeContent" v-html="renderedContent" />
+    <div class="markdown-body font-text text-[#434343]" v-if="readmeContent" v-html="renderedContent" />
   </div>
 </template>

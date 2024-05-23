@@ -24,15 +24,25 @@
 
   // Handle scroll
   const isScrolled = ref(false);
+  const isMobile = ref(null);
+
   // Add scroll event listener
   onMounted(() => {
+    checkMobile();
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', checkMobile);
   })
 
   // Remove scroll event listener on component unmount
   onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('resize', checkMobile);
   })
+
+  const checkMobile = () => {
+    // Example media query for mobile devices
+    isMobile.value = window.matchMedia("(max-width: 768px)").matches;
+  };
 
   // Handle scroll event
   const handleScroll = () => {
@@ -61,13 +71,14 @@
 <template>
   <header class="fixed inset-x-0 top-0 z-50 transition duration-500" v-if="showHeader" 
     :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': 'bg-white text-gray-800'">
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between px-6 lg:px-8" aria-label="Global">
       <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">
           <span class="sr-only">Logo</span>
           <NuxtImg v-if="logo" placeholder provider="storyblok"
-            class="w-auto transition duration-300" :style="{height: logoHeight + 'px'}" 
-            :class="{'dark-brighten' : !!whitenLogo && !isScrolled}" 
+            class="w-auto transition duration-300"
+            :style="{ height: isMobile ? '50px' : logoHeight + 'px' }"
+            :class="{'dark-brighten' : !!whitenLogo && !isScrolled}"
             :src="logo" alt="Nav Logo" 
           />
         </NuxtLink>
@@ -81,7 +92,7 @@
       </div>
       <div class="hidden lg:flex items-center lg:gap-x-12">
         <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
-          class=" font-semibold leading-6 hover:text-secondary"
+          class=" font-semibold leading-6 hover:text-secondary font-heading"
         >
           {{ blok.text }}
         </AppLink>
@@ -105,7 +116,7 @@
               class="h-24 sm:h-16 w-auto" 
               :src="logo" 
               alt="Mobile Nav Logo" 
-              :style="{height: logoHeight + 'px'}"
+              style="height: 50px"
               placeholder provider="storyblok"
             />
           </NuxtLink>
@@ -118,7 +129,7 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <AppLink v-for="link in headerMenu" :key="link.name" :to="link.url" @click="mobileMenuOpen = false" 
-                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-900 hover:opacity-50 duration-500"
+                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-900 hover:opacity-50 duration-500 font-heading"
                 >
                 {{ link.text }}
               </AppLink>

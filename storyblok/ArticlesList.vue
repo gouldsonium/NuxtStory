@@ -17,7 +17,7 @@
         v-if="!!resolvedRichText" v-html="resolvedRichText" class="max-w-none prose mt-5 text-center" 
         :class="{ 'prose-invert text-white': blok.invert}">
       </div>
-      <div class="grid md:grid-cols-3 gap-12 my-12 place-items-start">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 place-items-start">
         <ArticleCard v-for="article in blok.articles" :key="article.uuid" :article="article.content"
           :slug="article.full_slug" />
       </div>
