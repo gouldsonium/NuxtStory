@@ -51,6 +51,7 @@
   };
 
   const changeOnScroll = data.story.content?.change_on_scroll;
+  const darkmode = data.story.content?.darkmode;
   const whitenLogo = data.story.content?.whiten;
   const logoHeight = data.story.content?.height;
 
@@ -66,11 +67,18 @@
   })
 
   const showHeader = !!logo || headerMenu.value?.length > 0 || !!CTA?.length > 0;
+  const navClasses = () => {
+    if(darkmode){
+      return 'bg-white text-gray-800 dark:bg-gray-900 dark:text-white'
+    } else {
+      return 'bg-white text-gray-800'
+    }
+  }
 </script>
 
 <template>
   <header class="fixed inset-x-0 top-0 z-50 transition duration-500" v-if="showHeader" 
-    :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': 'bg-white text-gray-800 dark:bg-gray-900 dark:text-white'">
+    :class="!isScrolled && changeOnScroll ? 'bg-transparent text-white': navClasses()">
     <nav class="flex items-center justify-between px-6 lg:px-8" aria-label="Global">
       <div class="flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5" style="max-width: 90%;">

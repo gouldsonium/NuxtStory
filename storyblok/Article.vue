@@ -4,6 +4,7 @@
     itemscope 
     itemtype="http://schema.org/Article" 
     :style="{ backgroundColor: blok.background_color?.color }"
+    class="bg-gray-100 dark:bg-gray-800"
   >
     <NuxtImg
       v-if="blok.image?.filename" placeholder
@@ -16,12 +17,12 @@
       <h1 class="text-secondary font-bold font-heading" :style="{ color: blok.headline_teaser_color?.color }" itemprop="headline">
         {{ blok.title }}
       </h1>
-      <p class="my-4" :style="{ color: blok.subheaders_color?.color }">Published on 
+      <p class="my-4 text-gray-800 dark:text-gray-100" :style="{ color: blok.subheaders_color?.color }">Published on 
         <time itemprop="datePublished" :datetime="blok?.published">
           {{ convertDate(blok?.published) || 'N/A' }}
         </time>
       </p>
-      <div class="flex flex-wrap" :style="{ color: blok.subheaders_color?.color }">
+      <div class="flex flex-wrap text-gray-800 dark:text-gray-100" :style="{ color: blok.subheaders_color?.color }">
         <h4 itemprop="author" class="mb-4">Written by {{ blok?.author || 'Author Name' }}</h4>
       </div>
       <p class="hidden" :style="{ color: blok.headline_teaser_color?.color }">
@@ -31,7 +32,7 @@
       <div 
         v-html="resolvedRichText" 
         itemprop="articleBody" 
-        class="prose max-w-none" 
+        class="prose max-w-none text-gray-800 dark:text-gray-100 dark:prose-invert" 
         :class="{'prose-invert text-white': blok.invert}">
       </div>
     </div>
