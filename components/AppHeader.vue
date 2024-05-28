@@ -93,7 +93,7 @@
       </div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 " 
-          @click="mobileMenuOpen = true" :class="isScrolled ? 'text-gray-700' : 'text-white'">
+          @click="mobileMenuOpen = true" :class="[isScrolled ? 'text-gray-700' : 'text-white', darkmode ? 'dark:text-white' : '']">
           <span class="sr-only">Open main menu</span>
           <Bars3Icon class="h-6 w-6" aria-hidden="true" />
         </button>
@@ -115,7 +115,8 @@
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-50" />
       <DialogPanel 
-        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white text-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        :class="{'dark:bg-gray-900 dark:text-white' : darkmode}"
       >
         <div class="flex items-center justify-between">
           <NuxtLink to="/" class="-m-1.5 p-1.5" @click="mobileMenuOpen = false">
@@ -128,7 +129,7 @@
               placeholder provider="storyblok"
             />
           </NuxtLink>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false" :class="{'dark:text-white' : darkmode}">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
           </button>
@@ -137,7 +138,7 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <AppLink v-for="link in headerMenu" :key="link.name" :to="link.url" @click="mobileMenuOpen = false" 
-                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block text-gray-900 hover:opacity-50 duration-500 font-heading"
+                class="-mx-3 rounded-lg px-4 py-2 text-base font-semibold leading-7 block hover:opacity-50 duration-500 font-heading"
                 >
                 {{ link.text }}
               </AppLink>
