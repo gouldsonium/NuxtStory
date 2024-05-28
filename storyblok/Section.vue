@@ -32,16 +32,16 @@
 </script>
 
 <template>
-  <section v-editable="blok" :style="backgroundStyle" :class="{'py-16' : !!blok?.padding}">
+  <section v-editable="blok" :style="backgroundStyle" :class="{'py-16' : !!blok?.padding}" class="bg-gray-100 dark:bg-gray-800">
     <div :class="blok?.layout">
-      <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading" :style="{color: blok.title_color?.color}"
+      <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading text-gray-800 dark:text-gray-100" :style="{color: blok.title_color?.color}"
       :class="{'text-center justify-center' : blok?.text_center}">
         <span :class="{'sm:mx-3' : blok?.text_center}">
           {{ blok?.title }}
         </span>
       </h2>
       <div 
-        v-if="!!resolvedRichText" v-html="resolvedRichText" class="max-w-none prose mb-5" 
+        v-if="!!resolvedRichText" v-html="resolvedRichText" class="max-w-none prose mb-5 text-gray-800 dark:text-gray-100" 
         :class="{ 'prose-invert text-white': blok.invert, 'text-center' : blok?.text_center}">
       </div>
       <div>

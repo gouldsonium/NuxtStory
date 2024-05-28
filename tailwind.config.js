@@ -2,7 +2,7 @@ require('dotenv').config()
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'media',
   content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
   theme: {
     extend: {

@@ -11,14 +11,14 @@
       placeholder provider="storyblok"
       class="w-full h-48 xl:h-72 object-cover pointer-events-none"
     />
-    <div class="p-4 border h-full border-secondary border-t-0 bg-white">
-      <h3 class="text-gray-900 font-bold mb-3 font-heading">
+    <div class="p-4 border h-full border-secondary border-t-0 bg-white dark:bg-gray-900">
+      <h3 class="text-gray-900 font-bold mb-3 font-heading dark:text-white">
         {{ article.title }}
       </h3>
-      <h5 class="my-3">
+      <h5 class="my-3 text-gray-800 dark:text-gray-100">
         by <span class="text-secondary">{{ article.author }}</span> 
       </h5>
-      <div class="line-clamp-4 text-gray-700">
+      <div class="line-clamp-4 text-gray-700 text-gray-800 dark:text-gray-200">
         {{ article.teaser }}
       </div>
       <div class="py-5 text-center font-semibold">
