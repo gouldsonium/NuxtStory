@@ -35,7 +35,7 @@
         </NuxtLink>
         <a href="/success" class="hidden">Success Link</a>
         <div>
-          <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Quick Links</h4>
+          <h4 class="text-base font-semibold text-secondary font-heading" :style="{color: footer_text_color}">Quick Links</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in quickLinks" :key="item.text" class="my-3">
               <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>
@@ -43,7 +43,7 @@
           </ul>
         </div>
         <div v-if="contactUs?.length > 0">
-          <h4 class="text-base font-semibold text-secondary" :style="{color: footer_text_color}">Contact Us</h4>
+          <h4 class="text-base font-semibold text-secondary font-heading" :style="{color: footer_text_color}">Contact Us</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in contactUs" :key="item.text" class="my-3">
               <NuxtLink :to="item.url" class="mr-4 cursor-pointer hover:underline md:mr-6">{{ item.text }}</NuxtLink>

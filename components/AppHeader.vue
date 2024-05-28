@@ -100,7 +100,7 @@
       </div>
       <div class="hidden lg:flex items-center lg:gap-x-12">
         <AppLink v-for="blok in headerMenu" :key="blok.name" :to="blok.url" 
-          class=" font-semibold leading-6 hover:text-secondary font-heading"
+          class="font-semibold leading-6 hover:text-secondary font-heading"
         >
           {{ blok.text }}
         </AppLink>
