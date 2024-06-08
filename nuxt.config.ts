@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  plugins: [{ src: '~/plugins/router.scrollBehavior', mode: 'client' }],
   runtimeConfig: {
     public: {
       VERSION: process.env.STORYBLOK_VERSION

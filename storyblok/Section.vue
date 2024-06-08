@@ -2,9 +2,9 @@
   const props = defineProps({ blok: Object });
   const resolvedRichText = computed(() => renderRichText(props.blok.text));
 
-    // For the background style object
-  const hasBackgroundImage = computed(() => {return !!props.blok.background_image?.filename});  
-  const hasBackgroundColor = computed(() => {return !!props.blok.background_color?.color});
+  // For the background style object
+  const hasBackgroundImage = computed(() => !!props.blok.background_image?.filename);
+  const hasBackgroundColor = computed(() => !!props.blok.background_color?.color);
 
   const backgroundStyle = computed(() => {
     if (hasBackgroundImage.value && props.blok?.darken_background_image) {
@@ -23,8 +23,8 @@
       };
     }
 
-    if(hasBackgroundColor.value){
-      return {backgroundColor: props.blok.background_color?.color}
+    if (hasBackgroundColor.value) {
+      return { backgroundColor: props.blok.background_color?.color };
     }
 
     return null;
@@ -32,6 +32,7 @@
 </script>
 
 <template>
+  <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
   <section v-editable="blok" :style="backgroundStyle" :class="{'py-16' : !!blok?.padding}" class="bg-gray-100 dark:bg-gray-800">
     <div :class="blok?.layout">
       <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading text-gray-800 dark:text-gray-100" :style="{color: blok.title_color?.color}"
