@@ -16,7 +16,8 @@
     return [
       props.blok.position,
       props.blok?.border,
-      props.blok?.padding ? 'p-3' : ''
+      props.blok?.padding ? 'p-3' : '',
+      props.blok?.order_last ? 'order-last lg:order-none' : ''
     ]
   });
 

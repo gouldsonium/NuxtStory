@@ -5,7 +5,7 @@ Look at the [Storyblok documentation](https://www.storyblok.com/tc/nuxtjs) to le
 
 ## Note
 
-This template is a prototype for an upcoming project called VueStory. This will allow users to quickly create a highly customisable website that can be improved upon by the developer if they so wish.
+This template is a prototype for an upcoming project called NuxtStory. This will allow users to quickly create a highly customisable website that can be improved upon by the developer if they so wish.
 
 ## Setup
 
@@ -35,7 +35,7 @@ Start the development server on `http://localhost:3000`:
 yarn dev
 ```
 
-To preview in storyblok, you must be running on https. Run the following command in a seperate termnial after running dev toy run a server at `https://localhost:3010`:
+To preview in storyblok, you must be running on https. Run the following command in a seperate terminal after running dev to run a server at `https://localhost:3010`:
 
 ```bash
 # yarn
@@ -46,7 +46,7 @@ yarn proxy
 
 ### Preview Environment
 
-Build the application for production that changes whenever content is saved in StoryBlok
+Build the application for production that changes whenever content is saved and allow you to use the Storyblok visual editor
 
 - Set STORYBLOK_VERSION = 'draft'
 - Use a STORYBLOK_ACCESS_TOKEN with 'preview' access level 

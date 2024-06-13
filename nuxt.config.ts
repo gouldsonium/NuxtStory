@@ -27,6 +27,7 @@ export default defineNuxtConfig({
         page_title: process.env.WEBSITE_NAME
       }
     }] : null,
+    'nuxt-aos'
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
