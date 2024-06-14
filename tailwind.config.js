@@ -15,6 +15,13 @@ module.exports = {
       },
       screens: {
         xs: '495px'
+      },
+      order: {
+        '1': '1',
+        '2': '2',
+        '3': '3',
+        '4': '4',
+        // add other order values if needed
       }
     },
   },
