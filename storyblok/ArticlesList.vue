@@ -20,7 +20,7 @@
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 place-items-start">
         <ArticleCard v-for="(article, index) in blok.articles" :key="article.uuid" :article="article.content"
-          :slug="article.full_slug" data-aos="fade-right" :data-aos-delay="index * 500" :data-aos-once="true" />
+          :slug="article.full_slug" data-aos="fade-right" :data-aos-delay="index * 100" :data-aos-once="true" />
       </div>
     </div>
   </section>
