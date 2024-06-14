@@ -34,7 +34,7 @@
 <template>
   <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
   <section v-editable="blok" :style="backgroundStyle" :class="{'py-16' : !!blok?.padding}" class="bg-gray-100 dark:bg-gray-800">
-    <div :class="blok?.layout" :data-aos="blok?.animate" data-aos-delay="500">
+    <div :class="blok?.layout" :data-aos="blok?.animate" data-aos-delay="500" :data-aos-once="true">
       <h2 v-if="!!blok?.title" class="font-semibold flex items-center mb-5 font-heading text-gray-800 dark:text-gray-100" :style="{color: blok.title_color?.color}"
       :class="{'text-center justify-center' : blok?.text_center}">
         <span :class="{'sm:mx-3' : blok?.text_center}">
