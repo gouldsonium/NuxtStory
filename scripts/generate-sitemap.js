@@ -2,7 +2,8 @@ const axios = require('axios');
 require('dotenv').config(); // Load environment variables from .env file
 
 const storyblokApi = axios.create({
-  baseURL: "https://api.storyblok.com/v2/cdn",
+  baseURL: !!process.env.STORYBLOK_REGION 
+  ? `https://a-${process.env.STORYBLOK_REGION}.storyblok.com` : 'https://a.storyblok.com', 
   headers: {
     'Content-Type': 'application/json',
   },
