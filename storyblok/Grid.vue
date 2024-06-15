@@ -2,10 +2,9 @@
   <section v-editable="blok" :style="{ backgroundColor: blok.background_color?.color }">
     <div class="grid" :class="gridClass">
       <StoryblokComponent
-        v-for="(blok, index) in blok.columns"
+        v-for="blok in blok.columns"
         :key="blok._uid"
         :blok="blok"
-        :order="index + 1"
         class="h-full w-full"
       />
     </div>

@@ -2,7 +2,7 @@
   <NuxtLink
     :to="'/' + slug"
     v-editable="article"
-    class="overflow-hidden w-full h-full rounded-[25px] text-center overflow-hidden border-b-secondary border-b-4 hover:scale-105 duration-500"
+    class="overflow-hidden w-full h-full rounded-[25px] text-center overflow-hidden border-b-secondary border-b-4"
   >
     <NuxtImg
       v-if="!!article?.image"

@@ -1,6 +1,6 @@
 <template>
   <div v-editable class="w-fit" :class="{ 'my-5' : blok?.spacing, 'mx-auto' : blok?.center}">
-    <AppLink v-if="blok?.url" :to="blok?.url" class="font-semibold leading-6 btn text-center"
+    <AppLink v-if="blok?.url" :to="blok?.url" class="font-semibold leading-6 btn text-center font-heading"
       :class="{'hover:opacity-50' : blok.hover == 'fade'}, blok?.font_size, blok?.padding"  
       :style="{
         backgroundColor: buttonBackgroundColor, color: buttonTextColor,

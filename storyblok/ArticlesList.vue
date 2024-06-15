@@ -19,9 +19,26 @@
         :class="{ 'prose-invert text-white': blok.invert}">
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-12 my-12 place-items-start">
-        <ArticleCard v-for="(article, index) in blok.articles" :key="article.uuid" :article="article.content"
-          :slug="article.full_slug" data-aos="fade-right" :data-aos-delay="index * 100" :data-aos-once="true" />
+        <ArticleCard
+          v-for="(article, index) in blok.articles"
+          :key="article.uuid"
+          :article="article.content"
+          :slug="article.full_slug"
+          data-aos="flip-right"
+          :data-aos-once="true"
+          class="article-card"
+        />
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.grid .article-card {
+  transition: transform 0.5s !important;
+}
+
+.grid .article-card:hover {
+  transform: scale(1.05) !important;
+}
+</style>
