@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     }],
     '@nuxt/image',
     'nuxt-simple-robots',
+    'nuxt-facebook-pixel-module',
     !!process.env.GTAG_ID ?
     ['nuxt-gtag', {
       id: process.env.GTAG_ID,
@@ -27,12 +28,13 @@ export default defineNuxtConfig({
         page_title: process.env.WEBSITE_NAME
       }
     }] : null,
-    ['nuxt-facebook-pixel-module', {
-      track: 'PageView',
-      pixelId: process.env.FACEBOOK_PIXEL_ID,
-      autoPageView: true,
-      disabled: !process.env.FACEBOOK_PIXEL_ID
-    }],
+    // !!process.env.GTAG_ID ?
+    // ['nuxt-facebook-pixel-module', {
+    //   track: 'PageView',
+    //   pixelId: process.env.FACEBOOK_PIXEL_ID,
+    //   autoPageView: true,
+    //   disabled: false
+    // }] : null,
     'nuxt-aos',
   ],
   tailwindcss: {
