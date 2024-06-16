@@ -5917,6 +5917,13 @@ nuxt-aos@^1.2.4:
     aos "^3.0.0-beta.6"
     defu "^6.1.4"
 
+nuxt-facebook-pixel-module@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/nuxt-facebook-pixel-module/-/nuxt-facebook-pixel-module-1.6.0.tgz#bee3417a7a965638a216038b5216f57700cf522c"
+  integrity sha512-+9JGTzf6aXp5sIAsW/oPSP/HTZR0a+2FpFHYGFjvOrwp81mx7i10mt3C1XPcHakUH48kHEQSkB8PH4MD7SPLvQ==
+  dependencies:
+    minimatch "^3.0.4"
+
 nuxt-gtag@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/nuxt-gtag/-/nuxt-gtag-1.1.1.tgz#2af82e4ca7907658814d44ad6ed8a49c9e5484de"

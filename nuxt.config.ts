@@ -27,7 +27,13 @@ export default defineNuxtConfig({
         page_title: process.env.WEBSITE_NAME
       }
     }] : null,
-    'nuxt-aos'
+    ['nuxt-facebook-pixel-module', {
+      track: 'PageView',
+      pixelId: process.env.FACEBOOK_PIXEL_ID,
+      autoPageView: true,
+      disabled: !process.env.FACEBOOK_PIXEL_ID
+    }],
+    'nuxt-aos',
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
