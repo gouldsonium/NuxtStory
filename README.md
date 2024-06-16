@@ -12,7 +12,7 @@ This template is a prototype for an upcoming project called NuxtStory. This will
 ### Prerequisites
 
 - A Storyblok Account
-- An empty space with no content or bloks.
+- An empty space with no content or bloks. Page blok needs to be renamed to old_page
 - An active storyblok user access token
 - A Storyblok access token
 
