@@ -1,5 +1,5 @@
 // plugins/router.scrollBehavior.js
-export default function (nuxtApp) {
+export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.$router.options.scrollBehavior = (to, from, savedPosition) => {
     if (savedPosition) {
       return savedPosition;
@@ -12,4 +12,4 @@ export default function (nuxtApp) {
       return { top: 0 };
     }
   };
-}
+});
