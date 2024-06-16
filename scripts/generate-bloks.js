@@ -4,7 +4,8 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const storyblokManageApi = axios.create({
-  baseURL: "https://mapi.storyblok.com/v1",
+  baseURL: !!process.env.STORYBLOK_REGION 
+  ? `https://api-${process.env.STORYBLOK_REGION}.storyblok.com/v1` : "https://mapi.storyblok.com/v1",
   headers: {
     'Content-Type': 'application/json',
     'Authorization': process.env.STORYBLOK_PERSONAL_TOKEN
