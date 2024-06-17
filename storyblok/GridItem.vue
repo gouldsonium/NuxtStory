@@ -4,6 +4,9 @@
     class="h-full w-full flex flex-col" 
     :class="itemClass" 
     :style="{ backgroundColor: blok.background_color?.color, ...borderStyle, ...orderStyle }"
+    :data-aos="blok?.animate" 
+    :data-aos-delay="blok?.delay" 
+    data-aos-once="true"
   >
     <StoryblokComponent
       v-for="blok in blok.content"
