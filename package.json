@@ -32,5 +32,8 @@
     "markdown-it": "^14.1.0",
     "nuxt-facebook-pixel-module": "^1.6.0",
     "playwright": "^1.37.1"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
