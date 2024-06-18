@@ -2,64 +2,43 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-          <loc>https://lorerim.netlify.app/blog/</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
+          <loc>https://storyblok.gouldsonium.com/referral</loc>
+          <lastmod>2024-03-30T00:32:27.121Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
         </url>
       
         <url>
-          <loc>https://lorerim.netlify.app/blog/ngvo</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
+          <loc>https://storyblok.gouldsonium.com/components</loc>
+          <lastmod>2024-03-30T00:32:27.444Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
         </url>
       
         <url>
-          <loc>https://lorerim.netlify.app/blog/faqs</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
+          <loc>https://storyblok.gouldsonium.com/contact</loc>
+          <lastmod>2024-03-30T00:32:28.129Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+        </url>
+      
+        <url>
+          <loc>https://storyblok.gouldsonium.com/blog/</loc>
+          <lastmod>2024-03-30T00:32:28.000Z</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+        </url>
+      
+        <url>
+          <loc>https://storyblok.gouldsonium.com/blog/first-article</loc>
+          <lastmod>2024-03-30T00:32:28.000Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
         </url>
       
         <url>
-          <loc>https://lorerim.netlify.app/blog/more-to-come</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
-          <changefreq>weekly</changefreq>
-          <priority>0.7</priority>
-        </url>
-      
-        <url>
-          <loc>https://lorerim.netlify.app/showcase</loc>
-          <lastmod>2024-06-17T23:49:47.161Z</lastmod>
-          <changefreq>weekly</changefreq>
-          <priority>0.7</priority>
-        </url>
-      
-        <url>
-          <loc>https://lorerim.netlify.app/blog/controller-guide</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
-          <changefreq>weekly</changefreq>
-          <priority>0.7</priority>
-        </url>
-      
-        <url>
-          <loc>https://lorerim.netlify.app/read-me</loc>
-          <lastmod>2024-06-17T23:49:47.499Z</lastmod>
-          <changefreq>weekly</changefreq>
-          <priority>0.7</priority>
-        </url>
-      
-        <url>
-          <loc>https://lorerim.netlify.app/blog/requiem-guide</loc>
-          <lastmod>2024-06-17T23:49:48.000Z</lastmod>
-          <changefreq>weekly</changefreq>
-          <priority>0.7</priority>
-        </url>
-      
-        <url>
-          <loc>https://lorerim.netlify.app/</loc>
-          <lastmod>2024-06-17T23:49:48.159Z</lastmod>
+          <loc>https://storyblok.gouldsonium.com/</loc>
+          <lastmod>2024-03-30T00:32:29.118Z</lastmod>
           <changefreq>weekly</changefreq>
           <priority>1</priority>
         </url>
