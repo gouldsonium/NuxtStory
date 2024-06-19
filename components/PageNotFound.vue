@@ -7,7 +7,7 @@
           <h1 class="mb-3 z-30 text-white text-7xl font-heading">404</h1>
           <p class="font-light z-30 text-gray-200 text-xl">Page not found</p>
           <div class="w-fit my-5">
-            <AppLink to="/" class="font-semibold leading-6 btn text-center hover:opacity-50 px-6 py-3">
+            <AppLink to="/" class="font-semibold leading-6 btn text-center hover:opacity-50 px-6 py-3 font-heading">
               Back Home
             </AppLink>
           </div>
