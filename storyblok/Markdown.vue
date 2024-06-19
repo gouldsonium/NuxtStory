@@ -33,11 +33,16 @@ const renderedContent = computed(() => renderMarkdown(readmeContent.value));
 </template>
 
 <style scoped>
-/* :deep(.markdown-body table) {
-  background-color: black !important;
-  color: white !important;
-} */
 :deep(.markdown-body tr) {
   background-color:  transparent !important;
+}
+:deep(.markdown-body h1) {
+  @apply font-heading !important;
+}
+:deep(.markdown-body h2) {
+  @apply font-heading !important;
+}
+:deep(.markdown-body h3) {
+  @apply font-heading !important;
 }
 </style>

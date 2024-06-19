@@ -6,9 +6,9 @@ const router = useRouter();
 
 const props = defineProps({ blok: Object });
 const resolvedRichText = computed(() => renderRichText(props.blok.text));
-
+// Agreed to privacy policy
 const agreed = ref(false);
-
+// Fields
 const first_name = ref('');
 const last_name = ref('');
 const email = ref('');
@@ -17,10 +17,12 @@ const message = ref('');
 
 const handleSubmit = async () => {
   try {
+    // Ensure user agrees to the privacy policy
     if(!agreed.value){
       alert('Please agree to our privacy policy');
       return;
     }
+    // Built for Netlify forms
     const response = await fetch('/', {
       method: 'POST',
       body: new FormData(event.target),
@@ -33,6 +35,7 @@ const handleSubmit = async () => {
   }
 };
 
+// Used for switch on agree
 const computedStyle = computed(() => {
   if (agreed.value && props.blok?.privacy_policy?.color) {
     return { backgroundColor: props.blok.privacy_policy.color };

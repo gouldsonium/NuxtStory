@@ -1,5 +1,6 @@
 <script setup>
   const props = defineProps({ blok: Object });
+  // Sets a max height on the image in pixels if there is one set and it is above 0
   const imageMaxHeight = computed(() => {
     return !!props.blok?.max_height && props.blok?.max_height > 0 ? { maxHeight: props.blok?.max_height + 'px' } : null
   })

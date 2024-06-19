@@ -34,6 +34,7 @@
 </template>
 
 <style scoped>
+/* Ensure hover and animate on scroll works */
 .grid .article-card {
   transition: transform 0.5s !important;
 }

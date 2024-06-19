@@ -32,6 +32,7 @@
 </template>
 
 <style scoped>
+/* Ensure image and content is spread out */
 .image-box{
   width: 100%;
   display: flex;

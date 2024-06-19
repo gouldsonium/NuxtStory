@@ -4,6 +4,7 @@
   import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
   const runtimeConfig = useRuntimeConfig();
 
+  // fetch header details from Config object
   const storyblokApi = useStoryblokApi();
   const { data } = await storyblokApi.get('cdn/stories/config', {
     version: runtimeConfig.public.VERSION,
@@ -17,9 +18,10 @@
   const headerMenu = ref(null);
   headerMenu.value = data.story.content.header_menu;
 
-  // Handle call to action button
+  // CTA stands for Call To Action button
   const CTA = data.story.content?.cta;
 
+  // Open or close mobile menu
   const mobileMenuOpen = ref(false);
 
   // Handle scroll
@@ -39,8 +41,8 @@
     window.removeEventListener('resize', checkMobile);
   })
 
+  // media query for mobile devices
   const checkMobile = () => {
-    // Example media query for mobile devices
     isMobile.value = window.matchMedia("(max-width: 768px)").matches;
   };
 
@@ -50,11 +52,13 @@
     isScrolled.value = scrollPosition > 0
   };
 
+  // Logo and header options
   const changeOnScroll = data.story.content?.change_on_scroll;
   const darkmode = data.story.content?.darkmode;
   const whitenLogo = data.story.content?.whiten;
   const logoHeight = data.story.content?.height;
 
+  // Sets the favicon for the site
   const favicon = data.story.content.favicon?.filename || null;
   useHead({
     link: [
@@ -66,6 +70,7 @@
     ]  
   })
 
+  // If there is no logo, links or call to action btn, hide the navbar
   const showHeader = !!logo || headerMenu.value?.length > 0 || !!CTA?.length > 0;
   const navClasses = () => {
     if(darkmode){
@@ -158,6 +163,7 @@
 </template>
 
 <style scoped>
+/* removes all color from logo and sets it to be pure white at top of the screen */
 .dark-brighten{
   filter: brightness(0) invert(1);
 }

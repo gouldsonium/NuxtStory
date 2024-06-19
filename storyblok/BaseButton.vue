@@ -1,6 +1,9 @@
 <template>
   <div v-editable class="w-fit" :class="{ 'my-5' : blok?.spacing, 'mx-auto' : blok?.center}">
-    <AppLink v-if="blok?.url" :to="blok?.url" class="font-semibold leading-6 btn text-center font-heading"
+    <AppLink 
+      v-if="blok?.url" 
+      :to="blok?.url" 
+      class="font-semibold leading-6 btn text-center font-heading"
       :class="{'hover:opacity-50' : blok.hover == 'fade'}, blok?.font_size, blok?.padding"  
       :style="{
         backgroundColor: buttonBackgroundColor, color: buttonTextColor,
@@ -24,6 +27,7 @@
     buttonTextColor.value = props.blok?.text_color?.color;
   });
   
+  // Changes btn color based on hover choice
   const changeBackgroundColor = () => {
     if(props.blok.hover == 'flip'){
       buttonBackgroundColor.value = props.blok.text_color?.color;

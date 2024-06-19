@@ -7,6 +7,7 @@
 <script setup>
   const props = defineProps({ blok: Object });
 
+  // SEO for both static and SSR versions
   useSeoMeta({
     title: () => props.blok?.meta_title || 'Page Title',
     ogTitle: () => props.blok?.meta_title || 'Page Title',

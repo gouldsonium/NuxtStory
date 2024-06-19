@@ -1,12 +1,12 @@
 <script setup>
   const storyblokApi = useStoryblokApi();
   const runtimeConfig = useRuntimeConfig();
-
+  // Fetch footer data from Configh story
   const { data } = await storyblokApi.get('cdn/stories/config', {
     version: runtimeConfig.public.VERSION,
     resolve_links: 'url',
   });
-  
+  // Footer options
   const quickLinks = ref(null);
   quickLinks.value = data.story.content.quick_links;
   const ourServices = ref(null);

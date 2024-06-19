@@ -1,5 +1,6 @@
 <script setup>
 const { slug } = useRoute().params;
+// fetch the articles in an article list object
 const resolveRelations = ['articles-list.articles'];
 const runtimeConfig = useRuntimeConfig();
 

@@ -46,6 +46,7 @@
   const description = props.blok.teaser;
   const keywords = props.blok?.keywords;
 
+  // Set meta info for page
   useHead({
     meta: [
       {
@@ -63,6 +64,7 @@
     ],
   })
 
+  // Set seo for Static and SSR
   useSeoMeta({
     title: () => props.blok.title,
     ogTitle: () => props.blok.title,

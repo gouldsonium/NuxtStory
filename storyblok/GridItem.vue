@@ -47,10 +47,7 @@ const itemClass = computed(() => {
 });
 
 const borderStyle = computed(() => {
-  return props.blok?.border
-    ? {
-        border: 'solid ' + props.blok.border_color?.color + ' ' + props.blok?.border_thickness + 'px',
-      }
-    : null;
+  return props.blok?.border ? 
+  { border: 'solid ' + props.blok.border_color?.color + ' ' + props.blok?.border_thickness + 'px'} : null;
 });
 </script>

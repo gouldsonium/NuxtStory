@@ -33,7 +33,7 @@ import { Transition } from 'vue';
 
 const props = defineProps({ blok: Object })
 const isOpen = ref(false);
-
+// Open & close accordion
 const toggleAccordion = () => {
   isOpen.value = !isOpen.value;
 };
@@ -41,6 +41,7 @@ const toggleAccordion = () => {
 
   
 <style scoped>
+/* Flip arrow on click */
   .rotate-180{
     transform: rotate(180deg);
   }
@@ -59,7 +60,7 @@ const toggleAccordion = () => {
     cursor: pointer;
     color: black;
   }
-  
+  /* transition animation */
   article{
     transition: all 0.3s;
     transition-delay: 0.3s;
