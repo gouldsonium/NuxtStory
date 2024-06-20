@@ -56,7 +56,8 @@
       "keys": [
         "header_menu",
         "cta",
-        "change_on_scroll"
+        "change_on_scroll",
+        "darkmode"
       ],
       "pos": 7,
       "type": "tab"
@@ -112,6 +113,12 @@
       "pos": 13,
       "tooltip": true,
       "description": "Have the navbar background transparent at the top of the page and change on scroll"
+    },
+    "darkmode": {
+      "type": "boolean",
+      "pos": 1,
+      "description": "Enable to change color on dark mode",
+      "tooltip": true
     },
     "header_menu": {
       "type": "bloks",

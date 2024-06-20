@@ -19,6 +19,9 @@
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": []
+    },
+    "height": {
+      "type": "text"
     }
   },
   "image": null,

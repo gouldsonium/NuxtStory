@@ -36,6 +36,10 @@
       "options": [],
       "pos": 3
     },
+    "mobile_order": {
+      "type": "number",
+      "pos": 10
+    },
     "tab-9a2289f5-6a93-4c71-bb07-fc21ad17fa68": {
       "display_name": "Border",
       "keys": [
@@ -63,17 +67,89 @@
       "pos": 5
     },
     "border_thickness": {
-          "type": "number",
-          "description": "",
-          "tooltip": false,
-          "default_value": "0",
-          "pos": 6
+      "type": "number",
+      "description": "",
+      "tooltip": false,
+      "default_value": "0",
+      "pos": 6
     },
     "border_color": {
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": [],
       "pos": 7
+    },
+    "tab-5075ee48-645c-4b49-9f41-e3b3f8f825fb": {
+      "display_name": "Animation",
+      "keys": [
+        "animate",
+        "delay"
+      ],
+      "type": "tab",
+      "name": "tab-5075ee48-645c-4b49-9f41-e3b3f8f825fb"
+    },
+    "animate": {
+      "type": "option",
+      "pos": 12,
+      "use_uuid": true,
+      "options": [
+        {
+          "_uid": "3d88641d-4bfe-4d8b-9a56-76b6c1eaf185",
+          "name": "Fade Up",
+          "value": "fade-up"
+        },
+        {
+          "_uid": "697a9911-12b7-44e0-9362-ce5a0e606dc4",
+          "value": "fade-down",
+          "name": "Fade Down"
+        },
+        {
+          "_uid": "ee7f7af2-5c74-4759-a6d7-2d50c839e98f",
+          "value": "fade-left",
+          "name": "Fade Left"
+        },
+        {
+          "_uid": "4663c2c8-50b3-4758-a0c8-34f32e5c5adb",
+          "value": "fade-right",
+          "name": "Fade Right"
+        },
+        {
+          "_uid": "1ea71b58-9172-4cb4-80d8-7abbdb1de97b",
+          "value": "flip-up",
+          "name": "Flip Up"
+        },
+        {
+          "_uid": "3b2e6f26-2769-4790-99f6-169a84f7d117",
+          "value": "flip-down",
+          "name": "Flip Down"
+        },
+        {
+          "_uid": "2c8c6b11-2350-4b58-8b56-aae8705a467e",
+          "value": "flip-left",
+          "name": "Flip Left"
+        },
+        {
+          "_uid": "879b70d4-f457-4c72-9f03-323fe7c456dc",
+          "value": "flip-right",
+          "name": "Flip Right"
+        },
+        {
+          "_uid": "2206de23-6605-45f4-913d-0623e89cadc0",
+          "value": "zoom-in",
+          "name": "Zoom In"
+        },
+        {
+          "_uid": "35e98e84-2370-4236-97de-749d83919177",
+          "value": "zoom-out",
+          "name": "Zoom Out"
+        }
+      ]
+    },
+    "delay": {
+      "type": "number",
+      "pos": 13,
+      "min_value": 0,
+      "description": "Measure in milliseconds. Section animation has delay of 500 built in."
     }
   },
   "image": null,

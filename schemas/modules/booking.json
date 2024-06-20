@@ -2,36 +2,40 @@
   "name": "booking",
   "display_name": null,
   "schema": {
+    "section_id": {
+      "type": "text",
+      "pos": 0
+    },
     "name": {
       "type": "text",
-      "pos": 0,
+      "pos": 1,
       "tooltip": true,
       "description": "Name of the form, so if you have multiple forms you know which one the submission came from",
       "default_value": "contact"
     },
     "title": {
       "type": "text",
-      "pos": 1
+      "pos": 2
     },
     "text": {
       "type": "richtext",
-      "pos": 2
+      "pos": 3
     },
     "background_color": {
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": [],
-      "pos": 3
+      "pos": 4
     },
     "title_color": {
       "type": "custom",
-      "pos": 4,
+      "pos": 5,
       "field_type": "storyblok-colorpicker",
       "options": []
     },
     "invert": {
       "type": "boolean",
-      "pos": 5,
+      "pos": 6,
       "tooltip": true,
       "description": "Invert the text color so you can write white text in the editor"
     },
@@ -39,11 +43,11 @@
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": [],
-      "pos": 6
+      "pos": 7
     },
     "privacy_policy": {
       "type": "custom",
-      "pos": 7,
+      "pos": 8,
       "field_type": "storyblok-colorpicker",
       "options": []
     },
@@ -51,13 +55,13 @@
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": [],
-      "pos": 8
+      "pos": 9
     },
     "btn_text_color": {
       "type": "custom",
       "field_type": "storyblok-colorpicker",
       "options": [],
-      "pos": 9
+      "pos": 10
     },
     "style": {
       "type": "option",
@@ -77,7 +81,7 @@
         }
       ],
       "default_value": "0px",
-      "pos": 10
+      "pos": 11
     },
     "tab-d7be8512-b7b7-4e91-9131-a27404a00aab": {
       "display_name": "Color",
@@ -88,7 +92,7 @@
         "title_color",
         "invert"
       ],
-      "pos": 11,
+      "pos": 12,
       "type": "tab"
     },
     "tab-ab2f1e55-fec9-4d4d-801a-10f994f2fd9a": {
@@ -98,7 +102,7 @@
         "btn_text_color",
         "style"
       ],
-      "pos": 12,
+      "pos": 13,
       "type": "tab"
     }
   },

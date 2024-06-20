@@ -2,6 +2,10 @@
   "name": "section",
   "display_name": null,
   "schema": {
+    "section_id": {
+      "type": "text",
+      "pos": 0
+    },
     "title": {
       "type": "text"
     },
@@ -35,7 +39,8 @@
         "invert",
         "text_center",
         "layout",
-        "padding"
+        "padding",
+        "animate"
       ],
       "pos": 0,
       "type": "tab"
@@ -82,6 +87,52 @@
     "padding": {
       "type": "boolean",
       "default_value": true
+    },
+    "animate": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "name": "Fade Up",
+          "value": "fade-up"
+        },
+        {
+          "name": "Fade Down",
+          "value": "fade-down"
+        },
+        {
+          "name": "Fade Left",
+          "value": "fade-left"
+        },
+        {
+          "name": "Fade Right",
+          "value": "fade-right"
+        },
+        {
+          "name": "Flip Up",
+          "value": "flip-up"
+        },
+        {
+          "name": "Flip Down",
+          "value": "flip-down"
+        },
+        {
+          "name": "Flip Left",
+          "value": "flip-left"
+        },
+        {
+          "name": "Flip Right",
+          "value": "flip-right"
+        },
+        {
+          "name": "Zoom In",
+          "value": "zoom-in"
+        },
+        {
+          "name": "Zoom Out",
+          "value": "zoom-out"
+        }
+      ]
     }
   },
   "image": null,
