@@ -34,7 +34,7 @@
           <NuxtImg :src="logo" class="h-full" alt="Footer Logo" placeholder provider="storyblok" />
         </NuxtLink>
         <a href="/success" class="hidden">Success Link</a>
-        <div>
+        <div v-if="quickLinks?.length > 0">
           <h4 class="text-base font-semibold text-secondary font-heading" :style="{color: footer_text_color}">Quick Links</h4>
           <ul class="text-sm font-medium">
             <li v-for="item in quickLinks" :key="item.text" class="my-3">

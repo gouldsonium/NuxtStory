@@ -52,7 +52,9 @@
       "keys": [
         "title_color",
         "text_color",
-        "height"
+        "height",
+        "text_center",
+        "animate"
       ],
       "pos": 7,
       "type": "tab"
@@ -85,6 +87,57 @@
       "description": "Make background image darker to make text more readable",
       "tooltip": true,
       "pos": 9
+    },
+    "text_center": {
+      "type": "boolean",
+      "use_uuid": true,
+      "pos": 9
+    },
+    "animate": {
+      "type": "option",
+      "use_uuid": true,
+      "options": [
+        {
+          "name": "Fade Up",
+          "value": "fade-up"
+        },
+        {
+          "name": "Fade Down",
+          "value": "fade-down"
+        },
+        {
+          "name": "Fade Left",
+          "value": "fade-left"
+        },
+        {
+          "name": "Fade Right",
+          "value": "fade-right"
+        },
+        {
+          "name": "Flip Up",
+          "value": "flip-up"
+        },
+        {
+          "name": "Flip Down",
+          "value": "flip-down"
+        },
+        {
+          "name": "Flip Left",
+          "value": "flip-left"
+        },
+        {
+          "name": "Flip Right",
+          "value": "flip-right"
+        },
+        {
+          "name": "Zoom In",
+          "value": "zoom-in"
+        },
+        {
+          "name": "Zoom Out",
+          "value": "zoom-out"
+        }
+      ]
     },
     "tab-5ee9446b-8b04-4edb-858d-2816e97f10fc": {
       "display_name": "Background",

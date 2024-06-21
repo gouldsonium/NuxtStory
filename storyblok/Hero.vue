@@ -13,12 +13,16 @@
         :class="{'brightness-50' : blok?.background_image_darken}"
         :style="{maxHeight: `${blok?.height}px`}"
       />
-      <div class="grid grid-cols-1 lg:grid-cols-3 z-10 w-full py-6 sm:px-5 min-h-full container py-48">
-        <div class="flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="blok.text_position">
+      <div 
+        class="grid grid-cols-1 z-10 w-full py-6 sm:px-5 min-h-full container py-48" 
+        :class="{'lg:grid-cols-3' : !blok?.text_center}"
+        :data-aos="blok?.animate" :data-aos-once="true"
+      >
+        <div class="flex flex-col justify-center px-8 sm:px-24 lg:col-span-2" :class="{'text-center items-center' : blok?.text_center}">
           <h1 class="mb-3 z-30 font-heading text-gray-800 dark:text-gray-100" :style="{color: blok.title_color?.color}">
             {{ blok?.title || 'Page Title' }}
           </h1>
-          <p class="font-light z-30 text-gray-800 dark:text-gray-100" :style="{color: blok.text_color?.color}">
+          <p v-if="!!blok?.text"class="font-light z-30 text-gray-800 dark:text-gray-100" :style="{color: blok.text_color?.color}">
             {{ blok?.text }}
           </p>
           <div class="mt-10 flex flex-wrap z-30" v-if="blok?.buttons">
