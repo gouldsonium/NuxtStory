@@ -1,17 +1,21 @@
 <script setup>
   const props = defineProps({ blok: Object });
+
+  const heroHeight = computed(() => {
+    return !!props.blok?.full_screen ? { height: '100vh' } : {maxHeight: '800px'}
+  });
 </script>
 
 <template>
-  <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color}">
-    <div class="image-box" :style="{minHeight: `${blok.height}px`}">
+  <section v-editable="blok" :style="{backgroundColor: blok.background_color?.color, ...heroHeight}">
+    <div class="image-box" :style="{minHeight: `${blok.height}px`, ...heroHeight}">
       <NuxtImg 
         v-if="blok?.background_image?.filename" 
         :src="blok?.background_image?.filename" 
         alt="Background Image" placeholder
         class="img-background" provider="storyblok"
         :class="{'brightness-50' : blok?.background_image_darken}"
-        :style="{maxHeight: `${blok?.height}px`}"
+        :style="{...heroHeight}"
       />
       <div 
         class="grid grid-cols-1 z-10 w-full py-6 sm:px-5 min-h-full container py-48" 
@@ -41,17 +45,22 @@
 
 <style scoped>
 /* Ensure image and content is spread out */
+section{
+  overflow: hidden;
+}
 .image-box{
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .img-background {
   position: absolute;
   width: 100%;
   height: 100%;
-  max-height: 800px;
+  /* max-height: 800px; */
   object-fit: cover; /* Zoom in while preserving aspect ratio */
 }
 </style>

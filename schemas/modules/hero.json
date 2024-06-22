@@ -144,10 +144,18 @@
       "keys": [
         "background_image",
         "background_color",
-        "background_image_darken"
+        "background_image_darken",
+        "full_screen"
       ],
       "pos": 10,
       "type": "tab"
+    },
+    "full_screen": {
+      "type": "boolean",
+      "use_uuid": true,
+      "description": "Make background image darker to make text more readable",
+      "tooltip": true,
+      "pos": 9
     }
   },
   "image": null,
