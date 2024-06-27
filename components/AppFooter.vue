@@ -58,10 +58,10 @@
             © {{ copyright }} {{currentYear}} 
           </span>
           <span class="border-r-2 px-2">All Rights Reserved</span>
-          <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:text-secondary">Privacy Policy</NuxtLink>
+          <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:underline">Privacy Policy</NuxtLink>
         </div>
         <div class="justify-self-end py-3 sm:py-0">
-          Website by <a class="underline hover:text-secondary" href="https://storyblok.gouldsonium.com" target="_blank">Gouldsonium</a> 
+          Website by <a class="underline hover:opacity-50" href="https://storyblok.gouldsonium.com" target="_blank">Gouldsonium</a> 
         </div>
       </div>
     </div>

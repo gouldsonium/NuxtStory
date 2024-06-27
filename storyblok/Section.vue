@@ -35,25 +35,27 @@ const backgroundStyle = computed(() => {
 </script>
 
 <template>
-  <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
-  <section v-editable="blok" :style="backgroundStyle" :class="{ 'py-16': !!blok?.padding }" class="bg-gray-100 dark:bg-gray-800">
-    <div :class="blok?.layout" :data-aos="blok?.animate" data-aos-delay="500" data-aos-once="true">
-      <h2 
-        v-if="!!blok?.title"
-        class="font-semibold flex items-center mb-5 font-heading text-gray-800 dark:text-gray-100"
-        :style="{ color: blok.title_color?.color }" 
-        :class="{ 'text-center justify-center': blok?.text_center }"
-      >
-        <span :class="{ 'sm:mx-3': blok?.text_center }">
-          {{ blok?.title }}
-        </span>
-      </h2>
-      <div 
-        v-if="!!resolvedRichText" v-html="resolvedRichText"
-        class="max-w-none prose mb-5 text-gray-800 dark:text-gray-100"
-        :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"
-      ></div>
-      <div>
+  <section v-editable="blok" :style="backgroundStyle" :class="{ 'py-16': !!blok?.padding }" class="bg-gray-100 dark:bg-gray-800 overflow-x-hidden">
+    <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
+    <div :class="blok?.layout">
+      <div :data-aos="blok?.animate" data-aos-delay="500" data-aos-once="true">
+        <h2 
+          v-if="!!blok?.title"
+          class="font-semibold flex items-center mb-5 font-heading text-gray-800 dark:text-gray-100"
+          :style="{ color: blok.title_color?.color }" 
+          :class="{ 'text-center justify-center': blok?.text_center }"
+        >
+          <span :class="{ 'sm:mx-3': blok?.text_center }">
+            {{ blok?.title }}
+          </span>
+        </h2>
+        <div 
+          v-if="!!resolvedRichText" v-html="resolvedRichText"
+          class="max-w-none prose mb-5 text-gray-800 dark:text-gray-100"
+          :class="{ 'prose-invert text-white': blok.invert, 'text-center': blok?.text_center }"
+        ></div>
+      </div>
+      <div :data-aos="blok?.animate" data-aos-delay="500" data-aos-once="true">
         <StoryblokComponent v-for="blok in blok.content" :key="blok._uid" :blok="blok" class="relative" />
       </div>
     </div>
@@ -61,10 +63,7 @@ const backgroundStyle = computed(() => {
 </template>
 
 <style scoped>
-/* Ensure no horizontal overflow */
-section {
-  overflow-x: hidden;
-}
+
 /* Additional styles to prevent overflow issues */
 .prose {
   max-width: 100%;

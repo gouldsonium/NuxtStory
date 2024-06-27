@@ -4,8 +4,8 @@
 </script>
 
 <template>
-  <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
-  <section class="py-24 px-3 bg-gray-100 dark:bg-gray-800" :style="{ backgroundColor: blok.background_color?.color }">
+  <section class="py-16 px-3 bg-gray-100 dark:bg-gray-800" :style="{ backgroundColor: blok.background_color?.color }">
+    <div :id="blok?.section_id" style="position: relative; visibility: hidden;" class="md:top-[-100px]"></div>
     <div class="container mx-auto">
       <h2 v-if="!!blok?.headline"
         class="font-semibold flex items-center text-center justify-center font-heading text-gray-800 dark:text-gray-100"
