@@ -61,7 +61,7 @@
           <NuxtLink to="/privacy-policy" class="pl-2 cursor-pointer hover:underline">Privacy Policy</NuxtLink>
         </div>
         <div class="justify-self-end py-3 sm:py-0">
-          Website by <a class="underline hover:opacity-50" href="https://storyblok.gouldsonium.com" target="_blank">Gouldsonium</a> 
+          Website by <a class="underline hover:opacity-50" href="https://gouldsonium.com" target="_blank">Gouldsonium</a> 
         </div>
       </div>
     </div>
