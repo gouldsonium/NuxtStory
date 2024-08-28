@@ -1,15 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   plugins: [{ src: '~/plugins/router.scrollBehavior', mode: 'client' }],
+
   runtimeConfig: {
     public: {
       VERSION: process.env.STORYBLOK_VERSION
     }
   },
+
   site: {
     url: process.env.WEBSITE_URL,
     name: process.env.WEBSITE_NAME
   },
+
   modules: [
     '@nuxtjs/tailwindcss',
     ["@storyblok/nuxt", { 
@@ -37,9 +40,11 @@ export default defineNuxtConfig({
     }] : null,
     'nuxt-aos',
   ],
+
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
   },
+
   image: {
     storyblok: {
       baseURL: !!process.env.STORYBLOK_REGION 
@@ -47,8 +52,10 @@ export default defineNuxtConfig({
     },
     dir: 'assets/img'
   },
+
   css: ['assets/css/main.css'],
   devtools: { enabled: true },
+
   app:{
     pageTransition: {name: 'page', mode: 'out-in'},
     head: {
@@ -64,8 +71,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   experimental: {
     componentIslands: true,
     payloadExtraction: true
-  }
+  },
+
+  compatibilityDate: '2024-08-28'
 })
