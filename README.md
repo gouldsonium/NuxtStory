@@ -1,5 +1,5 @@
 # NuxtStory
-![Image](/nuxtstory.png)
+![Image](public/nuxtstory.png)
 
 **NuxtStory** is a customizable website template built using Nuxt.js & StoryBlok CMS.
 
