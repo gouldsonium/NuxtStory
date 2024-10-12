@@ -57,7 +57,6 @@ async function createItems() {
           component: componentData
         });
 
-        // console.log(componentData)
         console.log(`Item '${file}' created with ID: ${res.data.component.id}`);
       }
     }
@@ -85,7 +84,6 @@ async function createComponents() {
           component: componentData
         });
 
-        // console.log(componentData)
         console.log(`Component '${file}' created with ID: ${res.data.component.id}`);
       }
     }
@@ -118,7 +116,6 @@ async function createModules() {
           component: componentData
         });
 
-        // console.log(componentData)
         console.log(`Module '${file}' created with ID: ${res.data.component.id}`);
       }
     }
@@ -151,7 +148,6 @@ async function createStory() {
           component: componentData
         });
 
-        // console.log(componentData)
         console.log(`Story '${file}' created with ID: ${res.data.component.id}`);
       }
     }

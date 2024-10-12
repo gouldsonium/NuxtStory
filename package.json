@@ -1,6 +1,6 @@
 {
-  "name": "storyblok_template_v3",
-  "version": "0.3.1",
+  "name": "nuxtstory",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "build": "nuxt build",

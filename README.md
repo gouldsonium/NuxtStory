@@ -89,19 +89,6 @@ For the devs reading, you might want to clone to your local machine and run it t
 
 If you want to deploy this to Netlify, copy the steps from the [Deploy No Code](#deploy-no-code) section but replace the `yarn setup && yarn build` commands with just `yarn build` as you have already set up your StoryBlok account.
 
-## Known Bug
-The `section` and `grid item` bloks don't allow you to add to their *content* straight away. To fix this:
-
-1. Go to *Block Library*
-2. Click on the `Section` block
-3. Under fields, click on *content*
-4. Scroll down and select the Folder(s) option. This should like **Components (/Components)**
-5. Click save & back to fields
-6. Click on `grid-item`
-7. Repeat steps 3-5
-
-This appears to be a bug with the Storyblok API, I will raise it with them or update this to fix
-
 ## Preview vs Live Site
 
 If you have deployed to Netlify, you will have a live site that is fetching content from your StoryBlok space every time you save. This is great as a preview site where you can see the changes and save them as they happen. However, because the site fetches everything at once, it is a bit slow. Additionally, you might have a page or blog post that is a work in progress, and you do not want it on the site.

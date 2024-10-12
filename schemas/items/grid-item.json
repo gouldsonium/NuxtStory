@@ -4,7 +4,7 @@
   "schema": {
     "content": {
       "type": "bloks",
-      "restrict_type": "",
+      "restrict_type": "groups",
       "restrict_components": true,
       "component_whitelist": [],
       "pos": 0
